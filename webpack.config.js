@@ -11,6 +11,7 @@ module.exports = {
     output:{                        //// выход
         filename: 'app.js',
         path: path.resolve(__dirname, './dist'),  // resolve - соединяет полный путь (--dirname) с папкой в которой будет файл
+        publicPath: '/',
         // publicPath: '/dist/'         //// что бы не добавлять этот путь в картиках нужно отключить и вкл в dev ser contentBase: path.join(__dirname, "dist")
     },
     module: {
@@ -71,11 +72,11 @@ module.exports = {
     },
     devServer:{
         overlay: true,                                 //// выводит ошибки в черном окне
-        contentBase: path.join(__dirname, "src"),     //// в какой папке читать html
+        contentBase: path.join(__dirname, "src/"),     //// в какой папке читать html
         compress: true,
         host: '0.0.0.0',
         useLocalIp: true,
-        port: 9000, //// порт
+        port: 3030, //// порт
         historyApiFallback: true /// для правильной работы роутера в React
     },
     plugins: [                      //// регестрируем плагины => смотр. на оф сфйтах
@@ -104,3 +105,5 @@ module.exports = {
 //     ["@babel/transform-runtime"]
 // ]
 // }
+
+//    "dev": "webpack-dev-server --mode development --hot  --inline --history-api-fallback",
