@@ -1,0 +1,115 @@
+.navigation_block {
+  width: 100%;
+  height: 8%;
+  //background: red;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 100;
+
+
+  .btn_block, .nav_links_block {
+    height: 70%;
+    bottom: 0;
+    position: absolute;
+  }
+
+  // BTN_MENU
+  .btn_block {
+    border: 1px solid grey;
+    width: 200px;
+    //display: flex;
+
+
+    .btn_menu {
+      width: 45px;
+      height: 45px;
+      border-radius: 50px;
+    }
+
+    .label_btn_menu {
+      width: 50%;
+      height: 100%;
+      float: right;
+      line-height: 250%;
+      @include flex-center;
+      text-align: left;
+      justify-content: flex-start;
+    }
+  }
+
+  // NAV_MENU
+  .nav_links_block {
+    width: 50%;
+    border: 1px solid grey;
+    right: 5%;
+    display: flex;
+    justify-content: flex-end;
+
+    .nav_link {
+      border: 1px solid grey;
+      box-sizing: border-box;
+      margin-left: 10px;
+      padding: 0 10px 0 10px;
+      text-align: end;
+      font-size: 20px;
+      color: green;
+
+      //&:last-child{
+      //  margin-right: 10%;
+      //}
+
+      .number_menu {
+        color: red;
+        margin: 0;
+        font-size: 10px;
+        margin-bottom: -10px;
+      }
+    }
+  }
+
+
+  .nav_link {
+    position: relative;
+    box-sizing: border-box;
+
+    .submenu {
+      transition: .2s;
+      box-sizing: border-box;
+      width: 150px;
+      //margin-left: -10px;
+      list-style-type: none;
+      position: absolute;
+      border: 1px solid grey;
+      margin-top: 8px;
+      padding: 0;
+      height: 0;
+      //display: none;
+
+      li {
+        transform: rotateX(90deg);
+        transform: rotateY(90deg);
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        margin-top: 20px;
+        transition: .2s;
+        //transition-delay: .3s;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.nav_link:hover > .submenu > li {
+  transform: rotateX(0deg);
+  transform: rotateY(0deg);
+}
+
+.nav_link:hover > .submenu > li > a {
+  margin-top: 3px;
+  opacity: 1;
+}

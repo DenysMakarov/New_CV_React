@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 
 //----------------------------
-import Nav from "./Nav"
+import Nav from "./components/Nav"
 import Header from "./Header";
 
 class App extends React.Component {

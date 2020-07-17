@@ -2,15 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {Provider} from 'react-redux';
+import {compose, createStore, applyMiddleware} from "redux";
+import thunk from "redux-thunk";
 
+//------------------------------
 import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
 import App from "./App";
-import Nav from "./Nav";
 
+const test = {a:1}
+const testStore = (state = test, action) => {
+    return state
+}
+const store = createStore(testStore, compose(
+    applyMiddleware (
+        thunk
+    ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+));
 
+const app = (
+    <Provider store={store}>
+        <App/>
+    </Provider>
+)
 ReactDOM.render(
-    <App/>,
+    app,
     document.getElementById('root')
 );
