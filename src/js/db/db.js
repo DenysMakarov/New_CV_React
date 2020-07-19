@@ -5,7 +5,7 @@ export const subMenu = {
         {
             name: "Dakkar Rally",
             link: '',
-            id: 1
+            id: 1,
         }, {
             name: "FIA WRC",
             link: '',
@@ -66,4 +66,5 @@ export const subMenu = {
         }
     ],
 }
+
 

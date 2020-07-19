@@ -7,16 +7,11 @@ import {compose, createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 
 //------------------------------
-import Header from "./Header";
-import Body from "./Body";
-import Footer from "./Footer";
+import {rootReducer} from "./redux/reducers/rootReducer";
 import App from "./App";
 
-const test = {a:1}
-const testStore = (state = test, action) => {
-    return state
-}
-const store = createStore(testStore, compose(
+
+const store = createStore(rootReducer, compose(
     applyMiddleware (
         thunk
     ),

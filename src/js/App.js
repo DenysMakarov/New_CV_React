@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 
 //----------------------------
-import Nav from "./components/Nav"
-import Header from "./Header";
+import Nav from "./components/Navigation/Nav"
 
 class App extends React.Component {
     constructor(props) {
@@ -14,7 +13,6 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-
                 <div className={"App"} style={{"textAlign": "center"}}>
                     <div className="main_container">
                         <Nav/>
@@ -23,9 +21,7 @@ class App extends React.Component {
                         </div>
                     </div>
                 </div>
-
             </Router>
-
         );
     }
 }

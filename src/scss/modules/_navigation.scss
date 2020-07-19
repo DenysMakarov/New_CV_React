@@ -21,13 +21,18 @@
     //display: flex;
 
 
-    .btn_menu {
-      width: 45px;
-      height: 45px;
-      border-radius: 50px;
+    #btn_menu {
+      display: none;
     }
 
     .label_btn_menu {
+      width: 45px;
+      height: 45px;
+      border-radius: 50px;
+      border: 1px solid grey;
+    }
+
+    .text_btn_menu {
       width: 50%;
       height: 100%;
       float: right;
@@ -37,6 +42,7 @@
       justify-content: flex-start;
     }
   }
+
 
   // NAV_MENU
   .nav_links_block {
