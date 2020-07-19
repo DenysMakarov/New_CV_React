@@ -3,7 +3,7 @@ import {HIDE_MENU} from "../../types";
 
 
 const initialyState = {
-    menu: true
+    menu: false
 }
 
 export const mainMenuReducer = (state= initialyState, action) => {

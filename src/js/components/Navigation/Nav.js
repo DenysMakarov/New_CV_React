@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
 
 //------------------------------
-// import SubNav from "./SubNav";
 import Menu from "./Menu";
 import SubNavigation from "./SubNav";
 
