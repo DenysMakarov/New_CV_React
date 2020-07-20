@@ -2,7 +2,7 @@
   width: 100%;
   height: 70px;
   //background: red;
-  border: 1px solid grey;
+  //border: 1px solid grey;
   box-sizing: border-box;
   position: absolute;
   z-index: 100;
@@ -18,7 +18,7 @@
   //---------------- BTN_MENU ----------------
 
   .btn_block {
-    border: 1px solid grey;
+    //border: 1px solid grey;
     width: 200px;
     //display: flex;
 
@@ -30,6 +30,7 @@
       @include flex-center;
       text-align: left;
       justify-content: flex-start;
+      font-size: 21px;
     }
   }
 
@@ -39,29 +40,34 @@
   //------------------- NAV_MENU -------------------
   .nav_links_block {
     width: 50%;
-    border: 1px solid grey;
+    //border: 1px solid grey;
     right: 5%;
     display: flex;
     justify-content: flex-end;
 
     .nav_link {
-      border: 1px solid grey;
+      //border: 1px solid grey;
       box-sizing: border-box;
       margin-left: 10px;
-      padding: 0 10px 0 10px;
+      padding: 10px 10px 0 10px;
       text-align: end;
       font-size: 20px;
-      color: green;
+      //color: green;
 
       //&:last-child{
       //  margin-right: 10%;
       //}
 
       .number_menu {
-        color: red;
+        color: $colors-number-menu;
         margin: 0;
         font-size: 10px;
         margin-bottom: -10px;
+      }
+
+      a{
+        text-decoration: none;
+        color: #ffffff;
       }
     }
   }
@@ -78,7 +84,7 @@
       //margin-left: -10px;
       list-style-type: none;
       position: absolute;
-      border: 1px solid grey;
+      //border: 1px solid grey;
       margin-top: 8px;
       padding: 0;
       height: 0;
@@ -118,22 +124,27 @@
   width: 45px;
   height: 45px;
   border-radius: 50px;
-  background: rgba(0, 0, 0, 0.3);
+  //background: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 20px;
   left: 30px;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .label_btn_menu {
   width: 100%;
   height: 100%;
   border-radius: 50px;
-  background: green;
+  background: #1c1a1f;
+  cursor: pointer;
 }
 
 .btn_menu {
   display: none;
+}
+
+.text_btn_menu{
+  color: #ffffff;
 }
 
 //------------------- BTN_MENU -------------------
@@ -141,42 +152,51 @@
 
 //------------------- MENU_LIST -------------------
 
+
+
 .menu_list {
   width: 100vw;
   height: 100vh;
-  background: azure;
+  //background: red;
   position: absolute;
   top: 0;
-  z-index: 10;
+  //z-index: 10;
 
   .menu_list_block, {
     margin-left: 30px;
     width: 500px;
     height: 50%;
-    border: yellow 1px solid;
+    //border: yellow 1px solid;
     margin-top: 100px;
     text-align: left;
     position: relative;
 
-    @media screen and(max-width: 768px){
+    @media screen and(max-width: 768px) {
       width: 400px;
     }
 
-    .nav_link{
+    .nav_link {
       width: 200px;
       height: 50px;
       position: relative;
+      box-sizing: border-box;
+
+
+      &:first-child > div > a {
+        margin-left: 10px;
+      }
     }
 
-    .number_menu{
+    .number_menu {
       float: left;
     }
 
-    .text_of_headers_menu{
+    .text_of_headers_menu {
       float: left;
       margin-left: 10px;
       display: inline-block;
       width: 150px;
+      transition: .2s;
 
     }
 
@@ -184,53 +204,68 @@
       display: inline-block;
       transition: .2s;
       box-sizing: border-box;
-      width: 150px;
+      width: 250px;
       //margin-left: -10px;
       list-style-type: none;
       position: absolute;
-      border: 1px solid grey;
+      //border: 1px solid grey;
       //margin-top: 8px;
       padding: 0;
       height: 0;
       margin-left: 0px;
       float: right;
       //display: none;
-    //
-      li{
-        margin-top: 10px;
-        transition: .2s;
-        //opacity: 0;
+      //
+      li {
+        //transition: .2s;
+        margin-left: 100px;
+        opacity: 0;
+        transition-timing-function: ease-out;
+        transition-delay: 0s;
       }
     }
   }
 
-  //.sub_menu_cover{
-  //  width: 80%;
-  //  height: 100px;
-  //  //background: red;
-  //  position: absolute;
-  //  right: 0;
-  //}
+  #sub_menu_cover {
+    width: 50%;
+    height: 100%;
+    //background: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    //display: none;
+  }
+
   //
-  //.nav_link:hover  + .sub_menu_cover {
-  //  display: none;
-  //}
-  //
-  //.nav_link:hover > .submenu > li {
-  //  margin: 0;
-  //  opacity: 1;
-  //  //transform: rotateX(0deg);
-  //  //transform: rotateY(0deg);
-  //}
-  //
+  .nav_link:hover > + .sub_menu_cover {
+    display: none;
+  }
+
+  .nav_link:hover > div > .text_of_headers_menu {
+    padding-left: 70px;
+  }
+
   .nav_link:hover > .submenu > li {
-    margin-top: 0px;
+    transition: .2s;
+    margin-left: 0;
     opacity: 1;
   }
 
+  .nav_link:hover > .submenu > li:nth-child(2) {
+    transition-delay: .1s;
+  }
 
+  .nav_link:hover > .submenu > li:nth-child(3) {
+    transition-delay: .2s;
+  }
 
+  .nav_link:hover > .submenu > li:nth-child(4) {
+    transition-delay: .3s;
+  }
 
+  .nav_link:hover > .submenu > li:nth-child(5) {
+    transition-delay: .4s;
+  }
 
   .contacts_block {
     position: absolute;
@@ -242,19 +277,24 @@
     .get_in_touch, .work_inquires {
       width: 300px;
       height: 90%;
-      border: 1px solid grey;
+      //border: 1px solid grey;
       position: relative;
     }
 
     .social_network_icon_block {
       width: 100%;
       height: 30%;
-      border: 1px solid grey;
+      //border: 1px solid grey;
       position: absolute;
       bottom: 0;
     }
   }
 }
 
-
+.menu_list_show {
+  z-index: 100;
+}
+.menu_list_hide {
+  z-index: 10;
+}
 //------------------- MENU_LIST -------------------

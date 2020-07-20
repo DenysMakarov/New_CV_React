@@ -29,22 +29,23 @@ class MenuBtn extends React.Component {
     operatorMenu = () => {
         const {menu} = this.props.menuApear.mainMenu
         const {showHideMenu} = this.props
-        // const x = document.getElementById("navigation_block")
+        const x = document.getElementById("menu_list")
         return new Promise((res, rej) => {
-            menu == false ? this.setState({
-                typeOfMenu: "SHOW_MENU",
-                menuListClass: "menu_list_show"
-            }) : this.setState({
-                typeOfMenu: "HIDE_MENU",
-                menuListClass: "menu_list_hide"
-            })
+            menu == false ?
+                this.setState({
+                    typeOfMenu: "SHOW_MENU",
+                    menuListClass: "menu_list_show"
+                }) :
+                this.setState({
+                    typeOfMenu: "HIDE_MENU",
+                    menuListClass: "menu_list_hide"
+                })
             res(menu)
         })
             .then((menu) => {
                 showHideMenu(this.state.typeOfMenu)
-                // x.style.background = "red"
-                console.log(menu)
-                console.log(this.state.menuListClass)
+                x.className=`menu_list ${this.state.menuListClass}`
+                console.log(x)
             })
     }
 
@@ -59,7 +60,6 @@ class MenuBtn extends React.Component {
         )
     }
 }
-
 
 
 MenuBtn.propTypes = {

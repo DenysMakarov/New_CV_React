@@ -1,6 +1,4 @@
-//@import "../../node_modules/normalize.scss/normalize";
-//@import "modules/content";
-//@import "modules/keyframes";
+@import "modules/mixins";
 @import "modules/main_container";
 @import "modules/navigation";
 
@@ -8,40 +6,3 @@
 
 
 
-///////////////
-.nav-block{
-  height: 70px;
-
-}
-
-.nav-block, .headerBlock, .bodyStyle, .footerBlock{
-  border: 1px solid yellow;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.headerBlock{
-  border: 1px solid red;
-  margin-top: 25px;
-}
-
-.bodyStyle, .footerBlock{
-  border: 1px solid olive;
-}
-
-.footerBlock{
-  border: 1px solid blue;
-}
-
-.nav_button_block{
-  //display: flex;
-}
-
-.nav_button{
- color: burlywood;
-  margin-right: 10px;
-}
-
-.active_link{
-  color: dodgerblue;
-}

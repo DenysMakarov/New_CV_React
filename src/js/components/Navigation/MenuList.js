@@ -2,39 +2,29 @@ import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
 import {subMenu} from "../../db/db";
 import {createSubMenu} from './SubNav'
+import {showHideMenu} from "../../redux/actions/navigations";
+import {connect} from "react-redux";
+
+const mapToProps = (state) => {
+    return {
+        menu: state.mainMenu.menu
+    }
+}
 
 class MenuList extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {}
-    }
-
-    CreateSubMenu = (position, link, text, number) => {
-        return (
-            <Fragment>
-                <div className="nav_link">
-                    <div className="name_menu"><p className='number_menu'>number</p><Link to={link} className="text_of_headers_menu">{text}</Link></div>
-                    <ul className="submenu">
-                        {position.map((el) => (
-                            <li key={el.id}>
-                                <Link to={el.link}>{el.name}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                    {/*<div className="sub_menu_cover"></div>*/}
-                </div>
-                {/*<div className="sub_menu_cover"></div>*/}
-            </Fragment>
-        )
+        this.state = {
+            menuZIndex: 1
+        }
     }
 
 
     render() {
         const {events, tickets, portfolio, contacts} = subMenu
-
         return (
-            <div className="menu_list">
+            <div className={`menu_list`} id="menu_list">
 
                 <div className="menu_list_block">
                     <div className="nav_link">
@@ -44,6 +34,8 @@ class MenuList extends React.Component {
                     {createSubMenu(tickets, '/tickets', "Tickets", "03")}
                     {createSubMenu(portfolio, '/portfolio', "Portfolio", "04")}
                     {createSubMenu(contacts, '/contacts', "Contacts", "05")}
+                    <div id="sub_menu_cover"></div>
+
                 </div>
 
                 <div className="contacts_block">
@@ -58,4 +50,4 @@ class MenuList extends React.Component {
     }
 }
 
-export default MenuList
+export default connect(mapToProps, null)(MenuList)
