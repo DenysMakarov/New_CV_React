@@ -1,6 +1,6 @@
 .navigation_block {
   width: 100%;
-  height: 8%;
+  height: 70px;
   //background: red;
   border: 1px solid grey;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
 
 
   .btn_block, .nav_links_block {
-    height: 70%;
+    height: 80%;
     bottom: 0;
     position: absolute;
   }
@@ -22,18 +22,6 @@
     width: 200px;
     //display: flex;
 
-
-    #btn_menu {
-      display: none;
-    }
-
-    .label_btn_menu {
-      width: 45px;
-      height: 45px;
-      border-radius: 50px;
-      border: 1px solid grey;
-    }
-
     .text_btn_menu {
       width: 50%;
       height: 100%;
@@ -43,13 +31,6 @@
       text-align: left;
       justify-content: flex-start;
     }
-  }
-
-
-  .menu_list_cover{
-    width: 100px;
-    height: 100px;
-    background: red;
   }
 
   //------------------- BTN_MENU -------------------
@@ -114,7 +95,6 @@
         text-align: left;
         margin-top: 20px;
         transition: .2s;
-        //transition-delay: .3s;
         opacity: 0;
       }
     }
@@ -133,4 +113,148 @@
 
 //------------------- NAV_MENU -------------------
 
+//------------------- BTN_MENU -------------------
+.btn_menu_block {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 1000;
+}
 
+.label_btn_menu {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: green;
+}
+
+.btn_menu {
+  display: none;
+}
+
+//------------------- BTN_MENU -------------------
+
+
+//------------------- MENU_LIST -------------------
+
+.menu_list {
+  width: 100vw;
+  height: 100vh;
+  background: azure;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+
+  .menu_list_block, {
+    margin-left: 30px;
+    width: 500px;
+    height: 50%;
+    border: yellow 1px solid;
+    margin-top: 100px;
+    text-align: left;
+    position: relative;
+
+    @media screen and(max-width: 768px){
+      width: 400px;
+    }
+
+    .nav_link{
+      width: 200px;
+      height: 50px;
+      position: relative;
+    }
+
+    .number_menu{
+      float: left;
+    }
+
+    .text_of_headers_menu{
+      float: left;
+      margin-left: 10px;
+      display: inline-block;
+      width: 150px;
+
+    }
+
+    .submenu {
+      display: inline-block;
+      transition: .2s;
+      box-sizing: border-box;
+      width: 150px;
+      //margin-left: -10px;
+      list-style-type: none;
+      position: absolute;
+      border: 1px solid grey;
+      //margin-top: 8px;
+      padding: 0;
+      height: 0;
+      margin-left: 0px;
+      float: right;
+      //display: none;
+    //
+      li{
+        margin-top: 10px;
+        transition: .2s;
+        //opacity: 0;
+      }
+    }
+  }
+
+  //.sub_menu_cover{
+  //  width: 80%;
+  //  height: 100px;
+  //  //background: red;
+  //  position: absolute;
+  //  right: 0;
+  //}
+  //
+  //.nav_link:hover  + .sub_menu_cover {
+  //  display: none;
+  //}
+  //
+  //.nav_link:hover > .submenu > li {
+  //  margin: 0;
+  //  opacity: 1;
+  //  //transform: rotateX(0deg);
+  //  //transform: rotateY(0deg);
+  //}
+  //
+  .nav_link:hover > .submenu > li {
+    margin-top: 0px;
+    opacity: 1;
+  }
+
+
+
+
+
+  .contacts_block {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    display: flex;
+
+    .get_in_touch, .work_inquires {
+      width: 300px;
+      height: 90%;
+      border: 1px solid grey;
+      position: relative;
+    }
+
+    .social_network_icon_block {
+      width: 100%;
+      height: 30%;
+      border: 1px solid grey;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+
+//------------------- MENU_LIST -------------------

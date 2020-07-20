@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
 import {subMenu} from "../../db/db";
 
 
-const createSubMenu = (position, link, text) => {
+export const createSubMenu = (position, link, text, number) => {
     return (
-        <div className="nav_link">
-            <Link to={link} className=""><p className='number_menu'>01</p>{text}</Link>
-            <ul className="submenu">
-                {position.map((el)=>(
-                    <li key={el.id}>
-                        <Link to={el.link}>{el.name}</Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <Fragment>
+            <div className="nav_link">
+                <div className=""><p className='number_menu'>{number}</p><Link to={link} className="text_of_headers_menu">{text}</Link></div>
+                <ul className="submenu">
+                    {position.map((el)=>(
+                        <li key={el.id}>
+                            <Link to={el.link}>{el.name}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className="sub_menu_cover"></div>
+        </Fragment>
     )
 }
 
@@ -32,10 +35,10 @@ class SubNavigation extends React.Component{
                     <div className="nav_link">
                         <Link to='/' className=""><p className='number_menu'>01</p>Home</Link>
                     </div>
-                    {createSubMenu(events, '/events', "Events")}
-                    {createSubMenu(tickets, '/tickets', "Tickets")}
-                    {createSubMenu(portfolio, '/portfolio', "Portfolio")}
-                    {createSubMenu(contacts, '/contacts', "Contacts")}
+                    {createSubMenu(events, '/events', "Events", "02")}
+                    {createSubMenu(tickets, '/tickets', "Tickets", "03")}
+                    {createSubMenu(portfolio, '/portfolio', "Portfolio", "04")}
+                    {createSubMenu(contacts, '/contacts', "Contacts", "05")}
 
                 </div>
             </div>
