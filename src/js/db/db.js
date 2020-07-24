@@ -1,67 +1,74 @@
 
 
 export const subMenu = {
+    home: [
+        {
+            name: "",
+            link: '/',
+            id: 1
+        }
+    ],
     events: [
         {
             name: "Dakkar Rally",
             link: '',
-            id: 1,
+            id: 2,
         }, {
             name: "FIA WRC",
             link: '',
-            id: 2
+            id: 3
         }, {
             name: "Bamako Rally",
             link: '',
-            id: 3
+            id: 4
         }
     ],
     tickets: [
         {
             name: "Adult",
-            id: 4,
-            link: ''
-        }, {
-            name: "Teenager",
             id: 5,
             link: ''
         }, {
-            name: "Senior-citizen",
+            name: "Teenager",
             id: 6,
+            link: ''
+        }, {
+            name: "Senior-citizen",
+            id: 7,
             link: ''
         }
     ],
     portfolio: [
         {
             name: "Game",
-            id: 7,
-            link: ''
-        }, {
-            name: "MagicS",
             id: 8,
             link: ''
         }, {
-            name: "Footwear",
+            name: "MagicS",
             id: 9,
             link: ''
         }, {
-            name: "Restaurant",
+            name: "Footwear",
             id: 10,
             link: ''
         }, {
-            name: "React",
+            name: "Restaurant",
             id: 11,
+            link: ''
+        }, {
+            name: "React",
+            id: 12,
             link: ''
         }
     ],
     contacts: [
         {
             name: "Canada",
-            id: 4,
+            id: 13,
             link: ''
         }, {
             name: "USA",
-            id: 5,
+            id: 14,
             link: ''
         }
     ],

@@ -9,17 +9,23 @@ const changeColorNavLinks = (e) => {
         e.target.style.color = "white"
     })
 }
+const changeColorSubMenu = (e) => {
+    const arraySubMenu = Array.from(document.getElementsByClassName("header_of_submenu"))
+    arraySubMenu.map((el)=>{
+        el.style.color = "#807f81"
+        e.target.style.color = "white"
+    })
+}
 
-export const createSubMenu = (position, link, text, number) => {
-
+export const createSubMenu = (position, link, text, number, classN) => {
     return (
         <Fragment>
-            <div onMouseOver={changeColorNavLinks} className="nav_link">
-                <div className=""><p className='number_menu'>{number}</p><Link to={link} className="text_of_headers_menu">{text}</Link></div>
+            <div className={classN}>
+                <div className=""><p className='number_menu'>{number}</p><Link to={link} onMouseOver={changeColorNavLinks}  className="text_of_headers_menu">{text}</Link></div>
                 <ul className="submenu">
                     {position.map((el)=>(
                         <li key={el.id}>
-                            <Link to={el.link}>{el.name}</Link>
+                            <Link onMouseOver={changeColorSubMenu} className="header_of_submenu" to={el.link}>{el.name}</Link>
                         </li>
                     ))}
                 </ul>
@@ -35,18 +41,19 @@ class SubNavigation extends React.Component{
     }
 
     render() {
-        const {events, tickets, portfolio, contacts} = subMenu
+        const {home, events, tickets, portfolio, contacts} = subMenu
 
         return (
             <div className="nav_elements">
                 <div className="nav_links_block">
-                    <div className="nav_link">
-                        <div onMouseOver={changeColorNavLinks} className=""><p className='number_menu'>01</p><Link to='/' className="text_of_headers_menu">Home</Link></div>
-                    </div>
-                    {createSubMenu(events, '/events', "Events", "02")}
-                    {createSubMenu(tickets, '/tickets', "Tickets", "03")}
-                    {createSubMenu(portfolio, '/portfolio', "Portfolio", "04")}
-                    {createSubMenu(contacts, '/contacts', "Contacts", "05")}
+                    {/*<div className="nav_link">*/}
+                    {/*    <div onMouseOver={changeColorNavLinks} className=""><p className='number_menu'>01</p><Link to='/' className="text_of_headers_menu">Home</Link></div>*/}
+                    {/*</div>*/}
+                    {createSubMenu(home, '/', "Home", "01", "nav_link")}
+                    {createSubMenu(events, '/events', "Events", "02",  "nav_link")}
+                    {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link")}
+                    {createSubMenu(portfolio, '/portfolio', "Portfolio", "04", "nav_link")}
+                    {createSubMenu(contacts, '/contacts', "Contacts", "05", "nav_link")}
 
                 </div>
             </div>

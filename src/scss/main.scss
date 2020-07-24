@@ -1,8 +1,18 @@
+
+
 @import "modules/mixins";
 @import "modules/main_container";
 @import "modules/navigation";
 
 
 
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff");
+  src: url("../fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff2");
+  src: url("../fonts/SpaceGrotesk/SpaceGrotesk-Bold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 

@@ -46,28 +46,22 @@
     justify-content: flex-end;
 
     .nav_link {
-      //border: 1px solid grey;
       box-sizing: border-box;
       margin-left: 10px;
       padding: 10px 10px 0 10px;
       text-align: end;
       font-size: 20px;
-      //color: green;
-
-      //&:last-child{
-      //  margin-right: 10%;
-      //}
 
       .number_menu {
         color: $colors-number-menu;
         margin: 0;
-        font-size: 10px;
-        margin-bottom: -10px;
+        font-size: 7px;
+        margin-bottom: -5px;
       }
 
-      a{
+      a {
         text-decoration: none;
-        color: #ffffff;
+        color: $colors-number-menu;
       }
     }
   }
@@ -76,6 +70,7 @@
   .nav_link {
     position: relative;
     box-sizing: border-box;
+
 
     .submenu {
       transition: .2s;
@@ -89,6 +84,7 @@
       padding: 0;
       height: 0;
       //display: none;
+      z-index: 1000;
 
       li {
         transform: rotateX(90deg);
@@ -143,7 +139,7 @@
   display: none;
 }
 
-.text_btn_menu{
+.text_btn_menu {
   color: #ffffff;
 }
 
@@ -151,7 +147,6 @@
 
 
 //------------------- MENU_LIST -------------------
-
 
 
 .menu_list {
@@ -164,10 +159,10 @@
 
   .menu_list_block, {
     margin-left: 30px;
-    width: 500px;
+    //width: 700px;
     height: 50%;
     //border: yellow 1px solid;
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: left;
     position: relative;
 
@@ -176,10 +171,22 @@
     }
 
     .nav_link {
+      transition: .3s;
+      margin-top: 20px;
       width: 200px;
       height: 50px;
       position: relative;
       box-sizing: border-box;
+      color: $colors-number-menu;
+
+      //border: 1px solid red;
+      
+      div > a {
+        color: inherit;
+        font-size: 25px;
+        //border: 1px solid red;
+
+      }
 
 
       &:first-child > div > a {
@@ -189,39 +196,53 @@
 
     .number_menu {
       float: left;
+      font-size: 7px;
+      padding-top: 6px;
+      color: $colors-number-menu;
+
     }
 
     .text_of_headers_menu {
       float: left;
       margin-left: 10px;
       display: inline-block;
-      width: 150px;
-      transition: .2s;
+      width: 50px;
+      transition: .3s;
+      //border: 1px solid red;
+      text-align: right;
+      font-family: SpaceGrotesk;
+      color: $colors-number-menu;
+      text-decoration: none;
 
     }
 
     .submenu {
+      //border: 1px solid green;
       display: inline-block;
-      transition: .2s;
       box-sizing: border-box;
-      width: 250px;
-      //margin-left: -10px;
+      width: 0px;
+      height: 250px;
+      margin-left: 15px;
       list-style-type: none;
       position: absolute;
-      //border: 1px solid grey;
-      //margin-top: 8px;
       padding: 0;
-      height: 0;
-      margin-left: 0px;
       float: right;
-      //display: none;
-      //
+      padding-left: 30px;
+
       li {
-        //transition: .2s;
-        margin-left: 100px;
+
         opacity: 0;
         transition-timing-function: ease-out;
         transition-delay: 0s;
+        font-size: 25px;
+        //margin-left: 100px;
+        margin-top: 25px;
+        font-family: "Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+        a {
+          color: #807f81;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -229,7 +250,6 @@
   #sub_menu_cover {
     width: 50%;
     height: 100%;
-    //background: red;
     position: absolute;
     right: 0;
     top: 0;
@@ -237,18 +257,23 @@
   }
 
   //
+  .nav_link:hover > .submenu {
+    width: 250px;
+  }
+
   .nav_link:hover > + .sub_menu_cover {
     display: none;
   }
 
   .nav_link:hover > div > .text_of_headers_menu {
-    padding-left: 70px;
+    width: 150px;
   }
 
   .nav_link:hover > .submenu > li {
-    transition: .2s;
-    margin-left: 0;
+    transition: 0.4s;
+    margin-left: -30px;
     opacity: 1;
+    margin-top: 0;
   }
 
   .nav_link:hover > .submenu > li:nth-child(2) {
@@ -266,6 +291,12 @@
   .nav_link:hover > .submenu > li:nth-child(5) {
     transition-delay: .4s;
   }
+
+
+
+
+
+  // CONTACTS //
 
   .contacts_block {
     position: absolute;
@@ -294,7 +325,13 @@
 .menu_list_show {
   z-index: 100;
 }
+
 .menu_list_hide {
   z-index: 10;
+}
+
+
+.number_menu{
+  color: $colors-number-menu;
 }
 //------------------- MENU_LIST -------------------

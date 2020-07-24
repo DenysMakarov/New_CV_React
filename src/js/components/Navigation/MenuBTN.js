@@ -16,20 +16,28 @@ const mapDispatch = {
 }
 
 
+
 class MenuBtn extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             typeOfMenu: "HIDE_MENU",
-            menuListClass: "menu_list_hide"
+            // menuListClass: "menu_list_hide"
         }
     }
+
 
     operatorMenu = () => {
         const {menu} = this.props.menuApear.mainMenu
         const {showHideMenu} = this.props
-        const x = document.getElementById("menu_list")
+        const menuLinks = Array.from(document.getElementsByClassName("nav_link_menu_list"))
+        menuLinks.map((el) => {
+            (!menu) ? el.style.marginTop = "0" : el.style.marginTop = "30px"
+
+        })
+
+        const menuList = document.getElementById("menu_list")
         return new Promise((res, rej) => {
             menu == false ?
                 this.setState({
@@ -44,8 +52,7 @@ class MenuBtn extends React.Component {
         })
             .then((menu) => {
                 showHideMenu(this.state.typeOfMenu)
-                x.className=`menu_list ${this.state.menuListClass}`
-                console.log(x)
+                menuList.className=`menu_list ${this.state.menuListClass}`
             })
     }
 
@@ -62,12 +69,12 @@ class MenuBtn extends React.Component {
 }
 
 
-MenuBtn.propTypes = {
-    menuApear: PropTypes.shape({
-        mainMenu: PropTypes.shape({
-            menu: PropTypes.bool.isRequired
-        })
-    })
-}
+// MenuBtn.propTypes = {
+//     menuApear: PropTypes.shape({
+//         mainMenu: PropTypes.shape({
+//             menu: PropTypes.bool.isRequired
+//         })
+//     })
+// }
 
 export default connect(mapToProps, mapDispatch)(MenuBtn)

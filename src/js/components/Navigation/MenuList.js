@@ -22,18 +22,19 @@ class MenuList extends React.Component {
 
 
     render() {
-        const {events, tickets, portfolio, contacts} = subMenu
+        const {home, events, tickets, portfolio, contacts} = subMenu
         return (
             <div className={`menu_list`} id="menu_list">
 
                 <div className="menu_list_block">
-                    <div className="nav_link">
-                        <div className=""><p className='number_menu'>01</p><Link to='/'>Home</Link></div>
-                    </div>
-                    {createSubMenu(events, '/events', "Events", "02")}
-                    {createSubMenu(tickets, '/tickets', "Tickets", "03")}
-                    {createSubMenu(portfolio, '/portfolio', "Portfolio", "04")}
-                    {createSubMenu(contacts, '/contacts', "Contacts", "05")}
+                    {/*<div className="nav_link">*/}
+                    {/*    <div className=""><p className='number_menu'>01</p><Link to='/'>Home</Link></div>*/}
+                    {/*</div>*/}
+                    {createSubMenu(home, '/', "Home", "01", "nav_link nav_link_menu_list")}
+                    {createSubMenu(events, '/events', "Events", "02",  "nav_link nav_link_menu_list")}
+                    {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link nav_link_menu_list")}
+                    {createSubMenu(portfolio, '/portfolio', "Portfolio", "04", "nav_link nav_link_menu_list")}
+                    {createSubMenu(contacts, '/contacts', "Contacts", "05", "nav_link nav_link_menu_list")}
                     <div id="sub_menu_cover"></div>
 
                 </div>
