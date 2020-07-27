@@ -2,12 +2,22 @@
 .slider_block{
   width: 100%;
   height: 100%;
-  //background: gold;
-  //border: 1px solid grey;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
 }
+.slider_block_hide{
+  opacity: 0;
+  transition: 0s;
+}
+.slider_block_appear {
+  transition: .5s;
+  opacity: 1;
+}
+.slider_before_appear {
+  transition: 1s;
+}
+
 
 .right_pixel_decoration{
   width: 40%;
@@ -19,16 +29,13 @@
 
 // MAIN SLIDE
 .main_slide{
-  //background: bisque;
   width: 40%;
   height: 100%;
   position: absolute;
   left: 8%;
   //background-image: url(../img/1.jpg);
   background-position: center;
-  //transition: .2s;
-
-
+  background-size: cover;
 
   @media screen and (max-width: 768px){
     width: 100%;
@@ -47,6 +54,9 @@
   border: 1px solid olive;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-position: right;
+  //left: 400px;
+  //width: 50%;
 
   @media screen and (max-width: 768px){
     width: 50%;

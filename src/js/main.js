@@ -16,7 +16,7 @@ const store = createStore(rootReducer, compose(
     applyMiddleware(
         thunk
     ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 
 // BECAME for Safari => разобраться
@@ -34,9 +34,16 @@ const store = createStore(rootReducer, compose(
 //     composeEnhancers(middleware)
 // );
 
+const X = () => {
+    return (
+        <div></div>
+    )
+}
+
 const app = (
     <Provider store={store}>
         <App/>
+        {/*<X/>*/}
     </Provider>
 )
 ReactDOM.render(

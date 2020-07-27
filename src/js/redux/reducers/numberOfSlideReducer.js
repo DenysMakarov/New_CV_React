@@ -1,5 +1,6 @@
 import {NEXT_SLIDE} from "../../types";
 import {PREV_SLIDE} from "../../types";
+import {SET_SLIDE} from "../../types";
 import {NUMBER_OF_SLIDE} from "../../types"
 import {sliderInfo} from "../../db/dataBase";
 
@@ -24,34 +25,20 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
 
         case PREV_SLIDE :
             if (state.numberOfSlide > 0){
-                // console.log(sliderInfo.length)
-                const x = sliderInfo.length
                 return {
                     ...state, numberOfSlide : state.numberOfSlide - 1
-                }
-            } else if (state.numberOfSlide == 1){
-                console.log("kljkljlk")
-                return {
-                    ...state, numberOfSlide : 4
                 };
+            } else {
+                return {
+                    ...state, numberOfSlide : sliderInfo.length - 1
+                };
+            }
+        case SET_SLIDE :
+            return {
+                ...state, numberOfSlide : 3
             }
         default :
             return state
 
     }
 }
-
-
-
-// export const numberOfSlideReducer = (state = initiallyState, action) => {
-//     switch (action.type) {
-//         case NUMBER_OF_SLIDE :
-//             return {
-//                 ...state, numberOfSlide : action.payload
-//             };
-//         default :
-//             return state
-//
-//     }
-// }
-

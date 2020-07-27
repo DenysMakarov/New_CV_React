@@ -1,9 +1,10 @@
 
-
+@import "modules/keyframes";
 @import "modules/mixins";
+
 @import "modules/main_container";
-@import "modules/navigation";
-@import "modules/sliderBlock";
+@import "modules/navigation/navigation";
+@import "modules/slider_block/full_slider_block";
 
 
 @font-face {

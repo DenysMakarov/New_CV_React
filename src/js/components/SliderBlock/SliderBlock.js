@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {connect} from "react-redux";
 import Arrows from "./ArrowsBlock";
 import {sliderInfo} from "../../db/dataBase";
-import {CSSTransitionGroup} from 'react-transition-group' // ES6
+import SlidePagination from "./SlidePagination";
 
 
 const mapStateToProps = (state) => {
@@ -14,33 +14,29 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const style = {
-//     // backgroundImage:
-// }
-
 class SliderBlock extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            sl: 0
-        }
     }
 
     render() {
         const {numberOfSlide} = this.props.state.numberOfSlideReducer
-        // console.log(sliderInfo[numberOfSlide])
-        console.log(numberOfSlide)
+        let appearancePrevSlide = sliderInfo.length - 1;
+        numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == sliderInfo.length ? appearancePrevSlide = 0 : appearancePrevSlide
+
         return (
             <div className="slider_block">
 
                 <div className="right_pixel_decoration"></div>
 
-                    {/*<div className="main_slide" style={{backgroundImage: sliderInfo[numberOfSlide].imgPath}}></div>*/}
+                <div id="main_slide" className="main_slide"
+                     style={{backgroundImage: sliderInfo[numberOfSlide].imgPath}}></div>
 
-                <div className="slide_before" style={{}}></div>
+
+                <div id="slide_before" className="slide_before" style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath}}></div>
+
+                <SlidePagination/>
                 <Arrows/>
-
             </div>
         )
     }

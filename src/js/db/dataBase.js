@@ -1,15 +1,20 @@
 
 export const sliderInfo = [
     {
-        imgPath: "url(../img/1.jpg)"
+        imgPath: "url(../img/1.jpg)",
+        id: 1,
     }, {
-        imgPath: "url(../img/2.jpg)"
+        imgPath: "url(../img/2.jpg)",
+        id: 2
     }, {
-        imgPath: "url(../img/3.jpg)"
+        imgPath: "url(../img/3.jpg)",
+        id: 3
     }, {
-        imgPath: "url(../img/4.jpg)"
+        imgPath: "url(../img/4.jpg)",
+        id: 4
     }, {
-        imgPath: "url(../img/5.jpg)"
+        imgPath: "url(../img/5.jpg)",
+        id: 5
     },
 ]
 
