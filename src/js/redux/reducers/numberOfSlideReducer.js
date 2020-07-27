@@ -35,7 +35,7 @@ export const numberOfSlideReducer = (state = initiallyState, action) => {
             }
         case SET_SLIDE :
             return {
-                ...state, numberOfSlide : 3
+                ...state, numberOfSlide : action.payload
             }
         default :
             return state

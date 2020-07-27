@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import Arrows from "./ArrowsBlock";
 import {sliderInfo} from "../../db/dataBase";
 import SlidePagination from "./SlidePagination";
+import TextDesc from "./TextDesc";
 
 
 const mapStateToProps = (state) => {
@@ -32,9 +33,11 @@ class SliderBlock extends React.Component {
                 <div id="main_slide" className="main_slide"
                      style={{backgroundImage: sliderInfo[numberOfSlide].imgPath}}></div>
 
+                <div id="slide_before" className="slide_before"
+                     style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath}}></div>
 
-                <div id="slide_before" className="slide_before" style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath}}></div>
 
+                <TextDesc/>
                 <SlidePagination/>
                 <Arrows/>
             </div>

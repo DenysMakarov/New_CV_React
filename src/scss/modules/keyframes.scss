@@ -1,14 +1,37 @@
-@keyframes slide-appear {
+@keyframes text_slider_apear {
   0% {
-    display: block;
-    opacity: 0
+    opacity: 0;
+    padding-top: 70px;
   }
-  10% {
-    display: block;
+  30%{
+    padding-top: 40px;
+  }
+  50% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+    padding-top: 0;
+  }
+}
+
+
+@keyframes first_animate_Slider {
+  0% {
+    opacity: 0;
   }
 
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes first_animate_prevSlider {
+  0% {
+    left: -100px;
+  }
+
+  100% {
+    left: 0;
+  }
 }

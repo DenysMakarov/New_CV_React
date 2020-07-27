@@ -23,7 +23,7 @@ class App extends React.Component {
 
                     <MenuBtn/>
 
-                    <div className="main_container">
+                    <div className="main_container" >
                         <Nav/>
                         <SliderBlock/>
                     </div>

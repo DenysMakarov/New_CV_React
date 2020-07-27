@@ -21,6 +21,24 @@ const mapDispatchToProps = {
 }
 
 
+
+export const changeAnimationSlide = () => {
+    let getMainSlide = document.getElementById("main_slide")
+    let getBeforeSlide = document.getElementById("slide_before")
+
+    getMainSlide.style.animationName = "none"
+    getBeforeSlide.classList.remove("slider_before_appear")
+    getBeforeSlide.classList.add("slider_block_hide")
+    getMainSlide.classList.remove("slider_block_appear")
+    getMainSlide.classList.add("slider_block_hide")
+    setTimeout(() => {
+        getBeforeSlide.classList.remove("slider_block_hide")
+        getBeforeSlide.classList.add("slider_before_appear")
+        getMainSlide.classList.remove("slider_block_hide")
+        getMainSlide.classList.add("slider_block_appear")
+    }, 200)
+}
+
 class Arrows extends React.Component {
     constructor(props) {
         super(props);
@@ -29,36 +47,21 @@ class Arrows extends React.Component {
             slideNumber: 0,
             sliderInfo: sliderInfo
         }
+
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         // console.log(prevProps)
     }
 
-    changeAnimationSlide = () => {
-        let getMainSlide = document.getElementById("main_slide")
-        let getBeforeSlide = document.getElementById("slide_before")
-
-        getBeforeSlide.classList.remove("slider_before_appear")
-        getBeforeSlide.classList.add("slider_block_hide")
-        getMainSlide.classList.remove("slider_block_appear")
-        getMainSlide.classList.add("slider_block_hide")
-        setTimeout(() => {
-            getBeforeSlide.classList.remove("slider_block_hide")
-            getBeforeSlide.classList.add("slider_before_appear")
-            getMainSlide.classList.remove("slider_block_hide")
-            getMainSlide.classList.add("slider_block_appear")
-        }, 200)
-    }
-
     prevSlide = () => {
         this.props.prevSlide()
-        this.changeAnimationSlide()
+        changeAnimationSlide()
     }
 
     nextSlide = () => {
         this.props.nextSlide()
-        this.changeAnimationSlide()
+        changeAnimationSlide()
     }
 
     render() {

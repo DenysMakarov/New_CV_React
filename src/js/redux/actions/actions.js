@@ -18,10 +18,11 @@ export function prevSlide() {
         type: PREV_SLIDE,
     }
 }
-export function setSlide() {
-    return{
-        type: SET_SLIDE,
-        payLoad: 2
+
+export function setSlide(num) {
+    return {
+        type:SET_SLIDE,
+        payload:num
     }
 }
 
