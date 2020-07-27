@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
-import {showHideMenu} from "../../redux/actions/navigations";
+import {showHideMenu} from "../../redux/actions/actions";
 import {connect} from "react-redux";
 import PropTypes from "prop-types"
+import MenuList from "./MenuList";
 
 
 const mapToProps = (state) => {
@@ -23,7 +24,6 @@ class MenuBtn extends React.Component {
 
         this.state = {
             typeOfMenu: "HIDE_MENU",
-            // menuListClass: "menu_list_hide"
         }
     }
 
@@ -32,6 +32,7 @@ class MenuBtn extends React.Component {
         const {menu} = this.props.menuApear.mainMenu
         const {showHideMenu} = this.props
         const menuLinks = Array.from(document.getElementsByClassName("nav_link_menu_list"))
+
         menuLinks.map((el) => {
             (!menu) ? el.style.marginTop = "0" : el.style.marginTop = "30px"
 
@@ -59,11 +60,11 @@ class MenuBtn extends React.Component {
 
     render() {
         return (
-            <div className="btn_menu_block">
-                <input onClick={this.operatorMenu} type='checkbox' defaultChecked={false} id="btn_menu"
-                       className="btn_menu"></input>
-                <label htmlFor="btn_menu" className="label_btn_menu"></label>
-            </div>
+                <div className="btn_menu_block">
+                    <input onClick={this.operatorMenu} type='checkbox' defaultChecked={false} id="btn_menu"
+                           className="btn_menu"></input>
+                    <label htmlFor="btn_menu" className="label_btn_menu"></label>
+                </div>
         )
     }
 }

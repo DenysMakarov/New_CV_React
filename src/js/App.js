@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from "react-redux"; // метод позвол
 import Nav from "./components/Navigation/Nav"
 import MenuBtn from "./components/Navigation/MenuBTN";
 import MenuList from "./components/Navigation/MenuList";
+import SliderBlock from "./components/SliderBlock/SliderBlock";
+
 
 class App extends React.Component {
     constructor(props) {
@@ -17,13 +19,13 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <div className={"App"} style={{"textAlign": "center"}}>
+                <div className="App" style={{"textAlign": "center"}}>
 
                     <MenuBtn/>
 
                     <div className="main_container">
                         <Nav/>
-                        <div className="slider_block"></div>
+                        <SliderBlock/>
                     </div>
 
                     <MenuList/>

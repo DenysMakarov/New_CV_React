@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
-import {subMenu} from "../../db/db";
+import {subMenu} from "../../db/dataBase";
 import {createSubMenu} from './SubNav'
-import {showHideMenu} from "../../redux/actions/navigations";
+import {showHideMenu} from "../../redux/actions/actions";
 import {connect} from "react-redux";
+import Test from "../../Test";
 
-const mapToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         menu: state.mainMenu.menu
     }
@@ -22,6 +23,9 @@ class MenuList extends React.Component {
 
 
     render() {
+        // (!this.props.menu) ? <Test/> : <Test/>
+
+
         const {home, events, tickets, portfolio, contacts} = subMenu
         return (
             <div className={`menu_list`} id="menu_list">
@@ -51,4 +55,4 @@ class MenuList extends React.Component {
     }
 }
 
-export default connect(mapToProps, null)(MenuList)
+export default connect(mapStateToProps, null)(MenuList)

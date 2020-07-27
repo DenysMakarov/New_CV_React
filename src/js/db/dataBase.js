@@ -1,4 +1,18 @@
 
+export const sliderInfo = [
+    {
+        imgPath: "url(../img/1.jpg)"
+    }, {
+        imgPath: "url(../img/2.jpg)"
+    }, {
+        imgPath: "url(../img/3.jpg)"
+    }, {
+        imgPath: "url(../img/4.jpg)"
+    }, {
+        imgPath: "url(../img/5.jpg)"
+    },
+]
+
 
 export const subMenu = {
     home: [

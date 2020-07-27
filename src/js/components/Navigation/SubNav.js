@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
-import {subMenu} from "../../db/db";
+import {subMenu} from "../../db/dataBase";
 
 const changeColorNavLinks = (e) => {
     const arrayNavLinks = Array.from(document.getElementsByClassName("text_of_headers_menu"))
