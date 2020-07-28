@@ -12,6 +12,8 @@
   justify-content: normal;
   padding: 0;
   box-sizing: border-box;
+  z-index: 100;
+  top: 0;
 }
 
 .pagination_panel_number {
@@ -22,6 +24,10 @@
   background: rgba(0,0,0,.1);
   cursor: pointer;
   font-size: 10px;
+
+  //&:first-child{
+  //  background: rgba(0,0,0,.5);
+  //}
 
   &:hover{
     background: rgba(0,0,0,.5);

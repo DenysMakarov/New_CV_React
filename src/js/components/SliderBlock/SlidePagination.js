@@ -27,6 +27,14 @@ class SlidePagination extends React.Component {
         super(props);
     }
 
+    UNSAFE_componentWillMount(){
+        setTimeout(()=>{
+            const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
+            arrPag[0].classList.add("pagination_panel_number_active")
+        }, 1000)
+
+    }
+
     UNSAFE_componentWillUpdate(nextProps, nextState) {
         const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
         arrPag.map(el => el.classList.remove("pagination_panel_number_active"))
@@ -44,16 +52,15 @@ class SlidePagination extends React.Component {
                 <ul className="slide_pagination_panel">
                     {sliderInfo.map((el) => (
                         <li
-                            key={el.id}
-                            data-id={el.id}
+                            key={el.numberId}
+                            data-id={el.numberId}
                             onClick={this.setSlider}
                             style={{height: 100 / sliderInfo.length + "%"}}
-                            className="pagination_panel_number">{"0" + el.id}
+                            className="pagination_panel_number">{"0" + el.numberId}
                         </li>
                     ))}
                 </ul>
             </div>
-
         )
     }
 

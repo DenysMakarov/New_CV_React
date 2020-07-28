@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
 import {subMenu} from "../../db/dataBase";
-import {createSubMenu} from './SubNav'
+import {createSubMenu} from "../Navigation/CreateSubMenu"
 import {showHideMenu} from "../../redux/actions/actions";
 import {connect} from "react-redux";
 import Test from "../../Test";
