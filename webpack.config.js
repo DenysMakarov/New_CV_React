@@ -107,3 +107,9 @@ module.exports = {
 // }
 
 //    "dev": "webpack-dev-server --mode development --hot  --inline --history-api-fallback",
+
+// PROBLEM:
+// Have a problem: to compile img need to add them to css !important
+
+
+

@@ -27,12 +27,9 @@ class SlidePagination extends React.Component {
         super(props);
     }
 
-    UNSAFE_componentWillMount(){
-        setTimeout(()=>{
-            const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
-            arrPag[0].classList.add("pagination_panel_number_active")
-        }, 1000)
-
+    componentDidMount() {
+        const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
+        arrPag[0].classList.add("pagination_panel_number_active")
     }
 
     UNSAFE_componentWillUpdate(nextProps, nextState) {

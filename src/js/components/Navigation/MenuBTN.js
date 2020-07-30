@@ -17,7 +17,6 @@ const mapDispatch = {
 }
 
 
-
 class MenuBtn extends React.Component {
     constructor(props) {
         super(props);
@@ -32,11 +31,23 @@ class MenuBtn extends React.Component {
         const {menu} = this.props.menuApear.mainMenu
         const {showHideMenu} = this.props
         const menuLinks = Array.from(document.getElementsByClassName("nav_link_menu_list"))
+        const lineInBtnTop = document.getElementById("line_in_btn_top")
+        const lineInBtnBottom = document.getElementById("line_in_btn_bottom")
+
 
         menuLinks.map((el) => {
             (!menu) ? el.style.marginTop = "0" : el.style.marginTop = "30px"
-
         })
+
+        if (menu) {
+            lineInBtnTop.classList.remove("line_in_btn_top_active");
+            lineInBtnBottom.classList.remove("line_in_btn_bottom_active")
+
+        } else {
+            lineInBtnTop.classList.add("line_in_btn_top_active");
+            lineInBtnBottom.classList.add("line_in_btn_bottom_active")
+        }
+
 
         const menuList = document.getElementById("menu_list")
         return new Promise((res, rej) => {
@@ -53,29 +64,32 @@ class MenuBtn extends React.Component {
         })
             .then((menu) => {
                 showHideMenu(this.state.typeOfMenu)
-                menuList.className=`menu_list ${this.state.menuListClass}`
+                menuList.className = `menu_list ${this.state.menuListClass}`
             })
     }
 
 
     render() {
         return (
-                <div className="btn_menu_block">
-                    <input onClick={this.operatorMenu} type='checkbox' defaultChecked={false} id="btn_menu"
-                           className="btn_menu"></input>
-                    <label htmlFor="btn_menu" className="label_btn_menu"></label>
-                </div>
+            <div className="btn_menu_block">
+                <input onClick={this.operatorMenu} type='checkbox' defaultChecked={false} id="btn_menu"
+                       className="btn_menu"></input>
+                <label htmlFor="btn_menu" className="label_btn_menu">
+                    <div id="line_in_btn_top" className="line_in_btn line_in_btn_top"></div>
+                    <div id="line_in_btn_bottom" className="line_in_btn line_in_btn_bottom"></div>
+                </label>
+            </div>
         )
     }
 }
 
 
-// MenuBtn.propTypes = {
-//     menuApear: PropTypes.shape({
-//         mainMenu: PropTypes.shape({
-//             menu: PropTypes.bool.isRequired
-//         })
-//     })
-// }
+MenuBtn.propTypes = {
+    menuApear: PropTypes.shape({
+        mainMenu: PropTypes.shape({
+            menu: PropTypes.bool.isRequired
+        })
+    })
+}
 
 export default connect(mapToProps, mapDispatch)(MenuBtn)

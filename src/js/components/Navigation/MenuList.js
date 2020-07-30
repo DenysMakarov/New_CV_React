@@ -26,7 +26,7 @@ class MenuList extends React.Component {
         // (!this.props.menu) ? <Test/> : <Test/>
 
 
-        const {home, events, tickets, portfolio, contacts} = subMenu
+        const {home, events, tickets, portfolio, contacts, Login} = subMenu
         return (
             <div className={`menu_list`} id="menu_list">
 
@@ -39,6 +39,8 @@ class MenuList extends React.Component {
                     {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link nav_link_menu_list")}
                     {createSubMenu(portfolio, '/portfolio', "Portfolio", "04", "nav_link nav_link_menu_list")}
                     {createSubMenu(contacts, '/contacts', "Contacts", "05", "nav_link nav_link_menu_list")}
+                    {/*{createSubMenu(Login, '/lonIn', "Login", "06", "nav_link")}*/}
+
                     <div id="sub_menu_cover"></div>
 
                 </div>

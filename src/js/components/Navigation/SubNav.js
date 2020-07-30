@@ -3,40 +3,58 @@ import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as Rou
 import {subMenu} from "../../db/dataBase";
 import {createSubMenu} from "../Navigation/CreateSubMenu"
 
-class SubNavigation extends React.Component {
+class SubNav extends React.Component {
     constructor(props) {
         super(props);
     }
 
     linkColorDisable = () => { // нужно будет изменить как активный класс
         const arrTextHeaderOfMenu = Array.from(document.getElementsByClassName("text_of_headers_menu"))
-        arrTextHeaderOfMenu.map(el=>el.style.color = "#ffffff")
+        arrTextHeaderOfMenu.map(el => el.style.color = "#ffffff")
     }
 
+    // linkColorDisableAndCoverBox = () => {
+    //     this.linkColorDisable()
+    // }
+
     render() {
-        const {home, events, tickets, portfolio, contacts} = subMenu
+        const {home, events, tickets, portfolio, contacts, Login} = subMenu
         // const arrTextHeaderOfMenu = Array.from(document.getElementsByClassName("text_of_headers_menu"))
         // arrTextHeaderOfMenu.map(el => el.addEventListener(""))
-
+        // if (window.location == "http://192.168.0.105:3030/events#/") {
+        //     console.log("lklk")
+        // }
         return (
-            <div className="nav_elements">
-                <div onMouseLeave={this.linkColorDisable} id="nav_links_block" className="nav_links_block">
-                    {/*<div className="nav_link">*/}
-                    {/*    <div onMouseOver={changeColorNavLinks} className=""><p className='number_menu'>01</p><Link to='/' className="text_of_headers_menu">Home</Link></div>*/}
-                    {/*</div>*/}
-                    {createSubMenu(home, '/', "Home", "01", "nav_link")}
-                    {createSubMenu(events, '/events', "Events", "02", "nav_link")}
-                    {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link")}
-                    {createSubMenu(portfolio, '/portfolio', "Portfolio", "04", "nav_link")}
-                    {createSubMenu(contacts, '/contacts', "Contacts", "05", "nav_link")}
+            <RouterHash>
 
+                <Switch>
+
+                    {/*<Route path="/events" render={*/}
+                    {/*    ()=>{console.log("kjljk")}*/}
+                    {/*}/>*/}
+
+                </Switch>
+
+                <div className="nav_elements">
+                    <div onMouseLeave={this.linkColorDisable} id="nav_links_block" className="nav_links_block">
+                        {/*<div className="nav_link">*/}
+                        {/*    <div onMouseOver={changeColorNavLinks} className=""><p className='number_menu'>01</p><Link to='/' className="text_of_headers_menu">Home</Link></div>*/}
+                        {/*</div>*/}
+                        {createSubMenu(home, '/', "Home", "01", "nav_link")}
+                        {createSubMenu(events, '/events', "Events", "02", "nav_link")}
+                        {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link")}
+                        {createSubMenu(portfolio, '/portfolio', "Portfolio", "04", "nav_link")}
+                        {createSubMenu(contacts, '/contacts', "Contacts", "05", "nav_link")}
+                        {createSubMenu(Login, '/login', "LogIn", "06", "nav_link")}
+                    </div>
                 </div>
-            </div>
+            </RouterHash>
+
         )
     }
 }
 
-export default SubNavigation
+export default SubNav
 
 {/*<div className="nav_link">*/
 }
