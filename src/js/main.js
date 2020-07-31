@@ -16,7 +16,7 @@ const store = createStore(rootReducer, compose(
     applyMiddleware(
         thunk
     ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 
 // BECAME for Safari => разобраться
@@ -33,6 +33,8 @@ const store = createStore(rootReducer, compose(
 //     rootReducer,
 //     composeEnhancers(middleware)
 // );
+// BECAME for Safari => разобраться
+
 
 const X = () => {
     return (

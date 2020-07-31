@@ -9,7 +9,7 @@ import MenuBtn from "./components/Navigation/MenuBTN";
 import MenuList from "./components/Navigation/MenuList";
 import SliderBlock from "./components/SliderBlock/SliderBlock";
 import RegistrationPanel from "./components/Registration/RegistrationPanel";
-import Routes from "../img/Routes";
+import Routes from "./Routes";
 import Test from "./Test";
 
 

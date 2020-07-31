@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import RegistrationPanel from "../js/components/Registration/RegistrationPanel";
-import SliderBlock from "../js/components/SliderBlock/SliderBlock";
-import Test from "../js/Test";
+import RegistrationPanel from "./components/Registration/RegistrationPanel";
+import SliderBlock from "./components/SliderBlock/SliderBlock";
+import Test from "./Test";
 
 
 
