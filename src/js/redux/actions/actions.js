@@ -1,4 +1,4 @@
-import {NUMBER_OF_SLIDE} from "../../types"
+import {GET_USERS, NUMBER_OF_SLIDE, SET_USERS, VALID, INVALID} from "../../types"
 import {NEXT_SLIDE} from "../../types";
 import {PREV_SLIDE} from "../../types";
 import {SET_SLIDE} from "../../types";
@@ -8,11 +8,13 @@ export function showHideMenu(typeText) {
         type: typeText
     }
 }
+
 export function nextSlide() {
     return {
         type: NEXT_SLIDE,
     }
 }
+
 export function prevSlide() {
     return {
         type: PREV_SLIDE,
@@ -21,8 +23,26 @@ export function prevSlide() {
 
 export function setSlide(num) {
     return {
-        type:SET_SLIDE,
-        payload:num
+        type: SET_SLIDE,
+        payload: num
+    }
+}
+
+export function validForm() {
+    return {
+        type: VALID,
+    }
+}
+export function inValidForm() {
+    return {
+        type: INVALID,
+    }
+}
+
+export function setUsers(user) {
+    return {
+        type:SET_USERS,
+        payload: user
     }
 }
 

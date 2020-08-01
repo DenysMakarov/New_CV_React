@@ -9,8 +9,8 @@ import Test from "./Test";
 const Routes = () => {
     return (
         <Switch>
-            {/*<Route exact path="/" component={SliderBlock} />*/}
-            <Route path="/" component={RegistrationPanel}/>
+            <Route exact path="/" component={SliderBlock} />
+            <Route path="/login" component={RegistrationPanel}/>
             <Route path="*" component={Test} />
         </Switch>
     )
