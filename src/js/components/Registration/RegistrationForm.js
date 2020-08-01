@@ -41,7 +41,8 @@ class RegistrationForm extends React.Component {
                 passwordRepeat: ""
             },
             validation: false,
-            users: ""
+            users: "",
+            foundEmailInToDB: false
         }
     }
 
@@ -68,6 +69,22 @@ class RegistrationForm extends React.Component {
             .catch((err) => console.error(err))
     };
 
+    foundEmailInToDataBase = () => {
+        const {users} = this.props
+        const {registration} = this.state
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].email == registration.email) {
+                this.setState({
+                    foundEmailInToDB: true
+                })
+                break
+            } else {
+                this.setState({
+                    foundEmailInToDB: false
+                })
+            }
+        }
+    }
 
     validationForm = () => {
         const {name, username, email, newPassword, repeatPassword} = this.state.registration
@@ -75,7 +92,6 @@ class RegistrationForm extends React.Component {
         const usernameInput = document.getElementById("username")
         const nameError = document.getElementById("nameError")
         const usernameError = document.getElementById("usernameError")
-
         const emailForm = document.getElementById("email")
         const newPass = document.getElementById("newPassword")
         const emailInvalid = document.getElementById("emailError")
@@ -85,16 +101,18 @@ class RegistrationForm extends React.Component {
         let errorTextPass = []
         let secondPassInvalid = document.getElementById("secondPassError")
 
+        this.foundEmailInToDataBase()
+
         const styleError = {
-            color : "red",
+            color: "red",
             border: "1px solid red"
         }
         const styleValid = {
-            color : "green",
+            color: "green",
             border: "2px solid green"
         }
 
-        if (name == ""){
+        if (name == "") {
             nameError.innerText = "Please write your`s name"
             nameInput.style.border = styleError.border
         } else {
@@ -102,7 +120,7 @@ class RegistrationForm extends React.Component {
             nameInput.style.border = styleValid.border
         }
 
-        if (username == ""){
+        if (username == "") {
             usernameError.innerText = "Please write your`s second name"
             usernameInput.style.border = styleError.border
         } else {
@@ -113,10 +131,12 @@ class RegistrationForm extends React.Component {
         if (!isEmail(email)) {
             emailInvalid.innerText = "Incorrect email"
             emailForm.style.border = styleError.border
-
+        } else if (this.state.foundEmailInToDB == true) {
+            emailInvalid.innerText = "this email has been already exist"
+            emailForm.style.border = styleError.border
         } else {
             emailInvalid.innerText = ""
-            emailForm.style.border = "1px solid transparent"
+            emailForm.style.border = styleValid.border
         }
 
         if (!isLowerWord(newPassword)) {
@@ -143,7 +163,7 @@ class RegistrationForm extends React.Component {
         }
 
         const {inValidForm, validForm} = this.props
-        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword) {
+        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword && this.state.foundEmailInToDB == false && name != "") {
             validForm()
         } else {
             inValidForm()
@@ -151,23 +171,44 @@ class RegistrationForm extends React.Component {
     }
 
     addUser = () => {
-        const {setUsers} = this.props
-        setUsers(this.state.registration)
+
+        if (this.props.validation.validation == true) {
+            this.props.setUsers(this.state.registration)
+            this.props.inValidForm()
+
+            this.setState({
+                registration: {
+                    id: "",
+                    name: "",
+                    username: "",
+                    email: "",
+                    newPassword: "",
+                    repeatPassword: ""
+                },
+                login: {
+                    password: "",
+                    passwordRepeat: ""
+                },
+                validation: false,
+                users: "",
+                foundEmailInToDB: false
+            })
+
+        }
+
+
+        // console.log(this.props.validation)
         setTimeout(() => {
-            console.log(this.props)
-        }, 100)
+            console.log(this.props.users)
+        }, 1)
+
     }
 
 
     createNewAccount = (e) => {
-        const {validation} = this.props.validation
         e.preventDefault()
         this.validationForm()
-
-        if (!validation){
-            this.props.setUsers(this.state.return)
-            console.log(this.props)
-        }
+        this.addUser()
     }
 
 
@@ -184,7 +225,9 @@ class RegistrationForm extends React.Component {
                        id="name"
                        className="input_panel"
                        name="name"
-                       type="text"/>
+                       type="text"
+                       value={this.state.registration.name}
+                />
                 <label htmlFor="username">
                     <span id="usernameError" className="text_error"></span>
                     Second Name</label>
@@ -192,7 +235,9 @@ class RegistrationForm extends React.Component {
                        id="username"
                        className="input_panel"
                        name="username"
-                       type="text"/>
+                       type="text"
+                       value={this.state.registration.username}
+                />
                 <label htmlFor="email">
                     <span id="emailError" className="text_error"></span>
                     Email</label>
@@ -200,7 +245,9 @@ class RegistrationForm extends React.Component {
                        type="text"
                        className="input_panel"
                        id="email"
-                       name="email"/>
+                       name="email"
+                       value={this.state.registration.email}
+                />
                 <label htmlFor="newPassword">
                     <span id="passError" className="text_error"></span>
                     New Password</label>
@@ -209,7 +256,9 @@ class RegistrationForm extends React.Component {
                        className="input_panel"
                        id="newPassword"
                        name="newPassword"
-                       type="text"/>
+                       type="text"
+                       value={this.state.registration.newPassword}
+                />
                 <label htmlFor="repeatPassword">
                     <span id="secondPassError" className="text_error"></span>
                     Repeat Password</label>
@@ -219,6 +268,7 @@ class RegistrationForm extends React.Component {
                        id="repeatPassword"
                        name="repeatPassword"
                        type="password"
+                       value={this.state.registration.repeatPassword}
                 />
                 <button type="submit" className="btn_form btn_registration">SUBMIT</button>
             </form>
