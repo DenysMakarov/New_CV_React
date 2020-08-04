@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {connect} from "react-redux";
-import {sliderInfo} from "../../db/dataBase";
-import set from "@babel/runtime/helpers/esm/set";
 import {isEmail, isLowerWord, isNumber, isUpperWord} from "./validationForm";
 import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
-import awaitAsyncGenerator from "@babel/runtime/helpers/esm/awaitAsyncGenerator";
+import set from "@babel/runtime/helpers/esm/set";
 
 const mapStateToProps = (state) => {
     return {
@@ -22,11 +20,11 @@ const mapDispatchToProps = {
     inValidForm
 }
 
+// This block work with local Storage and rewrite new registration form in Local Storage instead keep it of as a back-end !!!
 
 class RegistrationForm extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             registration: {
                 id: "",
@@ -36,11 +34,6 @@ class RegistrationForm extends React.Component {
                 newPassword: "",
                 repeatPassword: ""
             },
-            login: {
-                password: "",
-                passwordRepeat: ""
-            },
-            validation: false,
             users: "",
             foundEmailInToDB: false
         }
@@ -50,10 +43,26 @@ class RegistrationForm extends React.Component {
         const {setUsers} = this.props
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
-            .then(data => setUsers(data))
+            .then(data => setUsers(data)) // add to redux
+            .then(()=>{
+              // console.log(this.props)
+            })
+            .then(data=>{
+                this.setState({
+                    registration: {
+                        id: this.props.users.length + 1,
+                        name: "",
+                        username: "",
+                        email: "",
+                        newPassword: "",
+                        repeatPassword: ""
+                    }
+                })
+            })
     }
 
 
+    // get param outside inputs and validation
     changeValue = (e) => {
         e.preventDefault()
         let {name, value} = e.target;
@@ -69,6 +78,7 @@ class RegistrationForm extends React.Component {
             .catch((err) => console.error(err))
     };
 
+    // check it out the same email in to db (local storage in this project / redux)
     foundEmailInToDataBase = () => {
         const {users} = this.props
         const {registration} = this.state
@@ -103,6 +113,7 @@ class RegistrationForm extends React.Component {
 
         this.foundEmailInToDataBase()
 
+        // Set style validation form
         const styleError = {
             color: "red",
             border: "1px solid red"
@@ -139,6 +150,7 @@ class RegistrationForm extends React.Component {
             emailForm.style.border = styleValid.border
         }
 
+        // add error if smt wrong in ti the inputs
         if (!isLowerWord(newPassword)) {
             errorTextPass.push(" Please enter a-z")
         }
@@ -162,46 +174,54 @@ class RegistrationForm extends React.Component {
             passwordRepeatInput.style.border = styleValid.border
         }
 
+        // finally decision validated or not
         const {inValidForm, validForm} = this.props
-        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword && this.state.foundEmailInToDB == false && name != "") {
+        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword && this.state.foundEmailInToDB == false && name != "" && username != "") {
             validForm()
         } else {
             inValidForm()
         }
     }
 
-    addUser = () => {
+    addToLocalStorage = () => {
+        let setPerson = {
+            name: this.state.registration.name,
+            email: this.state.registration.email,
+            password: this.state.registration.newPassword,
+        }
+        localStorage.user = JSON.stringify(setPerson)
+        // console.log(localStorage)
+    }
 
-        if (this.props.validation.validation == true) {
+    informPageAppear = () => {
+        const informPage = document.getElementById("informPage_cover")
+        const informPageText = document.getElementById("informPageText")
+        informPageText.innerText = this.state.registration.name + ", Thank you for registration!"
+        informPage.style.display = "flex"
+    }
+
+    addUser = () => {
+        const {validation} = this.props.validation
+        // console.log(this.props)
+
+        if (validation) {
+            this.addToLocalStorage()
             this.props.setUsers(this.state.registration)
             this.props.inValidForm()
-
             this.setState({
                 registration: {
-                    id: "",
+                    id: this.props.users.length + 2,
                     name: "",
                     username: "",
                     email: "",
                     newPassword: "",
                     repeatPassword: ""
                 },
-                login: {
-                    password: "",
-                    passwordRepeat: ""
-                },
-                validation: false,
                 users: "",
                 foundEmailInToDB: false
             })
-
+            this.informPageAppear()
         }
-
-
-        // console.log(this.props.validation)
-        setTimeout(() => {
-            console.log(this.props.users)
-        }, 1)
-
     }
 
 

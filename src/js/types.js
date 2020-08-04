@@ -9,7 +9,8 @@ export const SET_USERS = "SET_USERS"
 export const GET_USERS = "GET_USERS"
 export const VALID = "VALID"
 export const INVALID = "INVALID"
-
+export const LOGIN = "LOGIN"
+export const LOGOUT = "LOGOUT"
 export const NUMBER_OF_SLIDE = "NUMBER_OF_SLIDE"
 
 

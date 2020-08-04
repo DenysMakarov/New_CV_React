@@ -7,6 +7,7 @@ import {sliderInfo} from "../../db/dataBase";
 import set from "@babel/runtime/helpers/esm/set";
 import RegistrationForm from "./RegistrationForm";
 import LoginForm from "./LoginForm";
+import InformPage from "./InformPage";
 
 
 class RegistrationPanel extends React.Component {
@@ -70,6 +71,7 @@ class RegistrationPanel extends React.Component {
             <div id="registration_container" className="registration_container">
                 <RegistrationForm/>
                 <LoginForm/>
+                <InformPage/>
                 <div className="registration_block_cover"></div>
             </div>
         )

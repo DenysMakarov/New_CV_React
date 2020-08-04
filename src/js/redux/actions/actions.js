@@ -1,4 +1,4 @@
-import {GET_USERS, NUMBER_OF_SLIDE, SET_USERS, VALID, INVALID} from "../../types"
+import {GET_USERS, NUMBER_OF_SLIDE, SET_USERS, VALID, INVALID, LOGIN, LOGOUT} from "../../types"
 import {NEXT_SLIDE} from "../../types";
 import {PREV_SLIDE} from "../../types";
 import {SET_SLIDE} from "../../types";
@@ -45,6 +45,20 @@ export function setUsers(user) {
         payload: user
     }
 }
+
+export function logIn() {
+    return {
+        type: LOGIN,
+    }
+}
+
+export function logOut() {
+    return {
+        type:LOGOUT,
+    }
+}
+
+
 
 // export function countOfSlide(num) {
 //     return {
