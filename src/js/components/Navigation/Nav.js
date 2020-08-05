@@ -2,8 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter} from "react-router-dom";
 
 //------------------------------
-import Menu from "./MenuTextBtn";
-import SubNavigation from "./SubNav";
+import MenuTextBtn from "./MenuTextBtn";
+import SubNavigation from "./SubNavigation";
 
 class Nav extends React.Component {
 
@@ -15,7 +15,7 @@ class Nav extends React.Component {
         return (
             <HashRouter>
                 <div className="navigation_block" id="navigation_block">
-                    <Menu/>
+                    <MenuTextBtn/>
                     <SubNavigation/>
                 </div>
             </HashRouter>

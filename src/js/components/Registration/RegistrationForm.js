@@ -120,7 +120,7 @@ class RegistrationForm extends React.Component {
         }
         const styleValid = {
             color: "green",
-            border: "2px solid green"
+            border: "2px solid transparent"
         }
 
         if (name == "") {
@@ -205,7 +205,7 @@ class RegistrationForm extends React.Component {
         // console.log(this.props)
 
         if (validation) {
-            this.addToLocalStorage()
+            // this.addToLocalStorage()
             this.props.setUsers(this.state.registration)
             this.props.inValidForm()
             this.setState({
@@ -290,7 +290,7 @@ class RegistrationForm extends React.Component {
                        type="password"
                        value={this.state.registration.repeatPassword}
                 />
-                <button type="submit" className="btn_form btn_registration">SUBMIT</button>
+                <button type="submit" className="btn_form btn_registration">REGISTRATION</button>
             </form>
         )
     }

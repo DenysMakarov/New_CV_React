@@ -2,8 +2,22 @@ import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
 import {subMenu} from "../../db/dataBase";
 import {createSubMenu} from "../Navigation/CreateSubMenu"
+import {connect} from "react-redux";
+import {logIn, logOut} from "../../redux/actions/actions";
 
-class SubNav extends React.Component {
+
+const mapStateToProps = (state) => {
+    return {
+        login: state.loginReducer.login
+    }
+}
+
+const mapDispatchToProps = {
+    logOut,
+    logIn
+}
+
+class SubNavigation extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -13,28 +27,32 @@ class SubNav extends React.Component {
         arrTextHeaderOfMenu.map(el => el.style.color = "#ffffff")
     }
 
+
+    // componentDidMount() {
+    //     const loginBtn = document.getElementById("logIn");
+    //     loginBtn.addEventListener("click", this.logOut);
+    //     console.log(this.props)
+    // }
+    //
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     const loginBtn = document.getElementById("logIn");
+    //     (this.props.login == false) ? loginBtn.innerText = "Login" : loginBtn.innerText = "Logout"
+    // }
+    //
+    //
+    // logOut = () => {
+    //     this.props.logOut()
+    //     delete localStorage["user"]
+    // }
+
     // linkColorDisableAndCoverBox = () => {
     //     this.linkColorDisable()
     // }
 
     render() {
         const {home, events, tickets, portfolio, contacts, Login} = subMenu
-        // const arrTextHeaderOfMenu = Array.from(document.getElementsByClassName("text_of_headers_menu"))
-        // arrTextHeaderOfMenu.map(el => el.addEventListener(""))
-        // if (window.location == "http://192.168.0.105:3030/events#/") {
-        //     console.log("lklk")
-        // }
         return (
             <RouterHash>
-
-                <Switch>
-
-                    {/*<Route path="/events" render={*/}
-                    {/*    ()=>{console.log("kjljk")}*/}
-                    {/*}/>*/}
-
-                </Switch>
-
                 <div className="nav_elements">
                     <div onMouseLeave={this.linkColorDisable} id="nav_links_block" className="nav_links_block">
                         {/*<div className="nav_link">*/}
@@ -45,7 +63,7 @@ class SubNav extends React.Component {
                         {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link")}
                         {createSubMenu(portfolio, '/portfolio', "Portfolio", "04", "nav_link")}
                         {createSubMenu(contacts, '/contacts', "Contacts", "05", "nav_link")}
-                        {createSubMenu(Login, '/login', "LogIn", "06", "nav_link")}
+                        {createSubMenu(Login, '/login', "Login", "06", "nav_link", )}
                     </div>
                 </div>
             </RouterHash>
@@ -54,7 +72,7 @@ class SubNav extends React.Component {
     }
 }
 
-export default SubNav
+export default connect(mapStateToProps, mapDispatchToProps)(SubNavigation)
 
 {/*<div className="nav_link">*/
 }

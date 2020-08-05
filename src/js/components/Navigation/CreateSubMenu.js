@@ -19,11 +19,11 @@ const changeColorSubMenu = (e) => {
     })
 }
 
-export function createSubMenu (position, link, text, number, classN) {
+export function createSubMenu (position, link, text, number, classN, id) {
     return (
         <Fragment>
             <div className={classN}>
-                <div className=""><p className='number_menu'>{number}</p><Link to={link} onMouseOver={changeColorNavLinks}  className="text_of_headers_menu">{text}</Link></div>
+                <div className=""><p className='number_menu'>{number}</p><Link  id={id} to={link} onMouseOver={changeColorNavLinks}  className="text_of_headers_menu">{text}</Link></div>
                 <ul className="submenu">
                     {position.map((el)=>(
                         <li key={el.id}>

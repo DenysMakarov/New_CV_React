@@ -19,7 +19,8 @@ const mapDispatchToProps = {
     logOut
 }
 
-class LoginForm extends React.Component{
+
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -29,44 +30,77 @@ class LoginForm extends React.Component{
         }
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const loginBtn = document.getElementById("btnLogin");
+        (this.props.login == false) ? loginBtn.innerText = "SIGN IN" : loginBtn.innerText = "SIGN OUT"
+    }
+
+
     getValueInput = (e) => {
         e.preventDefault()
         const {name, value} = e.target
         this.setState({
-            [name] : value
+            [name]: value
         })
         // console.log(this.state)
     }
 
     logIn = (e) => {
         const {users} = this.props
+        const loginInformText = document.getElementById("login_inform_text")
         e.preventDefault()
-        for(let i=0; i<users.length; i++ ) {
-            if (users[i].email == this.state.email && users[i].newPassword == this.state.password) {
-                console.log(users[i].name)
-                // add to local storage
-                let setPerson = {
-                    name: users[i].name,
-                    email: users[i].email,
-                    password: users[i].newPassword,
+
+        if (this.props.login == false && this.state.email != "" && this.state.password != "") {
+
+           // check email and password in db
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == this.state.email && users[i].newPassword == this.state.password) {
+                    console.log(users[i].name)
+                    // add to local storage
+                    let setPerson = {
+                        name: users[i].name,
+                        email: users[i].email,
+                        password: users[i].newPassword,
+                    }
+                    localStorage.user = JSON.stringify(setPerson)
+                    this.props.logIn()
+                    this.setState({
+                        email: "",
+                        password: ""
+                    })
+                    loginInformText.innerText = "Thank you for visited us!"
+                    Array.from(document.getElementsByClassName("input_login")).map(el=>el.style.border = "2px solid transparent")
+                    break
+                } else {
+                    document.getElementById("login_inform_text").innerText = "There is no account with this email. Please try again"
+                    Array.from(document.getElementsByClassName("input_login")).map(el=>el.style.border = "2px solid red")
                 }
-                localStorage.user = JSON.stringify(setPerson)
-                break
+                // if (document.getElementById("")){
+                //
+                // }
             }
+        } else if (this.props.login == true){
+            this.props.logOut()
+            loginInformText.innerText = "By! See you soon!"
+            setTimeout(()=>{
+                loginInformText.innerText = "You can sign in your personal account if you have"
+            }, 3000)
         }
-        this.props.logIn()
+
+
+        console.log(this.props.login)
     }
 
     render() {
         return (
-            <form onClick={this.logIn} className="registration_block login_panel">
+            <form onSubmit={this.logIn} className="registration_block login_panel">
                 <span className="name_of_block">ACCOUNT</span>
                 <label htmlFor="email">Email</label>
-                <input onChange={this.getValueInput} className="input_panel" name="email" type="text"/>
+                <input id="login_email" onChange={this.getValueInput} value={this.state.email} className="input_panel input_login" name="email" type="text"/>
                 <label htmlFor="password">Password</label>
-                <input onChange={this.getValueInput} className="input_panel" name="password" type="text"/>
-
-                <button type="submit" className="btn_form btn_login ">SUBMIT</button>
+                <input id="login_password" onChange={this.getValueInput} value={this.state.password}  className="input_panel input_login" name="password" type="text"/>
+                <div id="logInform" className="logInform"> <h5 id="login_inform_text">You can sign in your personal account if you have</h5> </div>
+                <button  id="btnLogin" type="submit" className="btn_form btn_login ">LOGIN</button>
             </form>
         )
     }

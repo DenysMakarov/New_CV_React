@@ -4,9 +4,9 @@ import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-route
 import {connect} from "react-redux";
 import {nextSlide, prevSlide} from "../../redux/actions/actions";
 import {sliderInfo} from "../../db/dataBase";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
-import {CSSTransitionGroup} from 'react-transition-group'
-import set from "@babel/runtime/helpers/esm/set"; // ES6
 
 
 const mapStateToProps = (state) => {
@@ -50,10 +50,6 @@ class Arrows extends React.Component {
 
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        // console.log(prevProps)
-    }
-
     prevSlide = () => {
         this.props.prevSlide()
         changeAnimationSlide()
@@ -65,14 +61,16 @@ class Arrows extends React.Component {
     }
 
     render() {
-        const {numberOfSlide} = this.props
         return (
             <Fragment>
-                {/*<div style={{top: "25px"}} className="test">{"props : " + numberOfSlide}</div>*/}
                 <div onClick={this.prevSlide} className="arrow arrow_left">
-                    <i className="fas fa-arrow-left"></i></div>
+                    {/*<i className="fas fa-arrow-left"></i>*/}
+                    <FontAwesomeIcon icon={faArrowLeft}/>
+                </div>
                 <div onClick={this.nextSlide} className="arrow arrow_right">
-                    <i className="fas fa-arrow-right"></i></div>
+                    {/*<i className="fas fa-arrow-right"></i>*/}
+                    <FontAwesomeIcon icon={faArrowRight}/>
+                </div>
             </Fragment>
         )
     }
