@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
                         email: "",
                         password: ""
                     })
-                    loginInformText.innerText = "Thank you for visited us!"
+                    loginInformText.innerText = `${users[i].name}, Thank you for visited us!`
                     Array.from(document.getElementsByClassName("input_login")).map(el=>el.style.border = "2px solid transparent")
                     break
                 } else {

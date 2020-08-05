@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {connect} from "react-redux";
 import {isEmail, isLowerWord, isNumber, isUpperWord} from "./validationForm";
 import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
-import set from "@babel/runtime/helpers/esm/set";
 
 const mapStateToProps = (state) => {
     return {

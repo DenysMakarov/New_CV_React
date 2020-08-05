@@ -1,35 +1,35 @@
 
 export const sliderInfo = [
     {
-        imgPath: "url(../img/1.jpg)",
+        imgPath: "url(../img/rally_c3_4.jpg)",
         numberId: 1,
-        textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
-        textCenter: "",
-        textBottom: "DAKAR RALLY"
-    }, {
-        imgPath: "url(../img/2.jpg)",
-        numberId: 2,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "FIA WRC"
     }, {
-        imgPath: "url(../img/3.jpg)",
+        imgPath: "url(../img/Dakar_rally_toyo.jpg)",
+        numberId: 2,
+        textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
+        textCenter: "",
+        textBottom: "DAKAR RALLY"
+    }, {
+        imgPath: "url(../img/Bamaco.jpg)",
         numberId: 3,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "BAMAKO RALLY"
     }, {
-        imgPath: "url(../img/4.jpg)",
+        imgPath: "url(../img/f1_maclaren_1.jpg)",
         numberId: 4,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
-        textBottom: "ABOUT US"
+        textBottom: "FORMULA 1"
     }, {
-        imgPath: "url(../img/5.jpg)",
+        imgPath: "url(../img/f1_maclaren_2.jpg)",
         numberId: 5,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
-        textBottom: "ANY RALLY"
+        textBottom: "OTHER EVENTS"
     },
 ]
 
@@ -72,37 +72,33 @@ export const subMenu = {
             id: 7,
             link: ''
         }, {
-            name: "Teenager",
+            name: "Child",
             id: 8,
-            link: ''
-        }, {
-            name: "Senior-citizen",
-            id: 9,
             link: ''
         }
     ],
     portfolio: [
-        {
-            name: "Game",
-            id: 10,
-            link: ''
-        }, {
-            name: "MagicS",
-            id: 11,
-            link: ''
-        }, {
-            name: "Footwear",
-            id: 12,
-            link: ''
-        }, {
-            name: "Restaurant",
-            id: 13,
-            link: ''
-        }, {
-            name: "React",
-            id: 14,
-            link: ''
-        }
+        // {
+        //     name: "Game",
+        //     id: 10,
+        //     link: ''
+        // }, {
+        //     name: "MagicS",
+        //     id: 11,
+        //     link: ''
+        // }, {
+        //     name: "Footwear",
+        //     id: 12,
+        //     link: ''
+        // }, {
+        //     name: "Restaurant",
+        //     id: 13,
+        //     link: ''
+        // }, {
+        //     name: "React",
+        //     id: 14,
+        //     link: ''
+        // }
     ],
     contacts: [
         {

@@ -15,16 +15,16 @@ const mapStateToProps = (state) => {
     }
 }
 
-function FunDate() {
-    const dateNew = new Date()
-    const dateInfo = `${dateNew.getDate()} ${(<span>/</span>)}  ${dateNew.getMonth()} / ${dateNew.getFullYear()}`
-
-    return (
-        <span>
-            {dateInfo}
-        </span>
-    )
-}
+// function FunDate() {
+//     const dateNew = new Date()
+//     const dateInfo = `${dateNew.getDate()} ${(<span>/</span>)}  ${dateNew.getMonth()} / ${dateNew.getFullYear()}`
+//
+//     return (
+//         <span>
+//             {dateInfo}
+//         </span>
+//     )
+// }
 
 class TextDesc extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class TextDesc extends React.Component {
         setTimeout(()=>{
             arrTextSlide.map((el) => {
                 el.style.animationDelay = "0 !important"
-                el.style.animationName = "text_slider_apear"
+                el.style.animationName = "text_slider_appear"
             })
         }, 10)
      }
@@ -49,7 +49,7 @@ class TextDesc extends React.Component {
 
         return (
             <Fragment>
-                <FunDate/>
+                {/*<FunDate/>*/}
                 <div className="text_description_block">
                     <h5 className="text_description_slide text_description_slide_top">{sliderInfo[numberOfSlide].textTop}</h5>
                     <h5 className="text_description_slide text_description_slide_center">Strategy

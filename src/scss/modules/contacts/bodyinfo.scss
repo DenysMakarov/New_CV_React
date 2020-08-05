@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
+
+.map_info{
+  background-image: url(../img/map.png);
+  background-size: 100% 100%;
+}
+
+.address_block{
+  width: 100%;
+  height: 45%;
+  box-sizing: border-box;
+  //border: 1px solid red;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  justify-content: left;
+}
+
+.map_info{
+  width: 40%;
+  height: 100%;
+}
+
+.phone_icon_info_block, .address_icon_info_block{
+  width: 45px;
+  height: 45px;
+  border: 2px solid $color-main-text;
+  border-radius: 50px;
+  color: $color-main-text;
+  font-size: 19px;
+  padding: 7px;
+}
+
+.info_info, .address_info{
+  width: 22%;
+  height: 100%;
+  background: rgba(0,0,0,0.94);
+  padding: 40px;
+  padding-top: 50px;
+
+  h4{
+    margin-top: 30px;
+    width: 150px !important;
+    text-align: left;
+    font-size: 20px;
+  }
+}
+
+.address_info{
+  background: rgba(0,0,0,0.8);
+}
+
+.first_text_info_block{
+  font-size: 18px;
+}
+
+.second_text_info_block{
+  width: 200px;
+  font-size: 18px;
+  text-align: left;
+  font-family: 'Dosis', sans-serif;
+  color: rgba(255,255,255,.3);
+  margin-top: 20px;
+  margin-bottom: 0px;
+
+  @media all and (max-width: 1024px) {
+    font-size: 13px ;
+    width: 150px;
+  }
+}
+
+.assistance_text{
+  font-size: 17px ;
+  width: 300px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+
+  @media all and (max-width: 1024px) {
+    font-size: 15px ;
+    width: 150px;
+  }
+}
+
+
+.address_info{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+//.address_info{
+//  width: 20%;
+//  height: 100%;
+//}
+
+
+
+

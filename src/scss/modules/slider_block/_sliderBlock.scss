@@ -57,10 +57,9 @@
 // SLIDE BEFORE
 .slide_before {
   position: absolute;
-  width: 5%;
-  height: 40%;
-  top: 32%;
-  border: 1px solid olive;
+  width:50%;
+  height: 50%;
+  top: 27%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-position: right;
@@ -68,10 +67,11 @@
   animation-fill-mode: forwards;
   animation-duration: .5s;
   animation-delay: .5s;
-  left: -100px;
+  left: -50%;
   z-index: 100;
-  //left: 400px;
-  //width: 50%;
+  background-position: right;
+  background-size: cover;
+
 
   @media screen and (max-width: 768px) {
     width: 50%;
@@ -123,6 +123,9 @@
   top: 200px;
   z-index: 100;
 
+  @media all and (min-width: 1920px) {
+    width: 720px;
+  }
 
   @media all and (max-width: 1024px) {
     width: 420px;
@@ -136,13 +139,17 @@
   padding: 0;
   color: #ffffff;
   text-align: left;
-  animation-name: text_slider_apear;
+  animation-name: text_slider_appear;
   animation-fill-mode: forwards;
   animation-duration: .5s;
   animation-timing-function: ease-in;
   //animation-delay: .1s;
   opacity: 0;
   //transition: .5s;
+
+  @media all and (min-width: 1920px) {
+    font-size: 30px;
+  }
 }
 
 .text_description_slide_hide {
@@ -163,6 +170,10 @@
   margin-top: 65%;
   animation-delay: .3s;
 
+  @media all and (min-width: 1920px) {
+    margin-top: 55%;
+  }
+
   @media all and (max-width: 1024px) {
     margin-top: 55%;
   }
@@ -173,6 +184,9 @@
   animation-delay: .4s;
   font-size: 50px;
 
+  @media all and (min-width: 1920px) {
+    font-size: 70px;
+  }
 }
 
 .text_description_slide_behind {
@@ -185,6 +199,12 @@
   color: #1d1b20;
   text-align: left;
   transition: .4s;
+
+  @media all and (min-width: 1920px) {
+    bottom: 25%;
+    left: 20%;
+    font-size: 380px;
+  }
 }
 
 
