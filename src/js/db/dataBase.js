@@ -7,7 +7,8 @@ export const sliderInfo = [
         textCenter: "",
         textBottom: "FIA WRC",
         date: "18 July, 2020",
-        place: "OAE"
+        place: "OAE",
+        price: "550 EUR"
     }, {
         imgPath: "url(../img/Dakar_rally_toyo.jpg)",
         numberId: 2,
@@ -15,7 +16,8 @@ export const sliderInfo = [
         textCenter: "",
         textBottom: "DAKAR RALLY",
         date: "21 August, 2020",
-        place: "France"
+        place: "France",
+        price: "400 EUR"
     }, {
         imgPath: "url(../img/Bamaco.jpg)",
         numberId: 3,
@@ -23,7 +25,8 @@ export const sliderInfo = [
         textCenter: "",
         textBottom: "BAMAKO RALLY",
         date: "1 June, 2020",
-        place: "Hungary"
+        place: "Hungary",
+        price: "350 EUR"
     }, {
         imgPath: "url(../img/f1_maclaren_1.jpg)",
         numberId: 4,
@@ -31,15 +34,17 @@ export const sliderInfo = [
         textCenter: "",
         textBottom: "GRAND PRI F1",
         date: "1 June, 2020",
-        place: "Monaco"
+        place: "Monaco",
+        price: "1050 EUR"
     }, {
         imgPath: "url(../img/f1_maclaren_2.jpg)",
         numberId: 5,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "OTHER EVENTS",
-        date: "soon",
-        place: "have unknown yet"
+        date: "soon...",
+        place: "have unknown yet",
+        price: "0 EUR"
 
     },
 ]

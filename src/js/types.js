@@ -12,5 +12,8 @@ export const INVALID = "INVALID"
 export const LOGIN = "LOGIN"
 export const LOGOUT = "LOGOUT"
 export const NUMBER_OF_SLIDE = "NUMBER_OF_SLIDE"
+export const ADD_TICKET = "ADD_TICKET"
+export const REMOVE_TICKET = "REMOVE_TICKET"
+
 
 

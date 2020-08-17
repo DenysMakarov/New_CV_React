@@ -1,4 +1,14 @@
-import {GET_USERS, NUMBER_OF_SLIDE, SET_USERS, VALID, INVALID, LOGIN, LOGOUT} from "../../types"
+import {
+    GET_USERS,
+    NUMBER_OF_SLIDE,
+    SET_USERS,
+    VALID,
+    INVALID,
+    LOGIN,
+    LOGOUT,
+    ADD_TICKET,
+    REMOVE_TICKET
+} from "../../types"
 import {NEXT_SLIDE} from "../../types";
 import {PREV_SLIDE} from "../../types";
 import {SET_SLIDE} from "../../types";
@@ -58,11 +68,15 @@ export function logOut() {
     }
 }
 
+export function addTicket(ticket) {
+    return {
+        type: ADD_TICKET,
+        payload: ticket
+    }
+}
 
-
-// export function countOfSlide(num) {
-//     return {
-//         type: NUMBER_OF_SLIDE,
-//         payload: num
-//     }
-// }
+export function removeTicket() {
+    return {
+        type: REMOVE_TICKET,
+    }
+}

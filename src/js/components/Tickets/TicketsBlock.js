@@ -1,44 +1,108 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import {sliderInfo} from "../../db/dataBase";
-import set from "@babel/runtime/helpers/esm/set";
+import {connect} from "react-redux";
+import {addTicket, removeTicket} from "../../redux/actions/actions";
 
+
+const mapStateToProps = (state) => {
+    return {
+        tickets: state.ticketsReducer
+    }
+}
+
+const mapDispatchToProps = {
+    addTicket,
+    removeTicket
+}
 
 class TicketsBlock extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            nameTicket: "CHOOSE THE TICKET",
+            numberOfSlide: 1,
             firstName: "",
             secondName: "",
             phoneNumber: "",
-            numberOfSlide: 1,
             date: "You need to select event",
-            place: ""
+            place: "",
+            nameTicket: "CHOOSE EVENT",
         }
     }
 
-    setTitleTextOfTicket = (e) => {
+    getValueFromInput = (e) => {
+        e.preventDefault()
+        const {name, value} = e.target
+        this.setState({
+            [name]: value
+        })
+    }
+
+    setAnimationAndGetInformOfTicket = (e) => {
         this.setState({
             nameTicket: e.target.innerText,
             numberOfSlide: e.target.dataset.number,
-            date: sliderInfo[this.state.numberOfSlide-1].date,
-            place: sliderInfo[this.state.numberOfSlide-1].place,
+            date: sliderInfo[this.state.numberOfSlide - 1].date,
+            place: sliderInfo[this.state.numberOfSlide - 1].place,
         })
 
         const informImg = document.getElementById("inform_img")
         const dateOfEvent = document.getElementById("date_of_event")
         const ticketFormTitle = document.getElementById("ticket_form_title")
+        const arrOptionTitleText = Array.from(document.getElementsByClassName("tickets_option_title"))
+        const TicketTitle = document.getElementById("ticket_form_title")
+
+
+        for (let i = 0; i < arrOptionTitleText.length; i++) {
+            (arrOptionTitleText[i].dataset.number === e.target.dataset.number) ? arrOptionTitleText[i].style.color = "red" : arrOptionTitleText[i].style.color = "#ffffff"
+        }
+
 
         informImg.style.animationName = "none"
         dateOfEvent.style.animationName = "none"
         ticketFormTitle.style.animationName = "none"
+
         setTimeout(() => {
             informImg.style.animationName = "ticket_slide_appear"
             dateOfEvent.style.animationName = "ticket_date_appear"
             ticketFormTitle.style.animationName = "ticket_form_title_appear"
         }, 100)
+
+        TicketTitle.style.color = "white"
+    }
+
+    createTicket = (e) => {
+        e.preventDefault()
+        const {firstName, nameTicket, secondName, phoneNumber} = this.state
+        const ticketInfo = {
+            firstName: firstName,
+            nameTicket: nameTicket,
+            secondName: secondName,
+            phoneNumber: phoneNumber,
+            placeOfEvent: sliderInfo[this.state.numberOfSlide - 1].place,
+            dateOfEvent: sliderInfo[this.state.numberOfSlide - 1].date,
+        }
+        const InputFirstName = document.getElementById("input_ticket_first_name")
+        const InputSecondName = document.getElementById("input_ticket_second_name")
+        const InputPhoneNumber = document.getElementById("input_ticket_phoneNumber")
+        const TicketTitle = document.getElementById("ticket_form_title")
+
+
+        if (firstName !== "" && secondName !== "" && nameTicket !== "" && nameTicket !== "CHOOSE EVENT" && phoneNumber !== "") {
+            this.props.addTicket(ticketInfo)
+            this.setState({
+                firstName: "",
+                secondName: "",
+                phoneNumber: ""
+            })
+        }
+
+        (firstName === "") ? InputFirstName.style.border = "2px solid red" : InputFirstName.style.border = "2px solid transparent";
+        (secondName === "") ? InputSecondName.style.border = "2px solid red" : InputSecondName.style.border = "2px solid transparent";
+        (phoneNumber === "") ? InputPhoneNumber.style.border = "2px solid red" : InputPhoneNumber.style.border = "2px solid transparent";
+        (nameTicket === "CHOOSE EVENT") ? TicketTitle.style.color = "red" : TicketTitle.style.color = "white";
+
 
     }
 
@@ -48,44 +112,60 @@ class TicketsBlock extends React.Component {
             <div className="tickets_block_cover ">
                 <div className="tickets_block">
                     <div className="left_pixel_decoration"/>
+
                     <div className="tickets_events">
                         {sliderInfo.map((el) => (
                             <div data-name={el.textBottom} key={el.imgPath} className="tickets_option_cover">
                                 <div className="tickets_option">
-                                    <h5 onClick={this.setTitleTextOfTicket} data-number={el.numberId}
+                                    <h5 onClick={this.setAnimationAndGetInformOfTicket} data-number={el.numberId}
                                         className="tickets_option_text">{el.textBottom}</h5>
                                 </div>
-                                <p className="tickets_option_title">{el.textBottom}</p>
+                                <p data-number={el.numberId} className="tickets_option_title">{el.textBottom}</p>
                             </div>
                         ))}
                     </div>
 
                     <form id="ticket_form" className="ticket_form" action="">
                         <label htmlFor="firstName">First Name</label>
-                        <input className="input_ticket input_ticket_first_name" name="firstName"
-                               defaultValue={this.state.firstName}
+                        <input id="input_ticket_first_name"
+                               className="input_ticket input_ticket_first_name"
+                               onChange={this.getValueFromInput}
+                               name="firstName"
+                               value={this.state.firstName}
                                type="text"/>
                         <label htmlFor="secondName">Second Name</label>
-                        <input className="input_ticket input_ticket_second_name" name="secondName"
-                               defaultValue={this.state.secondName}
+                        <input id="input_ticket_second_name"
+                               className="input_ticket input_ticket_second_name"
+                               onChange={this.getValueFromInput}
+                               name="secondName"
+                               value={this.state.secondName}
                                type="text"/>
                         <label htmlFor="phoneNumber">Phone Number</label>
-                        <input className="input_ticket input_ticket_phoneNumber_name" name="phoneNumber"
-                               defaultValue={this.state.phoneNumber}
-                               type="text"/>
+                        <input id="input_ticket_phoneNumber"
+                               className="input_ticket input_ticket_phoneNumber"
+                               onChange={this.getValueFromInput}
+                               name="phoneNumber"
+                               value={this.state.phoneNumber}
+                               type="number"/>
 
 
-                        <h3 id="date_of_event" className="date_of_event">{sliderInfo[this.state.numberOfSlide-1].date} <br/> {sliderInfo[this.state.numberOfSlide-1].place}</h3>
+                        <h3 id="date_of_event" className="date_of_event">{sliderInfo[this.state.numberOfSlide - 1].date}
+                            <br/> {sliderInfo[this.state.numberOfSlide - 1].place}</h3>
                         <div id="inform_img" className="inform_img" style={{
                             backgroundImage: sliderInfo[this.state.numberOfSlide - 1].imgPath
-                        }}></div>
+                        }}/>
                         <h1 id="ticket_form_title" className="ticket_form_title">{this.state.nameTicket}</h1>
-                        <button id="btn_ticket_form" className="btn_ticket_form">Buy Ticket</button>
+                        <button
+                            onClick={this.createTicket}
+                            type="submit"
+                            id="btn_ticket_form"
+                            className="btn_ticket_form">Buy Ticket
+                        </button>
                     </form>
 
 
                     <div className="all_tickets_block">
-                        {this.state.numberOfSlide}
+                        {this.props.tickets.arrTickets.length}
                     </div>
 
                 </div>
@@ -95,4 +175,4 @@ class TicketsBlock extends React.Component {
     }
 }
 
-export default TicketsBlock
+export default connect(mapStateToProps, mapDispatchToProps)(TicketsBlock)
