@@ -3,7 +3,12 @@ import {
     faArrowLeft,
     faArrowRight,
     faPhoneAlt,
-    faEnvelope
+    faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faArrowLeft, faArrowRight,faPhoneAlt, faEnvelope)
+library.add(
+    faArrowLeft,
+    faArrowRight,
+    faPhoneAlt,
+    faEnvelope,
+    )

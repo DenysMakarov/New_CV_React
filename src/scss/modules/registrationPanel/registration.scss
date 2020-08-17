@@ -33,6 +33,18 @@
     border-right: 1px solid $color-contrast-line;
   }
 
+    @media all and (max-width: 1920px){
+      padding: 100px;
+      padding-top: 0;
+      }
+
+  @media all and (max-width: 1024px){
+    padding-top: -50px!important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+
+  }
+
   span{
     margin-bottom: 20px;
   }
@@ -76,6 +88,11 @@
   &:hover {
     border: 1px solid red;
   }
+
+    @media all and (max-width: 768px){
+      width: 40%;
+      left: 30%;
+    }
 }
 
 .text_error{
@@ -125,8 +142,7 @@
   color: #ffffff;
   outline: none !important;
   margin-top: 20px;
-  //position: absolute;
-  //bottom: 30px;
+
 }
 
 .logInform{

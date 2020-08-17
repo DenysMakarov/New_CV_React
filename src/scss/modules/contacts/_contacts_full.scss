@@ -1,0 +1,24 @@
+@import "header_contacts";
+@import "body_contacts";
+@import "footer_contacts";
+
+
+.contacts_block_cover{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto ;
+  background-image: url(../img/rally_subaru_1.jpg) !important;
+
+  @media all and (max-width: 2560px){
+    background-size: cover;
+    }
+
+}
+
+.contacts_block{
+  width: 100%;
+  height: 100px;
+}
+

@@ -77,3 +77,85 @@
     transform: rotate(0deg);
   }
 }
+
+@keyframes btn_animate_contacts {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);  }
+
+  75% {
+    opacity: .2;
+    transform: scale(1.3);
+  }
+
+  100%{
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes emailSubscribeContactsFalse {
+  0% {
+    margin-top: -10px;
+    color: #c8454c;
+    opacity: 0;
+  }
+  100%{
+    margin-top: 40px;
+    opacity: 1;
+    color: #c8454c;
+  }
+}
+@keyframes emailSubscribeContactsTrue {
+  0% {
+    margin-top: -10px;
+    opacity: 0;
+    color: #ffffff;
+  }
+  100%{
+    opacity: 1;
+    color: #ffffff;
+    margin-top: 40px;
+  }
+}
+
+@keyframes ticket_slide_appear {
+  0% {
+    bottom: 15%;
+    opacity: 0;
+
+  }
+  100%{
+    opacity: 1;
+    bottom: 23%;
+  }
+}
+
+@keyframes ticket_date_appear {
+  0% {
+    margin-top: 15%;
+    opacity: 0;
+
+  }
+  100%{
+    opacity: 1;
+    margin-top: 11%;
+  }
+}
+@keyframes ticket_form_title_appear {
+  0% {
+    bottom: 5%;
+    opacity: 0;
+
+  }
+  100%{
+    opacity: 1;
+    bottom: 10%;
+  }
+}
+
