@@ -1,7 +1,7 @@
 
 export const sliderInfo = [
     {
-        imgPath: "url(../img/rally_c3_4.jpg)",
+        imgPath: "url(img/rally_c3_4.jpg)",
         numberId: 1,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
@@ -11,7 +11,7 @@ export const sliderInfo = [
         place: "OAE",
         price: "550 EUR"
     }, {
-        imgPath: "url(../img/Dakar_rally_toyo.jpg)",
+        imgPath: "url(img/Dakar_rally_toyo.jpg)",
         numberId: 2,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
@@ -21,7 +21,7 @@ export const sliderInfo = [
         place: "France",
         price: "400 EUR"
     }, {
-        imgPath: "url(../img/Bamaco.jpg)",
+        imgPath: "url(img/Bamaco.jpg)",
         numberId: 3,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
@@ -31,17 +31,17 @@ export const sliderInfo = [
         place: "Hungary",
         price: "350 EUR"
     }, {
-        imgPath: "url(../img/f1_maclaren_1.jpg)",
+        imgPath: "url(img/f1_maclaren_1.jpg)",
         numberId: 4,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "GRAND PRI F1",
-        date: "1 September, 2020",
+        date: "1 May, 2020",
         month: "September",
         place: "Monaco",
         price: "1050 EUR"
     }, {
-        imgPath: "url(../img/f1_maclaren_2.jpg)",
+        imgPath: "url(img/f1_maclaren_2.jpg)",
         numberId: 5,
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",

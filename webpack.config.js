@@ -11,7 +11,7 @@ module.exports = {
     output:{                        //// выход
         filename: 'app.js',
         path: path.resolve(__dirname, './dist'),  // resolve - соединяет полный путь (--dirname) с папкой в которой будет файл
-        publicPath: '/',
+        // publicPath: '/',
         // publicPath: '/dist/'         //// что бы не добавлять этот путь в картиках нужно отключить и вкл в dev ser contentBase: path.join(__dirname, "dist")
     },
     module: {

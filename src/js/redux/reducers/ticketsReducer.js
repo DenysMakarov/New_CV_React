@@ -4,16 +4,40 @@ import {ADD_TICKET, REMOVE_TICKET} from "../../types";
 const initiallyState = {
     arrTickets: [
         {
-            dateOfEvent: "18 July, 2020",
+            dateOfEvent: "05 November, 2019",
             nameTicket: "FIA WRC",
-            firstName: "Denys",
-            secondName: "Makarov",
-            phoneNumber: "0507222855",
+            firstName: "Jhon",
+            secondName: "Richworth",
+            phoneNumber: "9347629438",
             placeOfEvent: "OAE",
             price: "400 EUR",
             passed: true,
             month: "July",
             id: 0
+        },
+        {
+            dateOfEvent: "11 October, 2019",
+            nameTicket: "DACAR",
+            firstName: "Sonya",
+            secondName: "Velasces",
+            phoneNumber: "8479470-02",
+            placeOfEvent: "OAE",
+            price: "400 EUR",
+            passed: true,
+            month: "July",
+            id: 1
+        },
+        {
+            dateOfEvent: "11 July, 2019",
+            nameTicket: "F1",
+            firstName: "Antonio",
+            secondName: "Alecsa",
+            phoneNumber: "8470374798",
+            placeOfEvent: "OAE",
+            price: "400 EUR",
+            passed: true,
+            month: "July",
+            id: 2
         }
     ]
 }

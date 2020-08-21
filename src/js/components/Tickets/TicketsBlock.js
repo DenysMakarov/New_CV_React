@@ -110,7 +110,7 @@ class TicketsBlock extends React.Component {
         (phoneNumber === "") ? InputPhoneNumber.style.border = "2px solid red" : InputPhoneNumber.style.border = "2px solid transparent";
         (nameTicket === "CHOOSE EVENT") ? TicketTitle.style.color = "red" : TicketTitle.style.color = "white";
 
-        console.log(this.props.tickets.arrTickets)
+        // console.log(this.props.tickets.arrTickets)
         // console.log(sliderInfo[this.state.numberOfSlide - 1].month)
     }
 

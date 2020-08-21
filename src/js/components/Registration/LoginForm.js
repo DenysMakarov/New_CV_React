@@ -4,7 +4,6 @@ import React from 'react';
 // import {useDispatch, useSelector} from "react-redux";
 import {connect} from "react-redux";
 // import {sliderInfo} from "../../db/dataBase";
-// import set from "@babel/runtime/helpers/esm/set";
 import {logIn, logOut} from "../../redux/actions/actions";
 
 const mapStateToProps = (state) => {
@@ -36,9 +35,10 @@ class LoginForm extends React.Component {
         switch (this.props.login) {
             case false :
                 loginBtn.innerText = "SIGN IN"
-                localStorage.user = ""
+            // localStorage.user = ""
             case true :
                 loginBtn.innerText = "SIGN OUT"
+                localStorage.user = ""
         }
     }
 
@@ -53,9 +53,10 @@ class LoginForm extends React.Component {
     }
 
     logIn = (e) => {
+        e.preventDefault()
         const {users} = this.props
         const loginInformText = document.getElementById("login_inform_text")
-        e.preventDefault()
+
 
         if (this.props.login === false && this.state.email !== "" && this.state.password !== "") {
 
@@ -110,7 +111,7 @@ class LoginForm extends React.Component {
                        className="input_panel input_login" name="password" type="text"/>
                 <div id="logInform" className="logInform"><h5 id="login_inform_text">You can sign in your personal
                     account if you have</h5></div>
-                <button id="btnLogin" type="submit" className="btn_form btn_login ">LOGIN</button>
+                <button id="btnLogin"  className="btn_form btn_login "></button>
             </form>
         )
     }

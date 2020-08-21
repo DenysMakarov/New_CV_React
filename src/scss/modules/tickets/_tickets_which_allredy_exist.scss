@@ -12,101 +12,139 @@
   width: 35%;
   height: 80%;
   //right: 45%;
-  right: 5%;
+  right: 10%;
   top: 10%;
   color: white;
   font-size: 50px;
 
 
-  .your_tickets_array {
+  .your_tickets_array_cover{
     margin-top: 5%;
-    width: 80%;
-    height: 90%;
+    width: 75%;
+    height: 85%;
+    position: absolute;
+    //transform: perspective(1000px);
+    left: 10px;
+    transition: .3s;
+  }
+
+
+  .your_tickets_array {
+    width: 100%;
+    height: 100%;
+    //margin-top: 5%;
+    //width: 80%;
+    //height: 90%;
     //border: 1px solid red;
     background: url("../img/ticketBg.jpg");
     background-size: cover;
-    position: absolute;
+    //position: absolute;
     box-sizing: border-box;
     padding: 30px;
     border-radius: 5px;
-
-  }
-
-  .your_tickets {
-    color: $main-bg;
-    //border: 1px solid red;
-    width: 50%;
-    float: left;
-    margin-top: 5px;
-    text-align: left;
-    //background: rgba(0,0,0,.3);
-    padding: 3px;
-    font-family: 'Abel', sans-serif;
-    font-size: 25px;
-  }
-
-  .your_tickets_nameTicket {
+    transition: .3s;
+    //right: -50%;
     position: absolute;
-    bottom: 3%;
-    font-size: 38px;
-    font-family: 'Righteous', cursive;
-    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
-
-  }
-
-  .your_tickets_price {
-    float: right;
-  }
-
-  .your_tickets_placeOfEvent, .your_tickets_dateOfEvent, .your_tickets_price {
-    text-align: right;
-  }
-
-  .qr_code {
-    font-size: 21px;
-    transform: rotate(-90deg);
-    position: absolute;
-    right: -8%;
-    width: 200px;
-    height: 100px;
-    bottom: 20%;
-    background: url("../img/qr_code.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    @media all and (max-width: 1440px){
-      right: -10%;
-    }
-
-    p {
-      position: relative;
-      height: 15px;
-      //border: 1px solid red;
-    }
-  }
-
-  .passed_cover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    //border: 1px solid red;
-    background: rgba(0,0,0,.8);
-
-
-    p{
-      margin: auto;
-      margin-top: 60%;
-      transform: rotate(-45deg);
-      border: 1px solid red;
-      border-radius: 10px;
-    }
+    transform: perspective(900px) rotateX(-1deg) rotateY(-11deg) rotate(0deg) translateX(0) translateY(0) translateZ(0);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   }
 }
+
+.your_tickets {
+  color: $main-bg;
+  //border: 1px solid red;
+  width: 50%;
+  float: left;
+  margin-top: 5px;
+  text-align: left;
+  //background: rgba(0,0,0,.3);
+  padding: 3px;
+  font-family: 'Abel', sans-serif;
+  font-size: 25px;
+}
+
+.your_tickets_nameTicket {
+  position: absolute;
+  bottom: 3%;
+  font-size: 38px;
+  font-family: 'Righteous', cursive;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+
+}
+
+.your_tickets_price {
+  float: right;
+}
+
+.your_tickets_placeOfEvent, .your_tickets_dateOfEvent, .your_tickets_price {
+  text-align: right;
+}
+
+.qr_code {
+  font-size: 21px;
+  transform: rotate(-90deg);
+  position: absolute;
+  right: -8%;
+  width: 200px;
+  height: 100px;
+  bottom: 20%;
+  background: url("../img/qr_code.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media all and (max-width: 1440px) {
+    right: -10%;
+  }
+
+  p {
+    position: relative;
+    height: 15px;
+    //border: 1px solid red;
+  }
+}
+
+.passed_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  //border: 1px solid red;
+  //background: rgba(0,0,0,.8);
+
+
+  p {
+    margin: auto;
+    margin-top: 60%;
+    transform: rotate(-45deg);
+    border: 3px solid red;
+    border-radius: 10px;
+    color: red;
+  }
+}
+
+//.your_tickets_array_cover:first-child {
+//  margin-left: 50px;
+//  transform: scale(.9);
+//}
+//
+//.your_tickets_first_child {
+//  z-index: 10000;
+//}
+//
+//.your_tickets_second_child {
+//  z-index: 10000;
+//}
+//
+//.your_tickets_third_child {
+//  z-index: 10000;
+//}
+
+
+
 
 
 
