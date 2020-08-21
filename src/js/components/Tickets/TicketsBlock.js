@@ -3,6 +3,8 @@ import React from 'react';
 import {sliderInfo} from "../../db/dataBase";
 import {connect} from "react-redux";
 import {addTicket, removeTicket} from "../../redux/actions/actions";
+import TicketsPag from "./TicketsPag";
+import YourTicketsBlock from "./YourTickets";
 
 
 const mapStateToProps = (state) => {
@@ -28,6 +30,7 @@ class TicketsBlock extends React.Component {
             date: "You need to select event",
             place: "",
             nameTicket: "CHOOSE EVENT",
+            month: ""
         }
     }
 
@@ -45,6 +48,8 @@ class TicketsBlock extends React.Component {
             numberOfSlide: e.target.dataset.number,
             date: sliderInfo[this.state.numberOfSlide - 1].date,
             place: sliderInfo[this.state.numberOfSlide - 1].place,
+            month: sliderInfo[this.state.numberOfSlide - 1].month,
+
         })
 
         const informImg = document.getElementById("inform_img")
@@ -82,6 +87,8 @@ class TicketsBlock extends React.Component {
             phoneNumber: phoneNumber,
             placeOfEvent: sliderInfo[this.state.numberOfSlide - 1].place,
             dateOfEvent: sliderInfo[this.state.numberOfSlide - 1].date,
+            monthOfDate: sliderInfo[this.state.numberOfSlide - 1].month,
+            id: this.props.tickets.arrTickets.length
         }
         const InputFirstName = document.getElementById("input_ticket_first_name")
         const InputSecondName = document.getElementById("input_ticket_second_name")
@@ -103,7 +110,8 @@ class TicketsBlock extends React.Component {
         (phoneNumber === "") ? InputPhoneNumber.style.border = "2px solid red" : InputPhoneNumber.style.border = "2px solid transparent";
         (nameTicket === "CHOOSE EVENT") ? TicketTitle.style.color = "red" : TicketTitle.style.color = "white";
 
-
+        console.log(this.props.tickets.arrTickets)
+        // console.log(sliderInfo[this.state.numberOfSlide - 1].month)
     }
 
 
@@ -112,6 +120,8 @@ class TicketsBlock extends React.Component {
             <div className="tickets_block_cover ">
                 <div className="tickets_block">
                     <div className="left_pixel_decoration"/>
+
+                    {/*<TicketsPag numberOfSlide = {this.state.numberOfSlide}/>*/}
 
                     <div className="tickets_events">
                         {sliderInfo.map((el) => (
@@ -164,9 +174,11 @@ class TicketsBlock extends React.Component {
                     </form>
 
 
-                    <div className="all_tickets_block">
-                        {this.props.tickets.arrTickets.length}
-                    </div>
+                    <YourTicketsBlock arrTickets = {this.props.tickets.arrTickets}/>
+
+                    {/*<div className="all_tickets_block">*/}
+                    {/*    {this.props.tickets.arrTickets.length}*/}
+                    {/*</div>*/}
 
                 </div>
             </div>

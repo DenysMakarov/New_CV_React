@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+.all_tickets_block {
+  right: 5%;
+}
+
+.tickets_which_already_exist_block {
+  position: absolute;
+  //border: 1px solid red;
+  width: 35%;
+  height: 80%;
+  //right: 45%;
+  right: 5%;
+  top: 10%;
+  color: white;
+  font-size: 50px;
+
+
+  .your_tickets_array {
+    margin-top: 5%;
+    width: 80%;
+    height: 90%;
+    //border: 1px solid red;
+    background: url("../img/ticketBg.jpg");
+    background-size: cover;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 5px;
+
+  }
+
+  .your_tickets {
+    color: $main-bg;
+    //border: 1px solid red;
+    width: 50%;
+    float: left;
+    margin-top: 5px;
+    text-align: left;
+    //background: rgba(0,0,0,.3);
+    padding: 3px;
+    font-family: 'Abel', sans-serif;
+    font-size: 25px;
+  }
+
+  .your_tickets_nameTicket {
+    position: absolute;
+    bottom: 3%;
+    font-size: 38px;
+    font-family: 'Righteous', cursive;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+
+  }
+
+  .your_tickets_price {
+    float: right;
+  }
+
+  .your_tickets_placeOfEvent, .your_tickets_dateOfEvent, .your_tickets_price {
+    text-align: right;
+  }
+
+  .qr_code {
+    font-size: 21px;
+    transform: rotate(-90deg);
+    position: absolute;
+    right: -8%;
+    width: 200px;
+    height: 100px;
+    bottom: 20%;
+    background: url("../img/qr_code.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    @media all and (max-width: 1440px){
+      right: -10%;
+    }
+
+    p {
+      position: relative;
+      height: 15px;
+      //border: 1px solid red;
+    }
+  }
+
+  .passed_cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    //border: 1px solid red;
+    background: rgba(0,0,0,.8);
+
+
+    p{
+      margin: auto;
+      margin-top: 60%;
+      transform: rotate(-45deg);
+      border: 1px solid red;
+      border-radius: 10px;
+    }
+  }
+}
+
+
+

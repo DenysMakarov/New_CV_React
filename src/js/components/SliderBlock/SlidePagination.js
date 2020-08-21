@@ -29,7 +29,7 @@ class SlidePagination extends React.Component {
 
     componentDidMount() {
         const arrPag = Array.from(document.getElementsByClassName("pagination_panel_number"))
-        arrPag[0].classList.add("pagination_panel_number_active")
+        arrPag[this.props.num].classList.add("pagination_panel_number_active")
     }
 
     UNSAFE_componentWillUpdate(nextProps, nextState) {
