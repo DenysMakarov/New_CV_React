@@ -156,7 +156,7 @@ class TicketsBlock extends React.Component {
                                onChange={this.getValueFromInput}
                                name="phoneNumber"
                                value={this.state.phoneNumber}
-                               type="number"/>
+                               type="text"/>
 
 
                         <h3 id="date_of_event" className="date_of_event">{sliderInfo[this.state.numberOfSlide - 1].date}

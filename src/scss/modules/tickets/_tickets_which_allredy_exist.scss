@@ -18,7 +18,7 @@
   font-size: 50px;
 
 
-  .your_tickets_array_cover{
+  .your_tickets_array_cover {
     margin-top: 5%;
     width: 75%;
     height: 85%;
@@ -26,27 +26,65 @@
     //transform: perspective(1000px);
     left: 10px;
     transition: .3s;
+
+    &:hover {
+      margin-top: 0%;
+    }
   }
 
+  .hide_ticket_button {
+    width: 15%;
+    height: 5%;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    outline: none !important;
+    border: none;
+    font-size: 15px;
+    display: none;
+    z-index: 90;
+    border-radius: 5px;
+
+    &:hover{
+      border: 1px solid $color-contrast-line;
+    }
+  }
+
+  .hide_ticket_button_active{
+    display: block;
+  }
+
+  .your_tickets_active {
+    margin-top: 0;
+    width: 90%;
+    height: 100%;
+    left: -40% !important;
+    z-index: 40;
+    opacity: 1 !important;
+    transform: perspective(0) rotateX(0deg) rotateY(0deg) rotate(0deg) translateX(0) translateY(0) translateZ(0) !important;
+  }
 
   .your_tickets_array {
     width: 100%;
     height: 100%;
-    //margin-top: 5%;
-    //width: 80%;
-    //height: 90%;
-    //border: 1px solid red;
     background: url("../img/ticketBg.jpg");
     background-size: cover;
-    //position: absolute;
     box-sizing: border-box;
     padding: 30px;
     border-radius: 5px;
-    transition: .3s;
-    //right: -50%;
     position: absolute;
     transform: perspective(900px) rotateX(-1deg) rotateY(-11deg) rotate(0deg) translateX(0) translateY(0) translateZ(0);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      z-index: 25;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 }
 
@@ -114,7 +152,6 @@
   left: 0;
   //border: 1px solid red;
   //background: rgba(0,0,0,.8);
-
 
   p {
     margin: auto;

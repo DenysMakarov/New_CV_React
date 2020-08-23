@@ -6,8 +6,9 @@ export const sliderInfo = [
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "FIA WRC",
-        date: "18 July, 2020",
-        month: "July",
+        date: "18 July, 2021",
+        month: 7,
+        year: 2020,
         place: "OAE",
         price: "550 EUR"
     }, {
@@ -16,8 +17,9 @@ export const sliderInfo = [
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "DAKAR RALLY",
-        date: "21 August, 2020",
-        month: "August",
+        date: "21 March, 2021",
+        month: 3,
+        year: 2021,
         place: "France",
         price: "400 EUR"
     }, {
@@ -26,8 +28,9 @@ export const sliderInfo = [
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "BAMAKO RALLY",
-        date: "1 June, 2020",
-        month: "June",
+        date: "11 June, 2021",
+        month: 6,
+        year: 2021,
         place: "Hungary",
         price: "350 EUR"
     }, {
@@ -36,8 +39,9 @@ export const sliderInfo = [
         textTop: "I`am created a unique visual system and strategy across the wide existing spectrum of...",
         textCenter: "",
         textBottom: "GRAND PRI F1",
-        date: "1 May, 2020",
-        month: "September",
+        date: "1 May, 2021",
+        month: 5,
+        year: 2021,
         place: "Monaco",
         price: "1050 EUR"
     }, {
@@ -50,7 +54,6 @@ export const sliderInfo = [
         place: "have unknown yet",
         month: "have unknown yet",
         price: "0 EUR"
-
     },
 ]
 

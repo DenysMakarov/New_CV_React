@@ -101,7 +101,7 @@ class FooterInfo extends React.Component {
                         <div className="footer_block_bottom">
                             <h5 className="footer_block_bottom_first">Work inquiries</h5>
                             <h4>Interested in working with us?
-                                hola@ohio.colabr.io</h4>
+                                makarovdenys1985@gmail.com</h4>
                             <h5 className="footer_block_bottom_three">Phone</h5>
                             <h4>Ph: +3.230.705.5448</h4>
                         </div>
