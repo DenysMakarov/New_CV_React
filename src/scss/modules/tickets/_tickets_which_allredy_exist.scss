@@ -27,8 +27,12 @@
     left: 10px;
     transition: .3s;
 
+    animation-name: ticket_animation_appear;
+    //animation-fill-mode: forwards;
+    animation-duration: .5s;
+
     &:hover {
-      margin-top: 0%;
+      margin-top: 0;
     }
   }
 
@@ -74,7 +78,7 @@
     border-radius: 5px;
     position: absolute;
     transform: perspective(900px) rotateX(-1deg) rotateY(-11deg) rotate(0deg) translateX(0) translateY(0) translateZ(0);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
     cursor: pointer;
 
     .cover {
@@ -162,24 +166,6 @@
     color: red;
   }
 }
-
-//.your_tickets_array_cover:first-child {
-//  margin-left: 50px;
-//  transform: scale(.9);
-//}
-//
-//.your_tickets_first_child {
-//  z-index: 10000;
-//}
-//
-//.your_tickets_second_child {
-//  z-index: 10000;
-//}
-//
-//.your_tickets_third_child {
-//  z-index: 10000;
-//}
-
 
 
 

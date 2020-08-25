@@ -34,7 +34,8 @@ class SliderBlock extends React.Component {
                      style={{backgroundImage: sliderInfo[numberOfSlide].imgPath}}></div>
 
                 <div id="slide_before" className="slide_before"
-                     style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath}}>
+                     style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath }}>
+                    {console.log(sliderInfo[appearancePrevSlide].imgPath)}
                     <div className="slide_before_cover"></div>
                 </div>
 

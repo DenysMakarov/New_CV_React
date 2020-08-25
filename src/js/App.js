@@ -28,19 +28,13 @@ class App extends React.Component {
 
                     <div className="main_container">
                         <Nav/>
-                        <Switch>
-                            {/*<Route exact path="/" component={SliderBlock} />*/}
-                            {/*<Route path="/events" component={RegistrationPanel}/>*/}
-                            {/*<Route path="/tickets" component={Test}/>*/}
-                            {/*<Route path="/tickets" render={()=>{console.log("jlkj")}}/>*/}
-                            <Routes/>
-                        </Switch>
+                        <Routes/>
                     </div>
 
                     <MenuList/>
 
                 </div>
-            </HashRouter>
+           </HashRouter>
         );
     }
 }

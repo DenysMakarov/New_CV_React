@@ -13,12 +13,12 @@ class Nav extends React.Component {
 
     render() {
         return (
-            <HashRouter>
+            // <HashRouter>
                 <div className="navigation_block" id="navigation_block">
                     <MenuTextBtn/>
                     <SubNavigation/>
                 </div>
-            </HashRouter>
+            // </HashRouter>
         )
     }
 }

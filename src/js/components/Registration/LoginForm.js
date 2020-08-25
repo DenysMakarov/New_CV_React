@@ -100,7 +100,7 @@ class LoginForm extends React.Component {
                 <label htmlFor="password">Password</label>
                 <input id="login_password" onChange={this.getValueInput} value={this.state.password}  className="input_panel input_login" name="password" type="text"/>
                 <div id="logInform" className="logInform"> <h5 id="login_inform_text">You can sign in your personal account if you have</h5> </div>
-                <button  id="btnLogin" type="submit" className="btn_form btn_login ">LOGIN</button>
+                <button  id="btnLogin" type="submit" className="btn_form btn_login ">SIGN IN</button>
             </form>
         )
     }

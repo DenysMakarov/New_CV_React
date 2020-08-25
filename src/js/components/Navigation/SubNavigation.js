@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter} from "react-router-dom";
 import {subMenu} from "../../db/dataBase";
 import {createSubMenu} from "../Navigation/CreateSubMenu"
 import {connect} from "react-redux";
@@ -52,7 +52,7 @@ class SubNavigation extends React.Component {
     render() {
         const {home, events, tickets, portfolio, contacts, Login} = subMenu
         return (
-            <RouterHash>
+            // <HashRouter>
                 <div className="nav_elements">
                     <div onMouseLeave={this.linkColorDisable} id="nav_links_block" className="nav_links_block">
                         {/*<div className="nav_link">*/}
@@ -66,7 +66,7 @@ class SubNavigation extends React.Component {
                         {createSubMenu(Login, '/login', "Login", "06", "nav_link", )}
                     </div>
                 </div>
-            </RouterHash>
+            // </HashRouter>
 
         )
     }

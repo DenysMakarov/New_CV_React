@@ -4,6 +4,7 @@ import RegistrationPanel from "./components/Registration/RegistrationPanel";
 import SliderBlock from "./components/SliderBlock/SliderBlock";
 import ContactsBlock from "./components/Contacts/ContactsBlock";
 import TicketsBlock from "./components/Tickets/TicketsBlock";
+import Events from "./components/Events/Events";
 
 
 
@@ -14,7 +15,7 @@ const Routes = () => {
             <Route path="/login" component={RegistrationPanel}/>
             <Route path="/contacts" component={ContactsBlock} />
             <Route path="/tickets" component={TicketsBlock} />
-
+            <Route path="/events" component={Events} />
         </Switch>
     )
 }

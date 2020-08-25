@@ -1,4 +1,4 @@
-import React, {Fragment} from "react"
+import React from "react"
 import {connect} from "react-redux";
 
 
@@ -51,7 +51,7 @@ class YourTicketsBlock extends React.Component {
         // }))
     }
 
-    hideTicket = (e) => {
+    hideTicket = () => {
         const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
         const arrTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
        setTimeout(()=>{
@@ -75,13 +75,13 @@ class YourTicketsBlock extends React.Component {
         const PassedCover = () => (
             <div className="passed_cover">
                 <p>PASSED</p>
-                <div className="cover"></div>
+                <div className="cover"/>
             </div>
         )
 
         return (
             <div className="tickets_which_already_exist_block">
-                {arrTickets.map((el, index) => (
+                {arrTickets.map((el) => (
                     <div key={el.id + dateOfToDay.getMilliseconds()}
                          className="your_tickets_array_cover"
 
@@ -102,7 +102,7 @@ class YourTicketsBlock extends React.Component {
                             </button>
                             {dateOfToDay.getMonth() > el.month && dateOfToDay.getFullYear() > el.year && <PassedCover/>}
                             {dateOfToDay.getFullYear() > el.year && <PassedCover/>}
-                            <div data-id={el.id} className="cover"></div>
+                            <div data-id={el.id} className="cover"/>
                         </div>
                     </div>
 
