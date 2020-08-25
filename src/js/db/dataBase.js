@@ -113,20 +113,8 @@ export const sliderInfo = [
         month: "have unknown yet",
         price: "0 EUR",
         roadDescription: "Sorry, we have not information yet.",
-        mapImg: "../img/Bamaco_2.jpg",
-    //     pilotImg_1: "../img/pilot_1.png",
-    //     pilotName_1: "Izaac Malsiwicz",
-    //     pilotAge_1: 35,
-    //     pilotExperience_1: 15,
-    //     pilotAwards_1: "Champion of the Europe",
-    //     pilotDesc_1: "Nullam viverra consecte quisque cursus et, porttitor ountur magni dolores eos qui ratione volu incidunt ut labore et dolore magnam aliquam quaerat voluptate quisque cursus et, porttitor ountur magni dolores eos qui ratione.",
-    //     pilotImg_2: "../img/pilot_2.png",
-    //     pilotName_2: "Mark Peterson",
-    //     pilotAge_2: 44,
-    //     pilotExperience_2: 21,
-    //     pilotAwards_2: "Champion of the World",
-    //     pilotDesc_2: "Nullam viverra consecte quisque cursus et, porttitor ountur magni dolores eos qui ratione volu incidunt ut labore et dolore magnam aliquam quaerat voluptate quisque cursus et, porttitor ountur magni dolores eos qui ratione.",
-    },
+        mapImg: "../img/rally_ford_3.jpg",
+ },
 ]
 
 
@@ -141,15 +129,15 @@ export const subMenu = {
     events: [
         {
             name: "Dakkar Rally",
-            link: '',
+            link: '/events',
             id: 2,
         }, {
             name: "FIA WRC",
-            link: '',
+            link: '/events',
             id: 3
         }, {
             name: "Bamako Rally",
-            link: '',
+            link: '/events',
             id: 4
         }, {
             name: "",
@@ -166,11 +154,11 @@ export const subMenu = {
         {
             name: "Adult",
             id: 7,
-            link: ''
+            link: '/tickets'
         }, {
             name: "Child",
             id: 8,
-            link: ''
+            link: '/tickets'
         }
     ],
     portfolio: [
@@ -200,11 +188,11 @@ export const subMenu = {
         {
             name: "Canada",
             id: 15,
-            link: ''
+            link: '/contacts'
         }, {
             name: "USA",
             id: 16,
-            link: ''
+            link: '/contacts'
         }
     ],
     Login: [

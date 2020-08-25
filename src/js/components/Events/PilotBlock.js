@@ -8,6 +8,7 @@ class PilotBlock extends React.Component {
     render() {
         return (
             <div className="pilot_block">
+                <h1 className="header_description">Favorites:</h1>
                 <div className="pilot_1">
                     <div className="photo_pilot"
                          style={{backgroundImage: `url(${this.props.el.pilotImg_1})`}}></div>
