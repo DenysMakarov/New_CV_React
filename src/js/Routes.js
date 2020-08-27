@@ -5,6 +5,7 @@ import SliderBlock from "./components/SliderBlock/SliderBlock";
 import ContactsBlock from "./components/Contacts/ContactsBlock";
 import TicketsBlock from "./components/Tickets/TicketsBlock";
 import Events from "./components/Events/Events";
+import Portfolio from "./components/Portfolio/Portfolio";
 
 
 
@@ -16,6 +17,7 @@ const Routes = () => {
             <Route path="/contacts" component={ContactsBlock} />
             <Route path="/tickets" component={TicketsBlock} />
             <Route path="/events" component={Events} />
+            <Route path="/portfolio" component={Portfolio}/>
         </Switch>
     )
 }

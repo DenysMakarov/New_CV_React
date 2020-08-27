@@ -8,7 +8,7 @@ import MenuList from "./MenuList";
 
 const mapToProps = (state) => {
     return {
-        menuApear: state
+        menuAppear: state
     }
 }
 
@@ -26,9 +26,8 @@ class MenuBtn extends React.Component {
         }
     }
 
-
     operatorMenu = () => {
-        const {menu} = this.props.menuApear.mainMenu
+        const {menu} = this.props.menuAppear.mainMenu
         const {showHideMenu} = this.props
         const menuLinks = Array.from(document.getElementsByClassName("nav_link_menu_list"))
         const lineInBtnTop = document.getElementById("line_in_btn_top")
@@ -71,10 +70,11 @@ class MenuBtn extends React.Component {
 
     render() {
         return (
-            <div className="btn_menu_block">
+            <div id="btn_menu_block" className="btn_menu_block">
                 <input onClick={this.operatorMenu} type='checkbox' defaultChecked={false} id="btn_menu"
                        className="btn_menu"></input>
-                <label htmlFor="btn_menu" className="label_btn_menu">
+
+                <label id="label_btn_menu" htmlFor="btn_menu" className="label_btn_menu">
                     <div id="line_in_btn_top" className="line_in_btn line_in_btn_top"></div>
                     <div id="line_in_btn_bottom" className="line_in_btn line_in_btn_bottom"></div>
                 </label>
@@ -85,7 +85,7 @@ class MenuBtn extends React.Component {
 
 
 MenuBtn.propTypes = {
-    menuApear: PropTypes.shape({
+    menuAppear: PropTypes.shape({
         mainMenu: PropTypes.shape({
             menu: PropTypes.bool.isRequired
         })

@@ -11,28 +11,42 @@ import SliderBlock from "./components/SliderBlock/SliderBlock";
 import RegistrationPanel from "./components/Registration/RegistrationPanel";
 import Routes from "./Routes";
 import Test from "./Test";
+import RoundAnimation from "./components/RoundAnimation";
 
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+
+
+        this.state = {
+            posX: "1",
+            posY: "1"
+        }
+    }
+
+    moveRound = (e) => {
+        this.setState({
+            posX:e.clientX,
+            posY: e.clientY
+        })
+    }
+
+    componentDidMount() {
+
     }
 
 
     render() {
         return (
             <HashRouter>
-                <div className="App" style={{"textAlign": "center"}}>
-
+                <div onMouseMove={this.moveRound} className="App" style={{"textAlign": "center"}}>
                     <MenuBtn/>
-
                     <div className="main_container">
                         <Nav/>
                         <Routes/>
                     </div>
-
                     <MenuList/>
-
                 </div>
            </HashRouter>
         );

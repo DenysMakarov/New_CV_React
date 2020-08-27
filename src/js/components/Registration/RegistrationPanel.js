@@ -20,49 +20,6 @@ class RegistrationPanel extends React.Component {
     }
 
 
-    // possible this =>
-    // onChange = (e) => {
-    //     const {name, type, value} = e.target
-    //     this.setState({[name]: value})
-    // }
-
-    // possible this =>
-    // onSubmit = (e) => {
-    //     e.preventDefault()
-    //     const formRegistrationBlock = document.getElementById("registration_block")
-    //     let newForm = new FormData(formRegistrationBlock)
-    //     let obj = {}
-    //     newForm.forEach((el, key) => {
-    //         if (obj.hasOwnProperty(key)) {
-    //             obj[key] = el
-    //         }
-    //     })
-    //     let registrationForm = Object.assign({obj}, this.state.registration)
-    //     // console.log(registrationForm)
-    // }
-
-    // possible this  =>
-    // changeValue = (e) => {
-    //     e.preventDefault()
-    //     let {name, value} = e.target;
-    //     let newAccount = Object.assign(this.state.registration, {});
-    //     newAccount[name] = value;
-    //     this.setState({registration: newAccount})
-    //     console.log(this.state)
-    //
-    // };
-    //
-    // createNewAccount = (e) => {
-    //     e.preventDefault()
-    //     // console.log(this.state.registration)
-    //     const {firstName, secondName, email, newPassword, repeatPassword} = this.state.registration
-    //     if (firstName == "MDA" && secondName == "Makarov") {
-    //         console.log("Ok")
-    //     } else {
-    //         console.log("No")
-    //     }
-    //     // console.log(firstName)
-    // }
 
 
     render() {

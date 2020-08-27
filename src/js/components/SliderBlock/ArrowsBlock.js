@@ -63,11 +63,13 @@ class Arrows extends React.Component {
     render() {
         return (
             <Fragment>
-                <div onClick={this.prevSlide} className="arrow arrow_left">
+                <div id="arrow_left"  className="arrow arrow_left">
+                    <div onClick={this.prevSlide} id="arrow_left_cover" className="arrow_left_cover"/>
                     {/*<i className="fas fa-arrow-left"></i>*/}
                     <FontAwesomeIcon icon={faArrowLeft}/>
                 </div>
-                <div onClick={this.nextSlide} className="arrow arrow_right">
+                <div id="arrow_right" className="arrow arrow_right">
+                    <div onClick={this.nextSlide} id="arrow_right_cover" className="arrow_right_cover"/>
                     {/*<i className="fas fa-arrow-right"></i>*/}
                     <FontAwesomeIcon icon={faArrowRight}/>
                 </div>

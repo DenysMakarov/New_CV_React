@@ -1,4 +1,3 @@
-
 export const sliderInfo = [
     {
         imgPath: "url(img/rally_c3_4.jpg)",
@@ -88,7 +87,7 @@ export const sliderInfo = [
         year: 2021,
         place: "Monaco",
         price: "1050 EUR",
-        roadDescription:"The great-grandmother of all street trails is, of course, the Monaco circuit. This track was opened in 1929. The track was designed by Anthony Noges, who has gone down in history because the last turn was named after him. To get an idea of just how crazy the Monaco circuit is, just watch this stunning drive. This video has not been accelerated and is streaming in real time.",
+        roadDescription: "The great-grandmother of all street trails is, of course, the Monaco circuit. This track was opened in 1929. The track was designed by Anthony Noges, who has gone down in history because the last turn was named after him. To get an idea of just how crazy the Monaco circuit is, just watch this stunning drive. This video has not been accelerated and is streaming in real time.",
         mapImg: "../img/f1.jpg",
         pilotImg_1: "../img/pilot_1.png",
         pilotName_1: "Izaac Malsiwicz",
@@ -114,7 +113,7 @@ export const sliderInfo = [
         price: "0 EUR",
         roadDescription: "Sorry, we have not information yet.",
         mapImg: "../img/rally_ford_3.jpg",
- },
+    },
 ]
 
 
@@ -178,7 +177,8 @@ export const subMenu = {
         //     name: "Restaurant",
         //     id: 13,
         //     link: ''
-        // }, {
+        // },
+        // {
         //     name: "React",
         //     id: 14,
         //     link: ''
@@ -201,6 +201,26 @@ export const subMenu = {
             id: 17,
             link: ''
         }
+    ]
+}
+
+export const portfolioData = {
+    portfolio: [
+        {
+            nameOfWork: "Game",
+            link: "/",
+        },{
+            nameOfWork: "Magic Slider",
+            link: "/",
+
+        },{
+            nameOfWork: "Sneakers Store",
+            link: "/",
+
+        },{
+            nameOfWork: "Restaurant",
+            link: "/",
+        },
     ]
 }
 

@@ -12,6 +12,10 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDispatch = {
+    showHideMenu
+}
+
 class MenuList extends React.Component {
     constructor(props) {
         super(props);
@@ -23,17 +27,13 @@ class MenuList extends React.Component {
 
 
     render() {
-        // (!this.props.menu) ? <Test/> : <Test/>
-
 
         const {home, events, tickets, portfolio, contacts, Login} = subMenu
         return (
             <div className={`menu_list`} id="menu_list">
 
                 <div className="menu_list_block">
-                    {/*<div className="nav_link">*/}
-                    {/*    <div className=""><p className='number_menu'>01</p><Link to='/'>Home</Link></div>*/}
-                    {/*</div>*/}
+
                     {createSubMenu(home, '/', "Home", "01", "nav_link nav_link_menu_list")}
                     {createSubMenu(events, '/events', "Events", "02",  "nav_link nav_link_menu_list")}
                     {createSubMenu(tickets, '/tickets', "Tickets", "03", "nav_link nav_link_menu_list")}
@@ -57,4 +57,4 @@ class MenuList extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, null)(MenuList)
+export default connect(mapStateToProps, mapDispatch)(MenuList)
