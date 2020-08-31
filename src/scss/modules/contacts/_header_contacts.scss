@@ -5,10 +5,25 @@
   padding-top: 10%;
   padding-left: 100px;
   text-align: left;
+
+  @media all and (max-width: 414px){
+    padding: 5%;
+    padding-top: 18%;
+  }
 }
 
 .header_contacts_first_text{
   font-size: 60px;
+
+  @media all and (max-width: 414px){
+    font-size: 25px;
+  }
+}
+
+.header_contacts_second_text{
+  @media all and (max-width: 414px){
+    font-size: 15px;
+  }
 }
 
 

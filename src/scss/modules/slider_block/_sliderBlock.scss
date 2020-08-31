@@ -101,6 +101,10 @@
   background: #ffffff;
   cursor: pointer;
   z-index: 3000!important;
+
+  //@media all and (max-width: 1024px) and (min-height: 1366px){
+  //  color: red;
+  //}
 }
 
 .arrow_left {

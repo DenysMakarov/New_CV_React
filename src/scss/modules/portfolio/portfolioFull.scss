@@ -24,6 +24,10 @@
       font-size: 165px;
       left: -5%;
       top: 55%;
+
+      @media all and (min-width: 1920px){
+        left: 15%;
+      }
     }
 
     &:nth-child(6) {
@@ -31,6 +35,11 @@
       font-size: 145px;
       right: -5%;
       top: 10%;
+
+      @media all and (min-width: 1920px){
+        top: 10%;
+        right: 5%;
+      }
     }
 
     &:nth-child(7) {
@@ -38,6 +47,11 @@
       font-size: 105px;
       right: 5%;
       top: 80%;
+
+      @media all and (min-width: 1920px){
+        top: 85%;
+        right: 15%;
+      }
     }
   }
 

@@ -34,10 +34,6 @@
     animation-duration: .3s;
     animation-fill-mode: forwards;
     opacity: 0;
-
-    //@media all and (max-width: 1440px){
-    //  margin-top: 50px;
-    //}
   }
 
   .inform_img{
@@ -53,6 +49,12 @@
     animation-duration: .3s;
     animation-fill-mode: forwards;
     animation-delay: .1s;
+
+    @media all and (max-width: 1024px) and (min-height: 1366px){
+      height: 40%;
+      width: 88%;
+      background-position: -150px 0;
+    }
   }
 
   .ticket_form_title{

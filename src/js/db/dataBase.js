@@ -36,7 +36,7 @@ export const sliderInfo = [
         year: 2021,
         place: "France",
         price: "400 EUR",
-        roadDescription: "It is no coincidence that such names as Ayrton Senna and Michael Schumacher were included in the list of winners in Macau. There are not many places in the world that make Monaco look less difficult, but Macau is one of them. The 6.12 km long trail runs around the former Portuguese colony. She does not forgive mistakes due to the insidious mixture of high speeds, slippery surfaces and bumpers located as close to the track as possible.",
+        roadDescription: "It is no coincidence that such names as Ayrton Senna and Michael Schumacher were included in the list of winners in Macau. There are not many places in the world that make Monaco look less difficult, but Macau is one of them.",
         mapImg: "../img/rally_subaru_1.jpg",
         pilotImg_1: "../img/pilot_1.png",
         pilotName_1: "Izaac Malsiwicz",

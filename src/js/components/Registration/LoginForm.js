@@ -30,11 +30,20 @@ class LoginForm extends React.Component {
         }
     }
 
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         const loginBtn = document.getElementById("btnLogin");
         (this.props.login == false) ? loginBtn.innerText = "SIGN IN" : loginBtn.innerText = "SIGN OUT"
     }
 
+    animationTextLoginInform = (color) => {
+        const loginInfoBlock = document.getElementById("logInform")
+        loginInfoBlock.style.animationName = "none"
+        setTimeout(()=>{
+            loginInfoBlock.style.animationName = "login_inform_appear"
+            loginInfoBlock.style.color = color
+        },0)
+    }
 
     getValueInput = (e) => {
         e.preventDefault()
@@ -46,13 +55,17 @@ class LoginForm extends React.Component {
     }
 
     logIn = (e) => {
+        e.preventDefault()
         const {users} = this.props
         const loginInformText = document.getElementById("login_inform_text")
-        e.preventDefault()
+        const loginInfoBlock = document.getElementById("logInform")
+        // loginInfoBlock.style.animationName = "none"
+
+
 
         if (this.props.login == false && this.state.email != "" && this.state.password != "") {
 
-           // check email and password in db
+            // check email and password in db
             for (let i = 0; i < users.length; i++) {
                 if (users[i].email == this.state.email && users[i].newPassword == this.state.password) {
                     console.log(users[i].name)
@@ -68,21 +81,26 @@ class LoginForm extends React.Component {
                         email: "",
                         password: ""
                     })
+
                     loginInformText.innerText = `${users[i].name}, Thank you for visited us!`
-                    Array.from(document.getElementsByClassName("input_login")).map(el=>el.style.border = "2px solid transparent")
+                    this.animationTextLoginInform("green")
+
+                    Array.from(document.getElementsByClassName("input_login")).map(el => el.style.border = "2px solid transparent")
                     break
                 } else {
-                    document.getElementById("login_inform_text").innerText = "There is no account with this email. Please try again"
-                    Array.from(document.getElementsByClassName("input_login")).map(el=>el.style.border = "2px solid red")
+                    this.animationTextLoginInform("red")
+
+                    loginInformText.innerText = "There is no account with this email. Please try again"
+                    Array.from(document.getElementsByClassName("input_login")).map(el => el.style.border = "2px solid red")
                 }
-                // if (document.getElementById("")){
-                //
-                // }
             }
-        } else if (this.props.login == true){
+        } else if (this.props.login == true) {
+            this.animationTextLoginInform("white")
+
             this.props.logOut()
+            localStorage.removeItem("user")
             loginInformText.innerText = "By! See you soon!"
-            setTimeout(()=>{
+            setTimeout(() => {
                 loginInformText.innerText = "You can sign in your personal account if you have"
             }, 3000)
         }
@@ -96,11 +114,16 @@ class LoginForm extends React.Component {
             <form onSubmit={this.logIn} className="registration_block login_panel">
                 <span className="name_of_block">ACCOUNT</span>
                 <label htmlFor="email">Email</label>
-                <input id="login_email" onChange={this.getValueInput} value={this.state.email} className="input_panel input_login" name="email" type="text"/>
+                <input id="login_email" onChange={this.getValueInput} value={this.state.email}
+                       className="input_panel input_login" name="email" type="text"/>
                 <label htmlFor="password">Password</label>
-                <input id="login_password" onChange={this.getValueInput} value={this.state.password}  className="input_panel input_login" name="password" type="text"/>
-                <div id="logInform" className="logInform"> <h5 id="login_inform_text">You can sign in your personal account if you have</h5> </div>
-                <button  id="btnLogin" type="submit" className="btn_form btn_login ">SIGN IN</button>
+                <input id="login_password" onChange={this.getValueInput} value={this.state.password}
+                       className="input_panel input_login" name="password" type="text"/>
+                <div id="logInform" className="logInform"><h5 id="login_inform_text">You can sign in your personal
+                    account if you have</h5></div>
+                <button id="btnLogin" type="submit"
+                        className="btn_form btn_login ">SIGN IN
+                </button>
             </form>
         )
     }

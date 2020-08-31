@@ -74,10 +74,6 @@ class FooterInfo extends React.Component {
                             <div onMouseOver={this.animationButtonShow} onMouseLeave={this.animationButtonHide}
                                  id="bnt_footer_block_top_animation" className="bnt_footer_block_top_animation"></div>
                         </div>
-                        {/*<p className="data_contact">{dateNew.getDate()} <span*/}
-                        {/*    style={{color: "red"}}> / </span> {dateNew.getMonth() + 1} <span*/}
-                        {/*    style={{color: "red"}}> / </span> {dateNew.getFullYear()}</p>*/}
-
                     </div>
                 </div>
 

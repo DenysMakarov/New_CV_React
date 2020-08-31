@@ -119,7 +119,7 @@
   }
   100%{
     opacity: 1;
-    color: #ffffff;
+    color: green;
     margin-top: 40px;
   }
 }
@@ -177,5 +177,17 @@
   100%{
     opacity: 1;
     margin-top: 0;
+  }
+}
+
+@keyframes login_inform_appear
+{
+  0% {
+    margin-top: 150px;
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    margin-top: 50px;
   }
 }

@@ -7,11 +7,7 @@
 
 .footer_contacts_block {
   width: 100%;
-  //height: 20px!important;
-  //border: 1px solid red;
-  //position: relative;
   margin-top: 600px;
-  //margin-top: 0;
   box-sizing: border-box;
   position: absolute;
 
@@ -28,8 +24,9 @@
   @media all and (max-width: 1024px) {
     margin-top: 480px !important;
   }
-  @media all and (max-width: 768px) {
-    margin-top: 500px;
+
+  @media all and (max-width: 415px){
+    margin-top: 300px !important;
   }
 }
 
@@ -38,9 +35,7 @@
 .footer_block_top {
   width: 100%;
   height: 400px;
-  //border: 1px solid red;
   background: rgba(29, 27, 32, .98);
-  //background: $main-bg;
 }
 
 .footer_block_top_inform {
@@ -59,6 +54,10 @@
   font-size: 55px;
   margin-bottom: 50px;
   font-family: 'Recursive', sans-serif;
+
+  @media all and (max-width: 415px){
+    font-size: 25px;
+  }
 }
 
 .footer_block_top_text_underline {
@@ -68,6 +67,10 @@
 
   @media all and (max-width: 768px) {
     font-size: 18px;
+  }
+  @media all and (max-width: 415px){
+    width: 100%;
+    font-size: 16px;
   }
 }
 
@@ -90,11 +93,20 @@
   @media all and (max-width: 1024px) {
     right: 50px;
   }
+
+  @media all and (max-width: 415px){
+    width: 100px;
+    top: 50px;
+  }
+}
+
+.fa-arrow-right{
+  @media all and (max-width: 415px){
+    display: none;
+  }
 }
 
 .bnt_footer_block_top {
-  //width: 230px;
-  //height: 50px;
   width: 100%;
   height: 100%;
   background: $color-contrast-line;
@@ -103,8 +115,6 @@
   color: $color-main-text;
   outline: none !important;
   position: absolute;
-  //right: 70px;
-  //top: 100px;
 }
 
 .bnt_footer_block_top_animation {
@@ -114,7 +124,6 @@
   position: absolute;
   border-radius: 5px;
   transition: .5s;
-  //animation-name: btn_animate_contacts;
   animation-duration: .3s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
@@ -144,6 +153,10 @@
   background: rgba(24, 23, 28, 1);
   position: relative;
   //padding-top: 1%;
+
+  @media all and (max-width: 415px){
+    height: 100% !important;
+  }
 }
 
 .footer_blocks_bottom_cover {
@@ -168,6 +181,15 @@
   color: $color-main-text;
   text-align: left;
 
+  @media all and (max-width: 768px){
+    width: 33.5%;
+  }
+
+  @media all and (max-width: 415px){
+    width: 100%;
+    height: 30%;
+  }
+
   .footer_block_bottom_three {
     margin-top: 40px;
   }
@@ -189,6 +211,38 @@
   }
 }
 
+
+@media all and (max-width: 1024px){
+
+  .footer_block_bottom:nth-child(1){
+    width: 15%;
+  }
+
+  .footer_block_bottom:nth-child(4){
+    width: 25%;
+    padding-left: 9%;
+  }
+}
+
+@media all and (max-width: 769px){
+
+  .footer_block_bottom:nth-child(4){
+    width: 100%;
+    padding-left: 9%;
+    height: -100px !important;
+    display: none;
+  }
+}
+
+@media all and (max-width: 415px){
+  .footer_block_bottom:nth-child(1){
+    width: 100%;
+  }
+}
+
+
+
+
 .email_subscribe {
   border-radius: 5px;
   border: 1px solid transparent;
@@ -196,6 +250,11 @@
   height: 50px;
   box-sizing: border-box;
   //width: 300px;
+  position: relative;
+
+  @media all and (max-width: 1024px){
+    height: 200px;
+  }
 }
 
 .email_subscribe_input, .email_subscribe_btn {
@@ -211,6 +270,7 @@
 
 .email_subscribe_input {
   text-align: center !important;
+  //border: 1px solid rgb(200,69,76);
 
   @media all and (max-width: 768px) {
     width: 100%;
@@ -221,6 +281,11 @@
   @media all and (max-width: 1024px) {
     font-size: 14px;
     padding-left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    border: 1px solid rgb(200,69,76);
+
   }
 }
 
@@ -237,6 +302,10 @@
 
   @media all and (max-width: 1024px) {
     font-size: 14px;
+    top: 150px !important;
+    height: 20%;
+    width: 100%;
+    position: absolute;
   }
 
   @media all and (max-width: 768px) {
@@ -276,6 +345,11 @@
   font-family: 'Mulish', sans-serif;
   box-sizing: border-box;
 
+  @media all and (max-width: 415px){
+    font-size: 10px;
+    padding-top: 10px;
+  }
+
   .contacts_icon {
     float: right;
     margin-left: 20px;
@@ -292,6 +366,11 @@
 
     &:hover {
       background-position: 0px 60px;
+    }
+
+    @media all and (max-width: 415px){
+      margin-top: 15px;
+      font-size: 25px;
     }
   }
 }

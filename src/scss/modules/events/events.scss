@@ -61,12 +61,21 @@
     display: none;
   }
 
-  @media all and (max-width: 1025px){
+  @media all and (max-width: 1026px) and (min-height: 1366px){
+    .event_block_desc > .pilot_block {
+      display: block;
+      width: 450px;
+    }
+  }
+
+  @media all and (max-width: 1024px){
     height: 55%;
     .event_block_desc > .pilot_block {
       display: none;
     }
   }
+
+
 
   @media all and (max-width: 1025px){
     height: 45%;

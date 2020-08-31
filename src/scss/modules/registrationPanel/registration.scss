@@ -78,12 +78,16 @@
   left: 40%;
   outline: none !important;
   background: rgba(0,0,0,0.3);
-  //border: 1px solid red;
   border: none;
   border-radius: 5px;
   color: $color-main-text;
   transition: .2s;
   border: 1px solid transparent;
+
+  @media all and (max-width: 1024px){
+    width: 30%;
+    left: 35%;
+  }
 
   &:hover {
     border: 1px solid red;
@@ -97,8 +101,16 @@
 
 .text_error{
   position: absolute;
-  left: 20px;
+  left: 12%;
   color: red;
+
+  @media all and (max-width: 1440px){
+    font-size: 13px;
+    left: 15%;
+  }
+  @media all and (max-width: 1024px){
+    left: 11% !important;
+  }
 }
 
 .informPage_cover{
@@ -149,11 +161,16 @@
   width: 100%;
   height: 100px;
   margin-top: 50px;
-  border: 1px solid red;
+  //border: 1px solid red;
   border-radius: 10px;
   text-align: center;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+
+  animation-name: login_inform_appear;
+  animation-fill-mode: forwards;
+  animation-duration: .8s;
 }

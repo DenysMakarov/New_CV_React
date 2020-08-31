@@ -165,6 +165,7 @@ class RegistrationForm extends React.Component {
             newPass.style.border = styleValid.border
         }
         passwordInvalid.innerText = errorTextPass
+
         if (repeatPassword != newPassword || repeatPassword == "") {
             secondPassInvalid.innerText = "Password is not the same as above"
             passwordRepeatInput.style.border = styleError.border
