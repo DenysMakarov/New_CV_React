@@ -56,7 +56,7 @@
   font-family: 'Recursive', sans-serif;
 
   @media all and (max-width: 415px) {
-    font-size: 25px;
+    font-size: 21px;
   }
 }
 
@@ -96,7 +96,12 @@
 
   @media all and (max-width: 415px) {
     width: 100px;
+    height: 80px;
     top: 50px;
+  }
+
+  @media all and (max-width: 320px){
+    right: 25px;
   }
 
 }
@@ -170,7 +175,6 @@
 .footer_block_bottom {
   width: 25%;
   height: 90%;
-  //border: 1px solid red;
   padding: 40px;
   padding-left: 0;
   color: $color-main-text;
@@ -232,6 +236,17 @@
 @media all and (max-width: 415px) {
   .footer_block_bottom:nth-child(1) {
     width: 100%;
+  }
+
+  .footer_block_bottom:nth-child(2) {
+    width: 50%;
+  }
+  .footer_block_bottom:nth-child(3) {
+    width: 50%;
+  }
+
+  .footer_block_bottom > h4 {
+    font-size: 10px;
   }
 }
 
