@@ -69,16 +69,15 @@
   }
 
   @media all and (max-width: 1024px){
-    height: 55%;
+    height: 45%;
+
     .event_block_desc > .pilot_block {
       display: none;
     }
   }
 
-
-
-  @media all and (max-width: 1025px){
-    height: 45%;
+  @media all and (max-width: 415px){
+    padding: 0;
   }
 
   .event_block_desc {
@@ -99,16 +98,23 @@
     float: right;
     background-size: cover;
     background-position: center;
-    //transform: perspective(900px) rotateX(-1deg) rotateY(-11deg) rotate(0deg) translateX(0) translateY(0) translateZ(0);
-    //box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+
+    @media all and (max-width: 415px){
+      height: 70%;
+      margin-top: 10%;
+    }
+
   }
 
   .header_description {
-    //color: $color-contrast-line;
     font-family: 'Allerta Stencil', sans-serif;
 
     @media all and (max-width: 1440px) {
       font-size: 25px;
+    }
+
+    @media all and (max-width: 320px){
+      font-size: 12px !important;
     }
   }
 
@@ -122,6 +128,12 @@
     }
     @media all and (max-width: 1025px) {
       font-size: 15px;
+    }
+    @media all and (max-width: 415px){
+      font-size: 10px !important;
+    }
+    @media all and (max-width: 320px){
+      font-size: 8px !important;
     }
   }
 
@@ -208,6 +220,11 @@
       width: 20%;
     }
 
+    @media all and (max-width: 415px){
+      width: 30% !important;
+      height: 10%;
+    }
+
     a{
       transition: .2s;
       display: block;
@@ -217,6 +234,16 @@
       color: white;
       font-size: 21px;
       line-height: 35px;
+
+      @media all and (max-width: 415px){
+        font-size: 15px;
+        line-height: 25px;
+      }
+
+      @media all and (max-width: 320px){
+        font-size: 11px;
+        line-height: 18px;
+      }
 
       &:hover{
         color: $color-contrast-line;

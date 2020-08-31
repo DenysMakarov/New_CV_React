@@ -172,7 +172,7 @@
   height: 90%;
   //border: 1px solid red;
   padding: 40px;
-  padding-left: 0px;
+  padding-left: 0;
   color: $color-main-text;
   text-align: left;
 
@@ -285,7 +285,7 @@
 
 .email_subscribe_btn {
   width: 40%;
-  padding-top: 0px;
+  padding-top: 0;
   height: 100%;
   transition: .2s;
 
@@ -354,11 +354,11 @@
     background-image: url(../img/iconBG.jpg);
     background-repeat: repeat;
     -webkit-background-clip: text;
-    background-position: 0px 150px;
+    background-position: 0 150px;
     color: transparent;
 
     &:hover {
-      background-position: 0px 60px;
+      background-position: 0 60px;
     }
 
     @media all and (max-width: 415px) {
