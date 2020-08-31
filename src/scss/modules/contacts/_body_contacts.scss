@@ -31,6 +31,14 @@
     top: 35%;
   }
 
+  @media all and (max-width: 376px) and (min-height: 811px){
+    top: 30% !important;
+  }
+
+  @media all and (max-width: 376px) and (min-height: 666px){
+    top: 43% !important;
+  }
+
   @media all and (max-width: 321px){
     top: 40%;
     height: 40%;
