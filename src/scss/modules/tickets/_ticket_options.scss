@@ -56,6 +56,14 @@
 
       &:hover{
         margin-left: 20%;
+
+        @media all and (max-width: 415px){
+          margin-left: 70%;
+          margin-top: 20px;
+        }
+        @media all and (max-width: 320px){
+          margin-left: 75%;
+        }
       }
       //
       &:hover > .tickets_option_title {
@@ -66,6 +74,10 @@
       &:hover > .tickets_option > .tickets_option_text {
         opacity: 1;
         text-align: right;
+
+        @media all and (max-width: 415px){
+          text-align: center ;
+        }
       }
 
       .tickets_option{
@@ -102,6 +114,11 @@
             margin-top: 50px;
           }
 
+          @media all and (max-width: 414px){
+            font-size: 15px !important;
+            transform: rotate(-90deg);
+          }
+
           &:hover{
             color: $color-contrast-line;
           }
@@ -120,6 +137,10 @@
         margin: 0;
         padding: 0;
         background: rgba(255,255,255,1);
+
+        @media all and (max-width: 375px){
+          font-size: 10px !important;
+        }
       }
     }
   }

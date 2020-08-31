@@ -176,10 +176,6 @@ class TicketsBlock extends React.Component {
 
                     <YourTicketsBlock arrTickets = {this.props.tickets.arrTickets}/>
 
-                    {/*<div className="all_tickets_block">*/}
-                    {/*    {this.props.tickets.arrTickets.length}*/}
-                    {/*</div>*/}
-
                 </div>
             </div>
 

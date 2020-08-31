@@ -10,6 +10,10 @@
     color: $color-main-text;
     text-align: left;
     width: 100%;
+
+    @media all and (max-width: 320px){
+      font-size: 10px;
+    }
   }
 
 
@@ -34,6 +38,10 @@
     animation-duration: .3s;
     animation-fill-mode: forwards;
     opacity: 0;
+
+    @media all and (max-width: 414px){
+      font-size: 15px;
+    }
   }
 
   .inform_img{
@@ -55,6 +63,10 @@
       width: 88%;
       background-position: -150px 0;
     }
+
+    @media all and (max-width: 320px){
+      bottom: 15% !important;
+    }
   }
 
   .ticket_form_title{
@@ -67,7 +79,13 @@
     animation-fill-mode: forwards;
     animation-delay: .2s;
     opacity: 0;
-    //font-family: 'Shadows Into Light', cursive;
+
+    @media all and (max-width: 414px){
+      font-size: 15px;
+    }
+    @media all and (max-width: 375px){
+      font-size: 13px;
+    }
   }
 
 
@@ -82,6 +100,17 @@
     outline: none !important;
     background: rgba(0,0,0,.3);
     color: $color-main-text;
+
+    @media all and (max-width: 414px){
+      bottom: -10%;
+      left: 20%;
+    }
+
+    @media all and (max-width: 320px){
+      width: 150px;
+      height: 35px;
+      left: 30%;
+    }
 
     &:hover {
       border: 1px solid $color-contrast-line;

@@ -27,6 +27,11 @@
   bottom: 0;
   overflow: auto;
   z-index: 50;
+
+  &::-webkit-scrollbar {
+    //width: 0px;
+    background: rgba(255, 255, 255, 0.0);
+  }
 }
 
 .event_block {
