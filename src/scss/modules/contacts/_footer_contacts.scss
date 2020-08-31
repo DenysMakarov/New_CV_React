@@ -25,7 +25,7 @@
     margin-top: 480px !important;
   }
 
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     margin-top: 300px !important;
   }
 }
@@ -55,7 +55,7 @@
   margin-bottom: 50px;
   font-family: 'Recursive', sans-serif;
 
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     font-size: 25px;
   }
 }
@@ -68,7 +68,7 @@
   @media all and (max-width: 768px) {
     font-size: 18px;
   }
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     width: 100%;
     font-size: 16px;
   }
@@ -94,16 +94,11 @@
     right: 50px;
   }
 
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     width: 100px;
     top: 50px;
   }
-}
 
-.fa-arrow-right{
-  @media all and (max-width: 415px){
-    display: none;
-  }
 }
 
 .bnt_footer_block_top {
@@ -154,7 +149,7 @@
   position: relative;
   //padding-top: 1%;
 
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     height: 100% !important;
   }
 }
@@ -181,11 +176,11 @@
   color: $color-main-text;
   text-align: left;
 
-  @media all and (max-width: 768px){
+  @media all and (max-width: 768px) {
     width: 33.5%;
   }
 
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     width: 100%;
     height: 30%;
   }
@@ -212,21 +207,21 @@
 }
 
 
-@media all and (max-width: 1024px){
+@media all and (max-width: 1024px) {
 
-  .footer_block_bottom:nth-child(1){
+  .footer_block_bottom:nth-child(1) {
     width: 15%;
   }
 
-  .footer_block_bottom:nth-child(4){
+  .footer_block_bottom:nth-child(4) {
     width: 25%;
     padding-left: 9%;
   }
 }
 
-@media all and (max-width: 769px){
+@media all and (max-width: 769px) {
 
-  .footer_block_bottom:nth-child(4){
+  .footer_block_bottom:nth-child(4) {
     width: 100%;
     padding-left: 9%;
     height: -100px !important;
@@ -234,13 +229,11 @@
   }
 }
 
-@media all and (max-width: 415px){
-  .footer_block_bottom:nth-child(1){
+@media all and (max-width: 415px) {
+  .footer_block_bottom:nth-child(1) {
     width: 100%;
   }
 }
-
-
 
 
 .email_subscribe {
@@ -252,7 +245,7 @@
   //width: 300px;
   position: relative;
 
-  @media all and (max-width: 1024px){
+  @media all and (max-width: 1024px) {
     height: 200px;
   }
 }
@@ -284,7 +277,7 @@
     position: absolute;
     width: 100%;
     z-index: 100;
-    border: 1px solid rgb(200,69,76);
+    border: 1px solid rgb(200, 69, 76);
 
   }
 }
@@ -345,7 +338,7 @@
   font-family: 'Mulish', sans-serif;
   box-sizing: border-box;
 
-  @media all and (max-width: 415px){
+  @media all and (max-width: 415px) {
     font-size: 10px;
     padding-top: 10px;
   }
@@ -368,7 +361,7 @@
       background-position: 0px 60px;
     }
 
-    @media all and (max-width: 415px){
+    @media all and (max-width: 415px) {
       margin-top: 15px;
       font-size: 25px;
     }
