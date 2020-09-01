@@ -11,7 +11,7 @@ class PilotBlock extends React.Component {
                 <h1 className="header_description">Favorites:</h1>
                 <div className="pilot_1">
                     <div className="photo_pilot"
-                         style={{backgroundImage: `url(${this.props.el.pilotImg_1})`}}></div>
+                         style={{backgroundImage: this.props.el.pilotImg_1}}></div>
                     <div className="desc_pilot">
                         <p className="header_desc_pilot name_of_pilot">
                             <span>{this.props.el.pilotName_1}</span>
@@ -29,7 +29,7 @@ class PilotBlock extends React.Component {
                 </div>
                 <div className="pilot_2">
                     <div className="photo_pilot"
-                         style={{backgroundImage: `url(${this.props.el.pilotImg_2})`}}></div>
+                         style={{backgroundImage: this.props.el.pilotImg_2}}></div>
                     <div className="desc_pilot">
                         <p className="header_desc_pilot name_of_pilot">
                             <span>{this.props.el.pilotName_2}</span>

@@ -32,7 +32,7 @@ class EventsDesc extends React.Component {
                     </button>
                 </div>
 
-                <div className="event_block_map" style={{backgroundImage: `url(${this.props.el.mapImg})`}}/>
+                <div className="event_block_map" style={{backgroundImage: this.props.el.mapImg}}/>
             </Fragment>
 
         );
