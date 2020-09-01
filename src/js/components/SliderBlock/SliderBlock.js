@@ -1,14 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
 import {connect} from "react-redux";
 import Arrows from "./ArrowsBlock";
 import {sliderInfo} from "../../db/dataBase";
 import SlidePagination from "./SlidePagination";
 import TextDesc from "./TextDesc";
 import RoundAnimation from "../RoundAnimation";
-
 
 const mapStateToProps = (state) => {
     return {
@@ -83,7 +79,6 @@ class SliderBlock extends React.Component {
                      style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath}}>
                     <div className="slide_before_cover"/>
                 </div>
-
 
                 <TextDesc/>
                 <SlidePagination/>

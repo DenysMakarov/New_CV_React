@@ -1,12 +1,12 @@
 import React from "react"
 import {connect} from "react-redux";
+import PropTypes from "prop-types"
 
 
 const mapStateToProps = (state) => {
     return {
         tickets: state.ticketsReducer
     }
-
 }
 
 
@@ -15,7 +15,6 @@ class YourTicketsBlock extends React.Component {
         super(props);
     }
 
-
     animationOfTickets = () => {
         let arrOfTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
         arrOfTickets = arrOfTickets.reverse()
@@ -23,7 +22,6 @@ class YourTicketsBlock extends React.Component {
         for (let i = 0; i < arrOfTickets.length; i++) {
             arrOfTickets[i].style.left = 60 * i + "px"
             arrOfTickets[i].style.transform = `scale(${scaleElem})`
-            // arrOfTickets[i].style.opacity = scaleElem
             scaleElem = scaleElem - 0.1
         }
     }
@@ -36,7 +34,6 @@ class YourTicketsBlock extends React.Component {
         this.animationOfTickets()
     }
 
-
     showTicket = (e) => {
         const arrTickets = Array.from(document.getElementsByClassName("your_tickets_array_cover"))
         const arrButtonClose = Array.from(document.getElementsByClassName("hide_ticket_button"))
@@ -44,11 +41,6 @@ class YourTicketsBlock extends React.Component {
         arrTickets.map((el) => el.classList.remove("your_tickets_active"))
         arrTickets[e.target.dataset.id].classList.add("your_tickets_active")
         arrButtonClose[e.target.dataset.id].classList.add("hide_ticket_button_active")
-
-        // arrButtonClose.map(el => el.addEventListener("click", (e) => {
-        //     console.log(e.target)
-        //
-        // }))
     }
 
     hideTicket = () => {
@@ -60,12 +52,11 @@ class YourTicketsBlock extends React.Component {
                arrButtonClose[i].classList.remove("hide_ticket_button_active")
            }
        }, 0)
-
-        console.log(arrTickets)
     }
 
 
     render() {
+        console.log(this.props)
         const {arrTickets} = this.props.tickets
         const NameOfDates = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
@@ -105,11 +96,14 @@ class YourTicketsBlock extends React.Component {
                             <div data-id={el.id} className="cover"/>
                         </div>
                     </div>
-
                 ))}
             </div>
         )
     }
+}
+
+YourTicketsBlock.propTypes = {
+    arrTickets : PropTypes.array
 }
 
 export default connect(mapStateToProps, null)(YourTicketsBlock)

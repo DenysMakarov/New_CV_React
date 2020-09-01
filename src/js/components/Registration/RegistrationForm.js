@@ -1,7 +1,4 @@
-import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
 import {connect} from "react-redux";
 import {isEmail, isLowerWord, isNumber, isUpperWord} from "./validationForm";
 import {setUsers, validForm, inValidForm} from "../../redux/actions/actions";
@@ -82,7 +79,7 @@ class RegistrationForm extends React.Component {
         const {users} = this.props
         const {registration} = this.state
         for (let i = 0; i < users.length; i++) {
-            if (users[i].email == registration.email) {
+            if (users[i].email === registration.email) {
                 this.setState({
                     foundEmailInToDB: true
                 })
@@ -122,7 +119,7 @@ class RegistrationForm extends React.Component {
             border: "2px solid transparent"
         }
 
-        if (name == "") {
+        if (name === "") {
             nameError.innerText = "Please write your`s name"
             nameInput.style.border = styleError.border
         } else {
@@ -130,7 +127,7 @@ class RegistrationForm extends React.Component {
             nameInput.style.border = styleValid.border
         }
 
-        if (username == "") {
+        if (username === "") {
             usernameError.innerText = "Please write your`s second name"
             usernameInput.style.border = styleError.border
         } else {
@@ -141,7 +138,7 @@ class RegistrationForm extends React.Component {
         if (!isEmail(email)) {
             emailInvalid.innerText = "Incorrect email"
             emailForm.style.border = styleError.border
-        } else if (this.state.foundEmailInToDB == true) {
+        } else if (this.state.foundEmailInToDB === true) {
             emailInvalid.innerText = "this email has been already exist"
             emailForm.style.border = styleError.border
         } else {
@@ -166,7 +163,7 @@ class RegistrationForm extends React.Component {
         }
         passwordInvalid.innerText = errorTextPass
 
-        if (repeatPassword != newPassword || repeatPassword == "") {
+        if (repeatPassword !== newPassword || repeatPassword === "") {
             secondPassInvalid.innerText = "Password is not the same as above"
             passwordRepeatInput.style.border = styleError.border
         } else {
@@ -176,21 +173,11 @@ class RegistrationForm extends React.Component {
 
         // finally decision validated or not
         const {inValidForm, validForm} = this.props
-        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword && this.state.foundEmailInToDB == false && name != "" && username != "") {
+        if (isLowerWord(newPassword) && isUpperWord(newPassword) && isNumber(newPassword) && repeatPassword === newPassword && this.state.foundEmailInToDB === false && name !== "" && username !== "") {
             validForm()
         } else {
             inValidForm()
         }
-    }
-
-    addToLocalStorage = () => {
-        let setPerson = {
-            name: this.state.registration.name,
-            email: this.state.registration.email,
-            password: this.state.registration.newPassword,
-        }
-        localStorage.user = JSON.stringify(setPerson)
-        // console.log(localStorage)
     }
 
     informPageAppear = () => {
@@ -202,10 +189,8 @@ class RegistrationForm extends React.Component {
 
     addUser = () => {
         const {validation} = this.props.validation
-        // console.log(this.props)
 
         if (validation) {
-            // this.addToLocalStorage()
             this.props.setUsers(this.state.registration)
             this.props.inValidForm()
             this.setState({
@@ -239,7 +224,7 @@ class RegistrationForm extends React.Component {
                   className="registration_block registration_panel">
                 <span className="name_of_block">REGISTRATION</span>
                 <label htmlFor="name">
-                    <span id="nameError" className="text_error"></span>
+                    <span id="nameError" className="text_error"/>
                     First Name </label>
                 <input onChange={this.changeValue}
                        id="name"
@@ -249,7 +234,7 @@ class RegistrationForm extends React.Component {
                        value={this.state.registration.name}
                 />
                 <label htmlFor="username">
-                    <span id="usernameError" className="text_error"></span>
+                    <span id="usernameError" className="text_error"/>
                     Second Name</label>
                 <input onChange={this.changeValue}
                        id="username"
@@ -259,7 +244,7 @@ class RegistrationForm extends React.Component {
                        value={this.state.registration.username}
                 />
                 <label htmlFor="email">
-                    <span id="emailError" className="text_error"></span>
+                    <span id="emailError" className="text_error"/>
                     Email</label>
                 <input onChange={this.changeValue}
                        type="text"
@@ -269,10 +254,9 @@ class RegistrationForm extends React.Component {
                        value={this.state.registration.email}
                 />
                 <label htmlFor="newPassword">
-                    <span id="passError" className="text_error"></span>
+                    <span id="passError" className="text_error"/>
                     New Password</label>
                 <input onChange={this.changeValue}
-                       type="password"
                        className="input_panel"
                        id="newPassword"
                        name="newPassword"
@@ -280,10 +264,9 @@ class RegistrationForm extends React.Component {
                        value={this.state.registration.newPassword}
                 />
                 <label htmlFor="repeatPassword">
-                    <span id="secondPassError" className="text_error"></span>
+                    <span id="secondPassError" className="text_error"/>
                     Repeat Password</label>
                 <input onChange={this.changeValue}
-                       value={this.state.registration.repeatPassword}
                        className="input_panel"
                        id="repeatPassword"
                        name="repeatPassword"

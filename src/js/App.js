@@ -10,7 +10,6 @@ import MenuList from "./components/Navigation/MenuList";
 import SliderBlock from "./components/SliderBlock/SliderBlock";
 import RegistrationPanel from "./components/Registration/RegistrationPanel";
 import Routes from "./Routes";
-import Test from "./Test";
 import RoundAnimation from "./components/RoundAnimation";
 
 

@@ -1,14 +1,8 @@
-import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {connect} from "react-redux";
-
+import React from 'react';
 
 class HeaderInfo extends React.Component{
     constructor(props) {
         super(props);
-
     }
 
     render() {

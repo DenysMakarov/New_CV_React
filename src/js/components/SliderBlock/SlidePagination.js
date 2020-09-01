@@ -1,15 +1,10 @@
-import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
 import {connect} from "react-redux";
-
-
 import {sliderInfo} from "../../db/dataBase";
 import {setSlide} from "../../redux/actions/actions";
 import {changeAnimationSlide} from "./ArrowsBlock"
+import PropTypes from "prop-types"
 
-
-//  =================  USES CLASS ================= //
 
 const mapPropsToState = (state) => {
     return {
@@ -60,7 +55,11 @@ class SlidePagination extends React.Component {
             </div>
         )
     }
+}
 
+SlidePagination.propTypes = {
+    num : PropTypes.number,
+    setSlide: PropTypes.func
 }
 
 export default connect(mapPropsToState, mapDispatchToProps)(SlidePagination)

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {sliderInfo} from "../../db/dataBase";
 import EventsDesc from "./EventsDesc";
 
@@ -7,7 +6,6 @@ class Events extends React.Component {
     constructor(props) {
         super(props);
     }
-
 
     render() {
         return (

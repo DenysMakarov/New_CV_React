@@ -1,8 +1,4 @@
-import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {connect} from "react-redux";
+import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhoneAlt, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
@@ -17,7 +13,7 @@ class BodyInfo extends React.Component{
     render() {
         return (
             <div className="address_block">
-                <div className="map_info info_block"></div>
+                <div className="map_info info_block"/>
                 <div className="info_info info_block">
                     <div className="phone_icon_info_block">
                         <FontAwesomeIcon icon={faPhoneAlt}/>

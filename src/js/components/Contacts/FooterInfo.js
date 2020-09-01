@@ -1,20 +1,14 @@
-import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {connect} from "react-redux";
+import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {isEmail} from "../Registration/validationForm";
 
 class FooterInfo extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             approvedEmail: false
         }
-
     }
 
     animationButtonShow = () => {
@@ -54,16 +48,13 @@ class FooterInfo extends React.Component {
     }
 
     render() {
-        const dateNew = new Date()
-
         return (
             <div className="footer_contacts_block">
-
                 <div className="footer_block_top">
                     <div className="footer_block_top_inform">
                         <p className="footer_block_top_text_top">CAREERS</p>
                         <h5 className="footer_block_top_text_center">Join our team.</h5>
-                        <div className="footer_block_top_line"></div>
+                        <div className="footer_block_top_line"/>
                         <p className="footer_block_top_text_underline">We’re a team of creatives who are excited about
                             unique ideas and help fin-tech companies to create amazing identity by crafting top-notch
                             UI/UX.</p>
@@ -72,11 +63,10 @@ class FooterInfo extends React.Component {
                                 <FontAwesomeIcon style={{marginLeft: "25px"}} icon={faArrowRight}/>
                             </button>
                             <div onMouseOver={this.animationButtonShow} onMouseLeave={this.animationButtonHide}
-                                 id="bnt_footer_block_top_animation" className="bnt_footer_block_top_animation"></div>
+                                 id="bnt_footer_block_top_animation" className="bnt_footer_block_top_animation"/>
                         </div>
                     </div>
                 </div>
-
 
                 <div className="footer_blocks_bottom">
                     <div className="footer_blocks_bottom_cover">
@@ -115,10 +105,9 @@ class FooterInfo extends React.Component {
                         </div>
                         <div className="footer_block_bottom_fifth">
                             © 2020, RALLY EVENTS Portfolio. Made with passion by Makarov Denys.
-                            <div className="contacts_icon"><i className="fab fa-youtube"></i></div>
-                            <div className="contacts_icon"><i className="fab fa-facebook-square"></i></div>
-                            <div className="contacts_icon"><i className="fab fa-twitter-square"></i></div>
-
+                            <div className="contacts_icon"><i className="fab fa-youtube"/></div>
+                            <div className="contacts_icon"><i className="fab fa-facebook-square"/></div>
+                            <div className="contacts_icon"><i className="fab fa-twitter-square"/></div>
                         </div>
                     </div>
                 </div>

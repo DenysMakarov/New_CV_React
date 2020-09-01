@@ -1,10 +1,9 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import {sliderInfo} from "../../db/dataBase";
 import {connect} from "react-redux";
-import {addTicket, removeTicket} from "../../redux/actions/actions";
-import TicketsPag from "./TicketsPag";
+import {addTicket} from "../../redux/actions/actions";
 import YourTicketsBlock from "./YourTickets";
+import PropTypes from "prop-types"
 
 
 const mapStateToProps = (state) => {
@@ -15,7 +14,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     addTicket,
-    removeTicket
 }
 
 class TicketsBlock extends React.Component {
@@ -109,9 +107,6 @@ class TicketsBlock extends React.Component {
         (secondName === "") ? InputSecondName.style.border = "2px solid red" : InputSecondName.style.border = "2px solid transparent";
         (phoneNumber === "") ? InputPhoneNumber.style.border = "2px solid red" : InputPhoneNumber.style.border = "2px solid transparent";
         (nameTicket === "CHOOSE EVENT") ? TicketTitle.style.color = "red" : TicketTitle.style.color = "white";
-
-        // console.log(this.props.tickets.arrTickets)
-        // console.log(sliderInfo[this.state.numberOfSlide - 1].month)
     }
 
 
@@ -120,8 +115,6 @@ class TicketsBlock extends React.Component {
             <div className="tickets_block_cover ">
                 <div className="tickets_block">
                     <div className="left_pixel_decoration"/>
-
-                    {/*<TicketsPag numberOfSlide = {this.state.numberOfSlide}/>*/}
 
                     <div className="tickets_events">
                         {sliderInfo.map((el) => (
@@ -172,15 +165,19 @@ class TicketsBlock extends React.Component {
                             className="btn_ticket_form">Buy Ticket
                         </button>
                     </form>
-
-
                     <YourTicketsBlock arrTickets = {this.props.tickets.arrTickets}/>
-
                 </div>
             </div>
 
         )
     }
+}
+
+TicketsBlock.propTypes = {
+    tickets: PropTypes.shape({
+        arrTickets: PropTypes.array
+    }),
+    addTicket : PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TicketsBlock)

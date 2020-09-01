@@ -11,6 +11,11 @@
   overflow: auto ;
   background-image: url(../img/rally_subaru_1.jpg) !important;
 
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: rgba(255, 255, 255, 0.0);
+  }
+
   @media all and (max-width: 2560px){
     background-size: cover;
     }

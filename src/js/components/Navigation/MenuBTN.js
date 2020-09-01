@@ -1,9 +1,7 @@
-import React, {Fragment} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink, HashRouter as RouterHash} from "react-router-dom";
+import React from 'react';
 import {showHideMenu} from "../../redux/actions/actions";
 import {connect} from "react-redux";
 import PropTypes from "prop-types"
-import MenuList from "./MenuList";
 
 
 const mapToProps = (state) => {
@@ -50,7 +48,7 @@ class MenuBtn extends React.Component {
 
         const menuList = document.getElementById("menu_list")
         return new Promise((res, rej) => {
-            menu == false ?
+            menu === false ?
                 this.setState({
                     typeOfMenu: "SHOW_MENU",
                     menuListClass: "menu_list_show"
@@ -72,11 +70,11 @@ class MenuBtn extends React.Component {
         return (
             <div id="btn_menu_block" className="btn_menu_block">
                 <input onClick={this.operatorMenu} type='checkbox' defaultChecked={false} id="btn_menu"
-                       className="btn_menu"></input>
+                       className="btn_menu"/>
 
                 <label id="label_btn_menu" htmlFor="btn_menu" className="label_btn_menu">
-                    <div id="line_in_btn_top" className="line_in_btn line_in_btn_top"></div>
-                    <div id="line_in_btn_bottom" className="line_in_btn line_in_btn_bottom"></div>
+                    <div id="line_in_btn_top" className="line_in_btn line_in_btn_top"/>
+                    <div id="line_in_btn_bottom" className="line_in_btn line_in_btn_bottom"/>
                 </label>
             </div>
         )
@@ -89,7 +87,8 @@ MenuBtn.propTypes = {
         mainMenu: PropTypes.shape({
             menu: PropTypes.bool.isRequired
         })
-    })
+    }),
+    showHideMenu: PropTypes.func
 }
 
 export default connect(mapToProps, mapDispatch)(MenuBtn)

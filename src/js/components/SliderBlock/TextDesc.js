@@ -1,12 +1,8 @@
 import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
 import {connect} from "react-redux";
-import Arrows from "./ArrowsBlock";
 import {sliderInfo} from "../../db/dataBase";
-import SlidePagination from "./SlidePagination";
-import set from "@babel/runtime/helpers/esm/set";
+import PropTypes from "prop-types"
+
 
 
 const mapStateToProps = (state) => {
@@ -14,17 +10,6 @@ const mapStateToProps = (state) => {
         numberOfSlide: state.numberOfSlideReducer.numberOfSlide
     }
 }
-
-// function FunDate() {
-//     const dateNew = new Date()
-//     const dateInfo = `${dateNew.getDate()} ${(<span>/</span>)}  ${dateNew.getMonth()} / ${dateNew.getFullYear()}`
-//
-//     return (
-//         <span>
-//             {dateInfo}
-//         </span>
-//     )
-// }
 
 class TextDesc extends React.Component {
     constructor(props) {
@@ -49,7 +34,6 @@ class TextDesc extends React.Component {
 
         return (
             <Fragment>
-                {/*<FunDate/>*/}
                 <div className="text_description_block">
                     <h5 className="text_description_slide text_description_slide_top">{sliderInfo[numberOfSlide].textTop}</h5>
                     <h5 className="text_description_slide text_description_slide_center">Strategy
@@ -60,9 +44,12 @@ class TextDesc extends React.Component {
                 </div>
                 <h1 id="text_description_slide_behind" className="text_description_slide_behind">{sliderInfo[numberOfSlide].textBottom}</h1>
             </Fragment>
-
         )
     }
+}
+
+TextDesc.propTypes = {
+    numberOfSlide : PropTypes.number
 }
 
 export default connect(mapStateToProps, null)(TextDesc)

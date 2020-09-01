@@ -9,7 +9,6 @@
   background-size: cover;
   overflow: auto;
   position: absolute;
-  //filter: brightness(30%);
 }
 
 .main_container_event_filter {
@@ -29,7 +28,7 @@
   z-index: 50;
 
   &::-webkit-scrollbar {
-    //width: 0px;
+    width: 0px;
     background: rgba(255, 255, 255, 0.0);
   }
 }

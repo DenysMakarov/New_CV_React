@@ -1,11 +1,7 @@
-import React, {Fragment} from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
 import {connect} from "react-redux";
-import {sliderInfo} from "../../db/dataBase";
-import set from "@babel/runtime/helpers/esm/set";
 import {logIn, logOut} from "../../redux/actions/actions";
+import PropTypes from "prop-types"
 
 const mapStateToProps = (state) => {
     return {
@@ -33,7 +29,7 @@ class LoginForm extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         const loginBtn = document.getElementById("btnLogin");
-        (this.props.login == false) ? loginBtn.innerText = "SIGN IN" : loginBtn.innerText = "SIGN OUT"
+        (this.props.login === false) ? loginBtn.innerText = "SIGN IN" : loginBtn.innerText = "SIGN OUT"
     }
 
     animationTextLoginInform = (color) => {
@@ -51,23 +47,18 @@ class LoginForm extends React.Component {
         this.setState({
             [name]: value
         })
-        // console.log(this.state)
     }
 
     logIn = (e) => {
         e.preventDefault()
         const {users} = this.props
         const loginInformText = document.getElementById("login_inform_text")
-        const loginInfoBlock = document.getElementById("logInform")
-        // loginInfoBlock.style.animationName = "none"
 
-
-
-        if (this.props.login == false && this.state.email != "" && this.state.password != "") {
+        if (this.props.login === false && this.state.email !== "" && this.state.password !== "") {
 
             // check email and password in db
             for (let i = 0; i < users.length; i++) {
-                if (users[i].email == this.state.email && users[i].newPassword == this.state.password) {
+                if (users[i].email === this.state.email && users[i].newPassword === this.state.password) {
                     console.log(users[i].name)
                     // add to local storage
                     let setPerson = {
@@ -94,7 +85,7 @@ class LoginForm extends React.Component {
                     Array.from(document.getElementsByClassName("input_login")).map(el => el.style.border = "2px solid red")
                 }
             }
-        } else if (this.props.login == true) {
+        } else if (this.props.login === true) {
             this.animationTextLoginInform("white")
 
             this.props.logOut()
@@ -104,12 +95,10 @@ class LoginForm extends React.Component {
                 loginInformText.innerText = "You can sign in your personal account if you have"
             }, 3000)
         }
-
-
-        console.log(this.props.login)
     }
 
     render() {
+
         return (
             <form onSubmit={this.logIn} className="registration_block login_panel">
                 <span className="name_of_block">ACCOUNT</span>
@@ -127,6 +116,14 @@ class LoginForm extends React.Component {
             </form>
         )
     }
+}
+
+LoginForm.propTypes = {
+    users: PropTypes.array,
+    login: PropTypes.bool,
+    logIn: PropTypes.func,
+    logOut: PropTypes.func
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
