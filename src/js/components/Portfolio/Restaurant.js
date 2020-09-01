@@ -1,7 +1,6 @@
 import React from "react"
 
 function goToLink () {
-    alert("This slider works as a library. You can connect it in your personal code where you want. Instructions included into folder 'LIBRARY' of Git link");
     window.location = "https://1985makarovdenis1985.github.io/New_CV_restaurant/dist/"
 }
 
