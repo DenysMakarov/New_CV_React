@@ -9,7 +9,7 @@ import {ticketsReducer} from "./ticketsReducer";
 export const rootReducer = combineReducers({
     mainMenu: mainMenuReducer,
     numberOfSlideReducer,
-    usersReducer : usersReducer,
+    usersReducer,
     validationFormReducer,
     loginReducer,
     ticketsReducer

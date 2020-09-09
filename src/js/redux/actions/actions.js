@@ -1,17 +1,15 @@
 import {
-    GET_USERS,
-    NUMBER_OF_SLIDE,
     SET_USERS,
     VALID,
     INVALID,
     LOGIN,
     LOGOUT,
     ADD_TICKET,
-    REMOVE_TICKET
+    REMOVE_TICKET,
+    NEXT_SLIDE,
+    PREV_SLIDE,
+    SET_SLIDE
 } from "../../types"
-import {NEXT_SLIDE} from "../../types";
-import {PREV_SLIDE} from "../../types";
-import {SET_SLIDE} from "../../types";
 
 export function showHideMenu(typeText) {
     return {
