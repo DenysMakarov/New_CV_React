@@ -1,5 +1,5 @@
 import React from 'react';
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 
 
 class TicketsPag extends React.Component {
@@ -11,8 +11,8 @@ class TicketsPag extends React.Component {
         this.setState({
             nameTicket: e.target.innerText,
             numberOfSlide: e.target.dataset.number,
-            date: sliderInfo[this.props.numberOfSlide - 1].date,
-            place: sliderInfo[this.props.numberOfSlide - 1].place,
+            date: eventInfo[this.props.numberOfSlide - 1].date,
+            place: eventInfo[this.props.numberOfSlide - 1].place,
         })
         console.log(this.props)
 
@@ -45,7 +45,7 @@ class TicketsPag extends React.Component {
     render() {
         return (
             <div className="tickets_events">
-                {sliderInfo.map((el) => (
+                {eventInfo.map((el) => (
                     <div data-name={el.textBottom}
                          key={el.imgPath}
                          className="tickets_option_cover">

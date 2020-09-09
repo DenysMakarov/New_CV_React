@@ -1,5 +1,5 @@
 import React from 'react'
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 import EventsDesc from "./EventsDesc";
 
 class Events extends React.Component {
@@ -12,7 +12,7 @@ class Events extends React.Component {
             <div className="main_container_event_cover">
                 <div className="main_container_event_filter"/>
                 <div className="main_container_event">
-                    {sliderInfo.map((el) => (
+                    {eventInfo.map((el) => (
                             <div key={el.numberId} className="event_block">
                                 <EventsDesc el={el}/>
                             </div>

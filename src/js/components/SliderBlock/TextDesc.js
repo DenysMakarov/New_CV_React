@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {connect} from "react-redux";
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 import PropTypes from "prop-types"
 
 
@@ -35,14 +35,14 @@ class TextDesc extends React.Component {
         return (
             <Fragment>
                 <div className="text_description_block">
-                    <h5 className="text_description_slide text_description_slide_top">{sliderInfo[numberOfSlide].textTop}</h5>
+                    <h5 className="text_description_slide text_description_slide_top">{eventInfo[numberOfSlide].textTop}</h5>
                     <h5 className="text_description_slide text_description_slide_center">Strategy
                         decision <br/>
                         {dateNew.getDate()} <span style={{color: "red"}}> / </span> {dateNew.getMonth() + 1} <span style={{color: "red"}}> / </span> {dateNew.getFullYear()} <br/>
                     </h5>
-                    <h1 className="text_description_slide text_description_slide_bottom">{sliderInfo[numberOfSlide].textBottom}</h1>
+                    <h1 className="text_description_slide text_description_slide_bottom">{eventInfo[numberOfSlide].textBottom}</h1>
                 </div>
-                <h1 id="text_description_slide_behind" className="text_description_slide_behind">{sliderInfo[numberOfSlide].textBottom}</h1>
+                <h1 id="text_description_slide_behind" className="text_description_slide_behind">{eventInfo[numberOfSlide].textBottom}</h1>
             </Fragment>
         )
     }

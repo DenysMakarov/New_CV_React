@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Arrows from "./ArrowsBlock";
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 import SlidePagination from "./SlidePagination";
 import TextDesc from "./TextDesc";
 import RoundAnimation from "../RoundAnimation";
@@ -64,8 +64,8 @@ class SliderBlock extends React.Component {
 
     render() {
         const {numberOfSlide} = this.props.state.numberOfSlideReducer
-        let appearancePrevSlide = sliderInfo.length - 1;
-        numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == sliderInfo.length ? appearancePrevSlide = 0 : appearancePrevSlide
+        let appearancePrevSlide = eventInfo.length - 1;
+        numberOfSlide > 0 ? appearancePrevSlide = numberOfSlide - 1 : numberOfSlide == eventInfo.length ? appearancePrevSlide = 0 : appearancePrevSlide
 
         return (
             <div id="slider_block" onMouseMove={this.setRoundPos} className="slider_block">
@@ -73,10 +73,10 @@ class SliderBlock extends React.Component {
                 <div className="right_pixel_decoration"/>
 
                 <div id="main_slide" className="main_slide"
-                     style={{backgroundImage: sliderInfo[numberOfSlide].imgPath}}/>
+                     style={{backgroundImage: eventInfo[numberOfSlide].imgPath}}/>
 
                 <div id="slide_before" className="slide_before"
-                     style={{backgroundImage: sliderInfo[appearancePrevSlide].imgPath}}>
+                     style={{backgroundImage: eventInfo[appearancePrevSlide].imgPath}}>
                     <div className="slide_before_cover"/>
                 </div>
 

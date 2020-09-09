@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 import {setSlide} from "../../redux/actions/actions";
 import {changeAnimationSlide} from "./ArrowsBlock"
 import PropTypes from "prop-types"
@@ -42,12 +42,12 @@ class SlidePagination extends React.Component {
         return (
             <div>
                 <ul className="slide_pagination_panel">
-                    {sliderInfo.map((el) => (
+                    {eventInfo.map((el) => (
                         <li
                             key={el.numberId}
                             data-id={el.numberId}
                             onClick={this.setSlider}
-                            style={{height: 100 / sliderInfo.length + "%"}}
+                            style={{height: 100 / eventInfo.length + "%"}}
                             className="pagination_panel_number">{"0" + el.numberId}
                         </li>
                     ))}

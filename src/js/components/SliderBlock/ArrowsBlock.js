@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {connect} from "react-redux";
 import {nextSlide, prevSlide} from "../../redux/actions/actions";
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types"
@@ -45,7 +45,7 @@ class Arrows extends React.Component {
 
         this.state = {
             slideNumber: 0,
-            sliderInfo: sliderInfo
+            sliderInfo: eventInfo
         }
     }
 

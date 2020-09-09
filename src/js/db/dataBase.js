@@ -1,4 +1,4 @@
-export const sliderInfo = [
+export const eventInfo = [
     {
         imgPath: "url(img/rally_c3_4.jpg)",
         numberId: 1,

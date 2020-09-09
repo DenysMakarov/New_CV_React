@@ -1,5 +1,5 @@
 import React from 'react';
-import {sliderInfo} from "../../db/dataBase";
+import {eventInfo} from "../../db/dataBase";
 import {connect} from "react-redux";
 import {addTicket} from "../../redux/actions/actions";
 import YourTicketsBlock from "./YourTickets";
@@ -44,9 +44,9 @@ class TicketsBlock extends React.Component {
         this.setState({
             nameTicket: e.target.innerText,
             numberOfSlide: e.target.dataset.number,
-            date: sliderInfo[this.state.numberOfSlide - 1].date,
-            place: sliderInfo[this.state.numberOfSlide - 1].place,
-            month: sliderInfo[this.state.numberOfSlide - 1].month,
+            date: eventInfo[this.state.numberOfSlide - 1].date,
+            place: eventInfo[this.state.numberOfSlide - 1].place,
+            month: eventInfo[this.state.numberOfSlide - 1].month,
 
         })
 
@@ -83,9 +83,9 @@ class TicketsBlock extends React.Component {
             nameTicket: nameTicket,
             secondName: secondName,
             phoneNumber: phoneNumber,
-            placeOfEvent: sliderInfo[this.state.numberOfSlide - 1].place,
-            dateOfEvent: sliderInfo[this.state.numberOfSlide - 1].date,
-            monthOfDate: sliderInfo[this.state.numberOfSlide - 1].month,
+            placeOfEvent: eventInfo[this.state.numberOfSlide - 1].place,
+            dateOfEvent: eventInfo[this.state.numberOfSlide - 1].date,
+            monthOfDate: eventInfo[this.state.numberOfSlide - 1].month,
             id: this.props.tickets.arrTickets.length
         }
         const InputFirstName = document.getElementById("input_ticket_first_name")
@@ -117,7 +117,7 @@ class TicketsBlock extends React.Component {
                     <div className="left_pixel_decoration"/>
 
                     <div className="tickets_events">
-                        {sliderInfo.map((el) => (
+                        {eventInfo.map((el) => (
                             <div data-name={el.textBottom} key={el.imgPath} className="tickets_option_cover">
                                 <div className="tickets_option">
                                     <h5 onClick={this.setAnimationAndGetInformOfTicket} data-number={el.numberId}
@@ -152,10 +152,10 @@ class TicketsBlock extends React.Component {
                                type="text"/>
 
 
-                        <h3 id="date_of_event" className="date_of_event">{sliderInfo[this.state.numberOfSlide - 1].date}
-                            <br/> {sliderInfo[this.state.numberOfSlide - 1].place}</h3>
+                        <h3 id="date_of_event" className="date_of_event">{eventInfo[this.state.numberOfSlide - 1].date}
+                            <br/> {eventInfo[this.state.numberOfSlide - 1].place}</h3>
                         <div id="inform_img" className="inform_img" style={{
-                            backgroundImage: sliderInfo[this.state.numberOfSlide - 1].imgPath
+                            backgroundImage: eventInfo[this.state.numberOfSlide - 1].imgPath
                         }}/>
                         <h1 id="ticket_form_title" className="ticket_form_title">{this.state.nameTicket}</h1>
                         <button
