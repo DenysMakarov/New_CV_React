@@ -1,7 +1,6 @@
 
 @import "modules/keyframes";
 @import "modules/mixins";
-
 @import "modules/main_container";
 @import "modules/navigation/navigation";
 @import "modules/slider_block/full_slider_block";
@@ -13,15 +12,5 @@
 @import "modules/img";
 
 
-
-
-@font-face {
-  font-family: "SpaceGrotesk";
-  src: url("../fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff");
-  src: url("../fonts/SpaceGrotesk/spacegrotesk-boldSpaceGrotesk.woff2");
-  src: url("../fonts/SpaceGrotesk/SpaceGrotesk-Bold.otf");
-  font-weight: normal;
-  font-style: normal;
-}
 
 

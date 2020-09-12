@@ -50,8 +50,6 @@ export const ticketsReducer = (state = initiallyState, action) => {
     switch (action.type) {
         case ADD_TICKET :
             return {...state, arrTickets: state.arrTickets.concat(action.payload)}
-        case REMOVE_TICKET:
-            return state
         default:
             return state
     }

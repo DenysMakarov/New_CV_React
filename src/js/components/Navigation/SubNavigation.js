@@ -1,14 +1,13 @@
 import React from 'react';
 import {subMenu} from "../../db/dataBase";
 import {createSubMenu} from "../Navigation/CreateSubMenu"
-import {connect} from "react-redux";
 
 class SubNavigation extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    linkColorDisable = () => { // нужно будет изменить как активный класс
+    linkColorDisable = () => { // need to change as an active class
         const arrTextHeaderOfMenu = Array.from(document.getElementsByClassName("text_of_headers_menu"))
         arrTextHeaderOfMenu.map(el => el.style.color = "#ffffff")
     }
@@ -32,4 +31,4 @@ class SubNavigation extends React.Component {
 }
 
 
-export default connect(null, null)(SubNavigation)
+export default SubNavigation

@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {Provider} from 'react-redux';
 import {compose, createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
@@ -10,7 +8,6 @@ import thunk from "redux-thunk";
 import {rootReducer} from "./redux/reducers/rootReducer";
 import App from "./App";
 
-// WAS
 const store = createStore(rootReducer, compose(
     applyMiddleware(
         thunk
@@ -18,13 +15,10 @@ const store = createStore(rootReducer, compose(
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 
-const app = (
+ReactDOM.render(
     <Provider store={store}>
         <App/>
-    </Provider>
-)
-ReactDOM.render(
-    app,
+    </Provider>,
     document.getElementById('root')
 );
 

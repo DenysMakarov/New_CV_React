@@ -1,19 +1,4 @@
 import React from 'react';
-import {showHideMenu} from "../../redux/actions/actions";
-import {connect} from "react-redux";
-import PropTypes from "prop-types"
-
-
-const mapToProps = (state) => {
-    return {
-        menuAppear: state
-    }
-}
-
-const mapDispatch = {
-    showHideMenu
-}
-
 
 class MenuBtn extends React.Component {
     constructor(props) {
@@ -21,22 +6,21 @@ class MenuBtn extends React.Component {
 
         this.state = {
             typeOfMenu: "HIDE_MENU",
+            menuOptions: false
         }
     }
 
     operatorMenu = () => {
-        const {menu} = this.props.menuAppear.mainMenu
-        const {showHideMenu} = this.props
         const menuLinks = Array.from(document.getElementsByClassName("nav_link_menu_list"))
         const lineInBtnTop = document.getElementById("line_in_btn_top")
         const lineInBtnBottom = document.getElementById("line_in_btn_bottom")
 
 
         menuLinks.map((el) => {
-            (!menu) ? el.style.marginTop = "0" : el.style.marginTop = "30px"
+            (!this.state.menuOptions) ? el.style.marginTop = "0" : el.style.marginTop = "30px"
         })
 
-        if (menu) {
+        if (this.state.menuOptions) {
             lineInBtnTop.classList.remove("line_in_btn_top_active");
             lineInBtnBottom.classList.remove("line_in_btn_bottom_active")
 
@@ -45,22 +29,21 @@ class MenuBtn extends React.Component {
             lineInBtnBottom.classList.add("line_in_btn_bottom_active")
         }
 
-
         const menuList = document.getElementById("menu_list")
         return new Promise((res, rej) => {
-            menu === false ?
+            this.state.menuOptions === false ?
                 this.setState({
-                    typeOfMenu: "SHOW_MENU",
+                    menuOptions: true,
                     menuListClass: "menu_list_show"
                 }) :
                 this.setState({
-                    typeOfMenu: "HIDE_MENU",
+                    menuOptions: false,
                     menuListClass: "menu_list_hide"
                 })
-            res(menu)
+            res(this.state.menuOptions)
         })
-            .then((menu) => {
-                showHideMenu(this.state.typeOfMenu)
+            .then(() => {
+                // showHideMenu(this.state.typeOfMenu)
                 menuList.className = `menu_list ${this.state.menuListClass}`
             })
     }
@@ -81,14 +64,4 @@ class MenuBtn extends React.Component {
     }
 }
 
-
-MenuBtn.propTypes = {
-    menuAppear: PropTypes.shape({
-        mainMenu: PropTypes.shape({
-            menu: PropTypes.bool.isRequired
-        })
-    }),
-    showHideMenu: PropTypes.func
-}
-
-export default connect(mapToProps, mapDispatch)(MenuBtn)
+export default MenuBtn

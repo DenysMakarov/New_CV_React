@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {addTicket} from "../../redux/actions/actions";
 import YourTicketsBlock from "./YourTickets";
 import PropTypes from "prop-types"
+import TicketsOptions from "./TicketsOptions";
 
 
 const mapStateToProps = (state) => {
@@ -54,8 +55,6 @@ class TicketsBlock extends React.Component {
         const dateOfEvent = document.getElementById("date_of_event")
         const ticketFormTitle = document.getElementById("ticket_form_title")
         const arrOptionTitleText = Array.from(document.getElementsByClassName("tickets_option_title"))
-        const TicketTitle = document.getElementById("ticket_form_title")
-
 
         for (let i = 0; i < arrOptionTitleText.length; i++) {
             (arrOptionTitleText[i].dataset.number === e.target.dataset.number) ? arrOptionTitleText[i].style.color = "red" : arrOptionTitleText[i].style.color = "#ffffff"
@@ -72,7 +71,7 @@ class TicketsBlock extends React.Component {
             ticketFormTitle.style.animationName = "ticket_form_title_appear"
         }, 100)
 
-        TicketTitle.style.color = "white"
+        ticketFormTitle.style.color = "white"
     }
 
     createTicket = (e) => {

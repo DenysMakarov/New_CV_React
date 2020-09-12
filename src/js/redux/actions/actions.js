@@ -72,9 +72,3 @@ export function addTicket(ticket) {
         payload: ticket
     }
 }
-
-export function removeTicket() {
-    return {
-        type: REMOVE_TICKET,
-    }
-}

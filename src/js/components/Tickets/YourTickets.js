@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-
 class YourTicketsBlock extends React.Component {
     constructor(props) {
         super(props);
@@ -75,7 +74,6 @@ class YourTicketsBlock extends React.Component {
                 {arrTickets.map((el) => (
                     <div key={el.id + dateOfToDay.getMilliseconds()}
                          className="your_tickets_array_cover"
-
                     >
                         <div className="your_tickets_array"
                              onClick={this.showTicket}>
@@ -91,7 +89,7 @@ class YourTicketsBlock extends React.Component {
                                     onClick={this.hideTicket}
                             >Close
                             </button>
-                            {dateOfToDay.getMonth() > el.month && dateOfToDay.getFullYear() > el.year && <PassedCover/>}
+                            {dateOfToDay.getMonth() > el.month && dateOfToDay.getFullYear() == el.year && <PassedCover/>}
                             {dateOfToDay.getFullYear() > el.year && <PassedCover/>}
                             <div data-id={el.id} className="cover"/>
                         </div>

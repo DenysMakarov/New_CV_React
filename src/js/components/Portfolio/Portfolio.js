@@ -2,7 +2,7 @@ import React from "react"
 import BackgroundText from "./BackgroundText";
 import {portfolioData} from "../../db/dataBase";
 import GameBlock from "./GameBlock";
-import SliderBlock from "./SliderBlock";
+import SliderMS from "./SliderMS";
 import SneakersShopBlock from "./SneakersShopBlock";
 import Restaurant from "./Restaurant";
 
@@ -33,7 +33,7 @@ class Portfolio extends React.Component {
         const {portfolio} = portfolioData
         const works = [
             <GameBlock/>,
-            <SliderBlock/>,
+            <SliderMS/>,
             <SneakersShopBlock/>,
             <Restaurant/>,
         ]

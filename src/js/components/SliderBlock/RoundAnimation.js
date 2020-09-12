@@ -16,7 +16,6 @@ class RoundAnimation extends React.Component {
             </div>
         )
     }
-
 }
 
 export default RoundAnimation

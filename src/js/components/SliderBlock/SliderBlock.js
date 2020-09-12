@@ -4,7 +4,7 @@ import Arrows from "./ArrowsBlock";
 import {eventInfo} from "../../db/dataBase";
 import SlidePagination from "./SlidePagination";
 import TextDesc from "./TextDesc";
-import RoundAnimation from "../RoundAnimation";
+import RoundAnimation from "./RoundAnimation";
 
 const mapStateToProps = (state) => {
     return {
@@ -35,27 +35,26 @@ class SliderBlock extends React.Component {
             round.style.width = "35px"
             round.style.height = "35px"
             round.style.opacity = "1"
-
-            setTimeout(() => {
-                round.style.transition = ".05s"
-            }, 10)
+            round.style.transition = ".05s"
 
         } else if (e.clientY <= 120) {
             round.style.opacity = "0"
             round.style.transition = ".5s"
         }
-        if (e.target.id === "arrow_left_cover"){
+
+        if (e.target.id === "arrow_left_cover") {
             this.setState({
                 // here to change set round relatively arrow
-                posX: arrowLeft.getBoundingClientRect().left+15,
-                posY: arrowLeft.getBoundingClientRect().top+15,
+                posX: arrowLeft.getBoundingClientRect().left + 15,
+                posY: arrowLeft.getBoundingClientRect().top + 15,
             })
             round.style.width = arrowLeft.getBoundingClientRect().width + 4 + "px";
             round.style.height = arrowLeft.getBoundingClientRect().height + 4 + "px";
-        } else  if (e.target.id === "arrow_right_cover"){
+        }
+        else if (e.target.id === "arrow_right_cover") {
             this.setState({
-                posX: arrowRight.getBoundingClientRect().left+15,
-                posY: arrowRight.getBoundingClientRect().top+15,
+                posX: arrowRight.getBoundingClientRect().left + 15,
+                posY: arrowRight.getBoundingClientRect().top + 15,
             })
             round.style.width = arrowRight.getBoundingClientRect().width + 4 + "px";
             round.style.height = arrowRight.getBoundingClientRect().height + 4 + "px";
@@ -69,7 +68,7 @@ class SliderBlock extends React.Component {
 
         return (
             <div id="slider_block" onMouseMove={this.setRoundPos} className="slider_block">
-                <RoundAnimation posX={this.state.posX} posY={this.state.posY} posB={this.state.posB}/>
+                <RoundAnimation posX={this.state.posX} posY={this.state.posY}/>
                 <div className="right_pixel_decoration"/>
 
                 <div id="main_slide" className="main_slide"
@@ -77,9 +76,7 @@ class SliderBlock extends React.Component {
 
                 <div id="slide_before" className="slide_before"
                      style={{backgroundImage: eventInfo[appearancePrevSlide].imgPath}}>
-                    <div className="slide_before_cover"/>
                 </div>
-
                 <TextDesc/>
                 <SlidePagination/>
                 <Arrows/>
