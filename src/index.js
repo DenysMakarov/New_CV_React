@@ -1,6 +1,6 @@
 
-import "./scss/main.scss"
-import "./js/main"
+import "./assets/scss/main.scss"
+import "./main"
 
 
 
